@@ -11,9 +11,6 @@
   - Instalação de distribuições
   - Configurações iniciais do sistema
   - Dual boot e máquinas virtuais
-- **Desligar o sistema com segurança**
-  - Comandos: `shutdown`, `reboot`, `poweroff`
-  - Boas práticas
 
 ---
 
