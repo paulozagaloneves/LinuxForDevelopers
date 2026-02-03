@@ -1,5 +1,34 @@
 # Manual de Instalação do Ubuntu 24.04 Desktop
 
+## Índice
+
+- [Requisitos do Sistema](#requisitos-do-sistema)
+  - [Requisitos Mínimos](#requisitos-mínimos)
+  - [Requisitos Recomendados](#requisitos-recomendados)
+- [Videos](#videos)
+- [Preparação](#preparação)
+  - [1. Transferência da ISO](#1-transferência-da-iso)
+  - [2. Criar Mídia de Instalação](#2-criar-mídia-de-instalação)
+- [Processo de Instalação](#processo-de-instalação)
+  - [1. Arranque](#1-arranque)
+  - [2. Ecrã de Boas-vindas](#2-ecrã-de-boas-vindas)
+  - [3. Configurações Iniciais](#3-configurações-iniciais)
+  - [4. Tipo de Instalação](#4-tipo-de-instalação)
+  - [5. Criação de Utilizador](#5-criação-de-utilizador)
+  - [6. Localização](#6-localização)
+  - [7. Instalação](#7-instalação)
+  - [8. Conclusão](#8-conclusão)
+- [Configurações Pós-Instalação](#configurações-pós-instalação)
+  - [1. Primeiro Arranque](#1-primeiro-arranque)
+  - [2. Actualizar o Sistema](#2-actualizar-o-sistema)
+  - [3. Instalar Controladores Adicionais](#3-instalar-controladores-adicionais)
+  - [4. Instalar Software Essencial](#4-instalar-software-essencial)
+  - [5. Configurar Firewall](#5-configurar-firewall)
+- [Resolução de Problemas Comuns](#resolução-de-problemas-comuns)
+- [Recursos Úteis](#recursos-úteis)
+- [Comandos Úteis Pós-Instalação](#comandos-úteis-pós-instalação)
+- [Conclusão](#conclusão)
+
 ## Requisitos do Sistema
 
 ### Requisitos Mínimos
@@ -13,6 +42,14 @@
 - **Memória RAM**: 8 GB ou mais
 - **Espaço em disco**: 50 GB ou mais
 - **Resolução de ecrã**: 1920 x 1080 ou superior
+
+
+## Videos
+
+1. [Learn Linux TV - How to Install Ubuntu 24.04 Desktop: Complete Beginner's Guide](https://www.youtube.com/watch?v=zE7OYNkuQ1w)
+2. [Nerd on the Street - How to Install Ubuntu 24.04 LTS](https://www.youtube.com/watch?v=WiW4KN2rNZY)
+3. [Luba Linux - Como Baixar e Instalar o Ubuntu 24.04](https://www.youtube.com/watch?v=ehn8sgyH8mo)            # PT-BR
+4. [Learn Linux TV - How to Deploy Ubuntu 24.04 LTS: Step-by-Step Installation Overview](https://www.youtube.com/watch?v=pln-tglFxwg)  # Install on Proxmox
 
 ## Preparação
 
