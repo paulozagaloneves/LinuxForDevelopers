@@ -1,5 +1,13 @@
 # Linux For Developers
 
+## Table of Contents
+
+- [Introdução ao Linux](#introdução-ao-linux)
+  - [História e evolução do Linux](#história-e-evolução-do-linux)
+  - [Distribuições Populares (Ubuntu, Fedora, Debian, Redhat, Arch)](#distribuições-populares-ubuntu-fedora-debian-redhat-arch)
+  - [Filosofia Open Source](#filosofia-open-source)
+- [Instalação e Configuração](#instalação-e-configuração)
+
 ## **Introdução ao Linux**
 
 ### História e evolução do Linux

@@ -2,7 +2,7 @@
 
 ## Trilha de Treinamento
 
-### 📅 Dia 1 - Fundamentos do Linux
+### 📅 [Dia 1 - Fundamentos do Linux](day-1/README.md)
 - **Introdução ao Linux**
   - História e evolução do Linux
   - Distribuições Populares (Ubuntu, Debian, Fedora, CentOS)
