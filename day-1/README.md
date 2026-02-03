@@ -85,6 +85,10 @@ O Linux é o exemplo máximo do sucesso do Open Source: começou como projecto d
 ## **Instalação e Configuração**
   - Instalação de distribuições
 
+  1. [Manual de Instalação do Ubuntu 24.04 Desktop](Ubuntu.Desktop.md)
+  2. [Manual de Instalação do Debian Trixie Desktop](Debian.Desktop.md)
+  3. [Manual de Instalação do Debian Server](Debian.Server.md)
+
   - Configurações iniciais do sistema
   
   - Dual boot e máquinas virtuais
