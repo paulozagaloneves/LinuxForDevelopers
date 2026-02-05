@@ -40,8 +40,23 @@
 - **Pacotes SNAP e FLATPAK**
   - Conceitos e diferenças
   - Instalação e gerenciamento
-
+- **Editores e IDE**
+  - Visual Studio Code
+  - IntelliJ IDEA
+  - Rider
+  - PyCharm
+  - GoLand
+- **SDKMAN**
+  - Instalação
+  - Comandos básicos
+  - Java
+  - Maven
+  - Projeto básico
+- **.NET**    
+  - Instalação
+  - Projeto básico
 ---
+
 
 ### 📅 Dia 3 - Manipulação de Arquivos e Diretórios
 - **Estrutura de Diretorios (FHS)**
