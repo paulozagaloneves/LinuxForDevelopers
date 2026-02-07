@@ -180,6 +180,11 @@
 
 ---
 
+### Configurações Gerais
+- [Certbot com Let's Encrypt e Cloudflare](general/Certbot-LetsEncrypt-Cloudflare.md)
+
+---
+
 ## 🎯 Objetivos do Treinamento
 
 Ao final desta trilha, o desenvolvedor será capaz de:
