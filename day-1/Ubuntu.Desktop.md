@@ -63,7 +63,7 @@
 1. [Learn Linux TV - How to Install Ubuntu 24.04 Desktop: Complete Beginner's Guide](https://www.youtube.com/watch?v=zE7OYNkuQ1w)
 2. [Nerd on the Street - How to Install Ubuntu 24.04 LTS](https://www.youtube.com/watch?v=WiW4KN2rNZY)
 3. [Luba Linux - Como Baixar e Instalar o Ubuntu 24.04](https://www.youtube.com/watch?v=ehn8sgyH8mo)            # PT-BR
-4. [Learn Linux TV - How to Deploy Ubuntu 24.04 LTS: Step-by-Step Installation Overview](https://www.youtube.com/watch?v=pln-tglFxwg)  # Install on Proxmox
+
 
 ## Preparação
 

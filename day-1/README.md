@@ -2,11 +2,29 @@
 
 ## Table of Contents
 
-- [Introdução ao Linux](#introdução-ao-linux)
-  - [História e evolução do Linux](#história-e-evolução-do-linux)
-  - [Distribuições Populares (Ubuntu, Fedora, Debian, Redhat, Arch)](#distribuições-populares-ubuntu-fedora-debian-redhat-arch)
-  - [Filosofia Open Source](#filosofia-open-source)
-- [Instalação e Configuração](#instalação-e-configuração)
+- [Linux For Developers](#linux-for-developers)
+  - [Table of Contents](#table-of-contents)
+  - [**Objetivo do Dia 1**](#objetivo-do-dia-1)
+  - [**Introdução ao Linux**](#introdução-ao-linux)
+    - [História e evolução do Linux](#história-e-evolução-do-linux)
+    - [Distribuições Populares (Ubuntu, Fedora, Debian, Redhat, Arch)](#distribuições-populares-ubuntu-fedora-debian-redhat-arch)
+    - [Filosofia Open Source](#filosofia-open-source)
+  - [**Virtualização do Linux**](#virtualização-do-linux)
+    - [Tipos de Virtualização no Windows](#tipos-de-virtualização-no-windows)
+    - [Hyper-V](#hyper-v)
+      - [Como habilitar o Hyper-V no Windows](#como-habilitar-o-hyper-v-no-windows)
+      - [Criar uma nova VM no Hyper-V](#criar-uma-nova-vm-no-hyper-v)
+      - [Videos](#videos)
+  - [**Instalação**](#instalação)
+
+## **Objetivo do Dia 1**
+
+- Apresentar a história e evolução do Linux, destacando o seu desenvolvimento, licenciamento e impacto global.
+- Explicar as principais distribuições Linux, suas características, público-alvo e diferenças.
+- Introduzir a filosofia Open Source, seus princípios, benefícios e tipos de licenças.
+- Demonstrar as opções de virtualização no Windows, incluindo Hyper-V, VirtualBox, VMware, QEMU, WSL 2 e KVM no WSL 2.
+- Instalar uma distribuição Linux (Ubuntu ou debian) num computador ou Máquina Virtual.
+
 
 ## **Introdução ao Linux**
 
@@ -31,17 +49,13 @@ Cada distribuição tem a sua própria filosofia, público-alvo e método de ges
 - **[Ubuntu](https://ubuntu.com/)**: Baseada no Debian, é a distribuição mais popular para desktops e iniciantes. Focada em facilidade de uso, possui ciclos de lançamento regulares a cada 6 meses e versões LTS (Long Term Support) com 5 anos de suporte. Ideal para programadores e uso geral. Usa gestor de pacotes APT (.deb).
 
   **Distribuições derivadas do Ubuntu:**
-  
+
   - **[Zorin OS](https://zorin.com/)**: Distribuição desenhada especificamente para utilizadores que migram do Windows. Apresenta um ambiente de trabalho visualmente semelhante ao Windows, facilitando a transição. Inclui várias disposições de desktop (Layouts) que imitam Windows, macOS e até ChromeOS. Vem com Wine pré-instalado para executar algumas aplicações Windows. Existe em versões Core (gratuita), Lite (para hardware mais antigo) e Pro (paga, com software adicional e layouts premium). Ideal para iniciantes e para ambientes empresariais que procuram substituir o Windows.
-  
   - **[Pop!_OS](https://pop.system76.com/)**: Desenvolvida pela System76 (fabricante de computadores Linux), é optimizada para programadores, criadores de conteúdo e utilizadores de ciência de dados. Destaca-se pelo excelente suporte para placas gráficas NVIDIA (drivers incluídos por defeito) e pela funcionalidade de organização automática de janelas (Auto-tiling). Inclui ferramentas de recuperação integradas e um instalador que facilita a encriptação completa do disco. Popular entre gamers e utilizadores que trabalham com machine learning, edição de vídeo e desenvolvimento de software.
-
+  
 - **[Debian](https://www.debian.org/)**: Uma das distribuições mais antigas e respeitadas, conhecida pela sua estabilidade e compromisso com software livre. É a base para muitas outras distros, incluindo Ubuntu. Possui três ramos: Stable (muito estável), Testing e Unstable. Preferida para servidores e utilizadores que valorizam estabilidade. Usa APT (.deb).
-
 - **[Fedora](https://fedoraproject.org/)**: Patrocinada pela Red Hat, é uma distribuição com atualizações frequentes que serve como campo de testes para tecnologias que eventualmente chegam ao Red Hat Enterprise Linux (RHEL). Sempre com software actualizado e inovador. Popular entre programadores e entusiastas. Usa gestor DNF (.rpm).
-
 - **[Red Hat (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux)**: Red Hat Enterprise Linux é uma distribuição comercial focada em ambientes corporativos e servidores empresariais. Oferece suporte pago, certificações e grande estabilidade. É a base para CentOS (descontinuado) e Rocky Linux/AlmaLinux. Usa DNF (.rpm).
-
 - **[Arch Linux](https://archlinux.org/)**: Distribuição rolling release (actualização contínua) minimalista e altamente personalizável. Segue a filosofia KISS (Keep It Simple, Stupid) e é voltada para utilizadores avançados que querem controlo total sobre o seu sistema. Conhecida pela sua documentação excelente (Arch Wiki) e gestor de pacotes Pacman. Requer instalação manual e configuração detalhada.
 
 ### Filosofia Open Source
@@ -51,25 +65,17 @@ A **filosofia Open Source** (código aberto) é o fundamento sobre o qual o Linu
 **Princípios fundamentais:**
 
 1. **Liberdade de utilização**: Qualquer pessoa pode executar o software para qualquer propósito, sem restrições.
-
 2. **Acesso ao código-fonte**: O código está disponível para leitura e estudo, permitindo compreender como o software funciona internamente.
-
 3. **Liberdade de modificação**: Utilizadores podem adaptar o software às suas necessidades específicas, corrigir falhas ou adicionar funcionalidades.
-
 4. **Liberdade de redistribuição**: As melhorias podem ser partilhadas com a comunidade, beneficiando todos os utilizadores.
 
 **Benefícios do Open Source:**
 
 - **Segurança e transparência**: Com milhares de olhos a rever o código, vulnerabilidades são identificadas e corrigidas rapidamente. Não há "portas traseiras" ocultas.
-
 - **Inovação colaborativa**: Programadores de todo o mundo contribuem, acelerando o desenvolvimento e a inovação. Projectos como o kernel Linux recebem contribuições de milhares de programadores.
-
 - **Independência tecnológica**: Organizações não ficam dependentes de fornecedores específicos (vendor lock-in) e podem adaptar o software às suas necessidades.
-
 - **Redução de custos**: Elimina licenças caras e permite reutilização de código entre projectos.
-
 - **Qualidade superior**: A revisão colaborativa constante tende a produzir software mais robusto e bem testado.
-
 - **Educação e aprendizagem**: Estudantes e programadores podem aprender com código real de projectos de qualidade mundial.
 
 **Licenças Open Source:**
@@ -82,13 +88,81 @@ Diferentes licenças definem como o software pode ser utilizado e redistribuído
 
 O Linux é o exemplo máximo do sucesso do Open Source: começou como projecto de um estudante e tornou-se a base da infraestrutura tecnológica mundial, demonstrando que a colaboração aberta pode superar modelos proprietários tradicionais.
 
-## **Instalação e Configuração**
+
+
+## **Virtualização do Linux**
+
+### Tipos de Virtualização no Windows
+
+
+No Windows, existem várias soluções de virtualização, cada uma com características, requisitos e casos de utilização específicos:
+
+- **Hyper-V**: Solução de virtualização nativa da Microsoft disponível nas edições Pro, Enterprise e Education do Windows. Permite criar e gerir máquinas virtuais com bom desempenho e integração no sistema. Requer suporte à virtualização no hardware (Intel VT-x/AMD-V) e pode entrar em conflito com outros softwares de virtualização.
+
+- **VirtualBox**: Plataforma de virtualização gratuita e open source mantida pela Oracle. Suporta múltiplos sistemas operativos convidados (Linux, Windows, BSD, etc.) e é fácil de utilizar. Funciona em várias versões do Windows, mas pode ter desempenho inferior ao Hyper-V e limitações de integração.
+
+- **VMware Workstation Player/Pro**: Solução comercial (com versão gratuita para uso pessoal) da VMware. Oferece desempenho robusto, funcionalidades avançadas e excelente compatibilidade com diferentes sistemas operativos convidados. Bastante utilizada em ambientes empresariais e por profissionais de TI.
+
+- **QEMU**: Emulador e virtualizador open source poderoso, mais comum em ambientes Linux, mas disponível para Windows. Permite emulação completa de hardware e virtualização acelerada (quando combinado com KVM). No Windows, é mais utilizado por utilizadores avançados.
+
+- **WSL 2 (Windows Subsystem for Linux 2)**: Permite executar distribuições Linux diretamente no Windows, com kernel Linux real a correr numa máquina virtual leve gerida pelo próprio Windows. Ideal para programadores que necessitam de um ambiente Linux sem sair do Windows. Suporta integração de ficheiros, rede e execução de aplicações gráficas (WSLg).
+
+- **KVM no WSL 2**: Com o WSL 2, é possível correr o KVM (Kernel-based Virtual Machine) dentro do ambiente Linux, permitindo criar e gerir VMs Linux diretamente no WSL. Esta abordagem é experimental e dirigida a utilizadores avançados que pretendem explorar virtualização aninhada (nested virtualization) no Windows.
+
+Cada solução tem vantagens e limitações. A escolha depende do objetivo (desenvolvimento, testes, produção), requisitos de desempenho, integração e facilidade de utilização.
+
+### Hyper-V
+
+#### Como habilitar o Hyper-V no Windows
+
+Siga estes passos para ativar o Hyper-V no Windows 10 ou 11 (edições Pro, Enterprise ou Education):
+
+1. **Verifique os requisitos**
+  - Certifique-se de que está a usar uma edição compatível do Windows (Pro, Enterprise ou Education).
+  - O seu processador deve suportar virtualização (Intel VT-x ou AMD-V) e esta opção deve estar ativada na BIOS/UEFI.
+
+2. **Ative o Hyper-V nas funcionalidades do Windows**
+  - Prima `Win + R`, escreva `optionalfeatures` e carregue em ENTER.
+  - Na janela "Funcionalidades do Windows", procure e selecione **Hyper-V** (inclua as subopções "Plataforma Hyper-V" e "Ferramentas de Gestão Hyper-V").
+  - Clique em **OK** e aguarde a instalação dos componentes.
+
+3. **Reinicie o computador**
+  - Após a instalação, será solicitado que reinicie o Windows. Guarde o seu trabalho e reinicie.
+
+4. **Aceda ao Hyper-V Manager**
+  - Após reiniciar, pesquise por "Hyper-V Manager" no menu Iniciar e abra a aplicação.
+  - A partir daqui pode criar e gerir máquinas virtuais.
+
+**Nota:** Se não encontrar a opção Hyper-V, verifique se o seu hardware suporta virtualização e se está ativada na BIOS/UEFI. Em alguns casos, pode ser necessário ativar também a "Segurança baseada em virtualização" nas definições do Windows.
+
+
+#### Criar uma nova VM no Hyper-V
+
+1. Abra o Hyper-V Manager (procure por "Hyper-V Manager" no menu Iniciar).
+2. No painel direito, clique em "Novo" > "Máquina Virtual...".
+3. Clique em "Seguinte" no assistente de criação.
+4. Dê um nome à sua VM e escolha a localização para os ficheiros (opcional).
+5. Selecione a geração da VM (Geração 1 para BIOS/MBR, Geração 2 para UEFI/GPT).
+6. Defina a quantidade de memória RAM a atribuir.
+7. Configure a ligação de rede (escolha o switch virtual, se existir).
+8. Crie um novo disco rígido virtual (VHDX) ou utilize um existente.
+9. Selecione a imagem ISO de instalação do sistema operativo ou configure para instalar mais tarde.
+10. Reveja as configurações e clique em "Concluir".
+11. A VM aparecerá na lista. Clique com o botão direito e escolha "Iniciar".
+12. Clique em "Conectar" para abrir o ecrã da VM e proceder à instalação do sistema operativo.
+
+#### Videos
+
+1. [How to deploy Ubuntu Server as a VM on Hyper-V](https://www.youtube.com/watch?v=SddejlcR72Q)
+2. [Como Instalar Ubuntu Linux no Hyper-V no Windows (Tutorial Completo)](https://www.youtube.com/watch?v=p6RoEe0CO_Q)    # PT.BR
+
+
+
+## **Instalação**
+
   - Instalação de distribuições
 
   1. [Manual de Instalação do Ubuntu 24.04 Desktop](Ubuntu.Desktop.md)
   2. [Manual de Instalação do Debian Trixie Desktop](Debian.Desktop.md)
   3. [Manual de Instalação do Debian Server](Debian.Server.md)
 
-  - Configurações iniciais do sistema
-  
-  - Dual boot e máquinas virtuais
