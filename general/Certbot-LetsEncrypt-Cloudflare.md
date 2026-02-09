@@ -6,6 +6,11 @@
 - Domínio configurado no Cloudflare
 - Token de API do Cloudflare
 
+
+## Referências
+
+- [certbot-dns-cloudflare](https://certbot-dns-cloudflare.readthedocs.io/en/stable/)
+
 ## Passo 1: Instalar Certbot
 
 ```bash
