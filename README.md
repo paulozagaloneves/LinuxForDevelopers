@@ -11,7 +11,7 @@
 - **Virtualização do Linux**
 - **Instalação e Configuração**
   - Instalação de distribuições
-
+- **Comandos básicos essenciais**
 
 ---
 
@@ -20,7 +20,7 @@
 - **Acesso SSH**
   - Configuração de SSH
   - Autenticação por chave pública/privada
-  - Conexões seguras
+
 - **Interface Linha de Comandos (CLI)**
   - Introdução ao shell (bash, zsh)
   - Navegação básica

@@ -28,10 +28,10 @@ $ sudo apt install openssh-server
 
 Agora já consegue aceder remotamente ao linux.
 
-- Acesso remoto ao linux com SSH
+- Acesso remoto ao linux com utlizador e senha
 
 ```powershell
-c: > ssh user@<IP do linux>
+c: > ssh utilizador@ip-do-servidor
 ```
 
 **Exemplo:**
@@ -71,11 +71,69 @@ ubuntu@linux-lab-ubuntu:~$
 ```
 
 
-- Autenticação por chave pública/privada
-- Conexões seguras
+- Acesso remoto ao linux sem senha
+
+Para se poder aceder remotamente ao linux sem senha é necessário criar um par de chaves publica/privada e configurar o linux com a chave pública.
+
+**Configurar acesso SSH por chave**
+
+Configurar o acesso SSH por chave no Linux é um processo direto que aumenta drasticamente a segurança do teu servidor. 
+Passo a passo: 
+
+1. Gerar o par de chaves (na tua máquina local) 
+No teu computador (Linux, macOS ou Windows com PowerShell), executa o comando para criar as chaves: 
+
+```powershell
+C:> ssh-keygen -t ed25519
+```
+
+**Dica:** O algoritmo ed25519 é atualmente o mais recomendado por ser mais seguro e rápido que o RSA tradicional.
+
+2. Copiar a chave pública para o servidor 
+
+Usa o utilitário ssh-copy-id para automatizar a transferência: 
+
+```powershell
+C:> ssh-copy-id utilizador@ip-do-servidor
+```
+Este comando pede a tua senha atual uma última vez e adiciona a tua chave pública ao ficheiro ~/.ssh/authorized_keys no servidor.
+
+3. Abre outra janela do powershell e testa o acesso ssh agora
+
+```powershell
+C:> ssh utilizador@ip-do-servidor
+```
+
 
 ### Interface Linha de Comandos (CLI)
+
 - Introdução ao shell (bash, zsh)
+
+**O que é um Shell?**
+
+Um **shell** é um interpretador de comandos que funciona como intermediário entre o utilizador e o kernel do Linux. Ele permite que você execute comandos, scripts e navegue pelo sistema de ficheiros através de uma interface de linha de comandos (CLI).
+
+**Em resumo:** O shell é a porta de entrada para o poder do Linux, permitindo controlo completo do sistema através de comandos.
+
+**Shells mais famosos**
+
+**Bash (Bourne Again Shell)**
+- Shell padrão na maioria das distribuições Linux
+- Desenvolvido como evolução do sh original
+- Versátil e amplamente suportado
+- Ideal para scripts de automação
+- Sintaxe simples e direta
+- Excelente para iniciantes
+
+**Zsh (Z Shell)**
+- Shell moderno e poderoso com recursos avançados
+- Oferece autocompletar inteligente e histórico melhorado
+- Suporta temas e plugins (via frameworks como Oh My Zsh)
+- Sintaxe compatível com bash, mas com mais funcionalidades
+- Melhor experiência interativa para desenvolvedores
+- Presets prontos para aumentar produtividade
+
+
 - Navegação básica
 - Variáveis de ambiente (PATH, .bashrc, .zshrc)
 
