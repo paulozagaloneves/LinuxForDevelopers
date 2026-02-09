@@ -1,8 +1,29 @@
 # Linux para Developers - Dia 2
 
-## Acesso Remoto e Gerenciamento de Pacotes
+## Table of Contents
 
-### Acesso SSH
+- [Linux para Developers - Dia 2](#linux-para-developers---dia-2)
+  - [Table of Contents](#table-of-contents)
+  - [**Objetivos Dia 2**](#objetivos-dia-2)
+  - [Exercício Prático](#exercício-prático)
+  - [Acesso Remoto SSH](#acesso-remoto-ssh)
+    - [Configuração de SSH](#configuração-de-ssh)
+    - [Acesso remoto ao linux sem senha](#acesso-remoto-ao-linux-sem-senha)
+  - [Interface Linha de Comandos (CLI)](#interface-linha-de-comandos-cli)
+  - [Documentação (man)](#documentação-man)
+  - [Gerenciamento de Pacotes](#gerenciamento-de-pacotes)
+  - [Pacotes SNAP e FLATPAK](#pacotes-snap-e-flatpak)
+  - [Editores e IDE](#editores-e-ide)
+  - [SDKMAN](#sdkman)
+  - [.NET](#net)
+
+## **Objetivos Dia 2**
+
+## Exercício Prático
+
+
+
+## Acesso Remoto SSH
 
 O acesso SSH (Secure Shell) é um protocolo que permite ligar-se de forma segura a um servidor remoto, normalmente via linha de comandos, para administrar o sistema, transferir ficheiros e executar comandos. A ligação é encriptada, protegendo dados e credenciais contra interceptação.
 
@@ -18,7 +39,7 @@ Distingue-se de outros tipos de acesso ao servidor, como:
 
 SSH é preferido para administração remota, por ser seguro, flexível e permitir automação (via scripts e chaves).
 
-- Configuração de SSH
+### Configuração de SSH
 
 No servidor linux instalar OpenSSH e habilitar serviço ssh.
 
@@ -71,7 +92,7 @@ ubuntu@linux-lab-ubuntu:~$
 ```
 
 
-- Acesso remoto ao linux sem senha
+### Acesso remoto ao linux sem senha
 
 Para se poder aceder remotamente ao linux sem senha é necessário criar um par de chaves publica/privada e configurar o linux com a chave pública.
 
@@ -105,7 +126,7 @@ C:> ssh utilizador@ip-do-servidor
 ```
 
 
-### Interface Linha de Comandos (CLI)
+## Interface Linha de Comandos (CLI)
 
 - Introdução ao shell (bash, zsh)
 
@@ -137,7 +158,7 @@ Um **shell** é um interpretador de comandos que funciona como intermediário en
 - Navegação básica
 - Variáveis de ambiente (PATH, .bashrc, .zshrc)
 
-### Documentação (man)
+## Documentação (man)
 - `man <comando>` - Manual de comandos
 - Navegação: espaço, setas, `q` para sair
 - Seções do manual (1-9)
@@ -147,29 +168,29 @@ Um **shell** é um interpretador de comandos que funciona como intermediário en
 - `info` - Sistema alternativo de documentação
 - `--help` ou `-h` - Ajuda rápida dos comandos
 
-### Gerenciamento de Pacotes
+## Gerenciamento de Pacotes
 - APT (Debian/Ubuntu): `apt-get`, `apt`
 - YUM/DNF (RedHat/Fedora)
 - Instalar, atualizar e remover software
 
-### Pacotes SNAP e FLATPAK
+## Pacotes SNAP e FLATPAK
 - Conceitos e diferenças
 - Instalação e gerenciamento
 
-### Editores e IDE
+## Editores e IDE
 - Visual Studio Code
 - IntelliJ IDEA
 - Rider
 - PyCharm
 - GoLand
 
-### SDKMAN
+## SDKMAN
 - Instalação
 - Comandos básicos
 - Java
 - Maven
 - Projeto básico
 
-### .NET
+## .NET
 - Instalação
 - Projeto básico
