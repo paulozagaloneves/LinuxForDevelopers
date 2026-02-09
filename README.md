@@ -3,18 +3,20 @@
 ## Trilha de Treinamento
 
 ### 📅 [Dia 1 - Fundamentos do Linux](day-1/README.md)
+
 - **Introdução ao Linux**
   - História e evolução do Linux
   - Distribuições Populares (Ubuntu, Debian, Fedora, CentOS)
   - Filosofia Open Source
+- **Virtualização do Linux**
 - **Instalação e Configuração**
   - Instalação de distribuições
-  - Configurações iniciais do sistema
-  - Dual boot e máquinas virtuais
+
 
 ---
 
 ### 📅 Dia 2 - Acesso Remoto e Gerenciamento de Pacotes
+
 - **Acesso SSH**
   - Configuração de SSH
   - Autenticação por chave pública/privada
@@ -23,7 +25,8 @@
   - Introdução ao shell (bash, zsh)
   - Navegação básica
   - Variáveis de ambiente (PATH, .bashrc, .zshrc)
-  - 
+
+  -
 - **Documentação (man)**
   - `man <comando>` - Manual de comandos
   - Navegação: espaço, setas, `q` para sair
@@ -55,10 +58,11 @@
 - **.NET**    
   - Instalação
   - Projeto básico
+
 ---
 
-
 ### 📅 Dia 3 - Manipulação de Arquivos e Diretórios
+
 - **Estrutura de Diretorios (FHS)**
   - `/` - Diretório raiz
   - `/bin` - Binários essenciais do sistema
@@ -94,6 +98,7 @@
 ---
 
 ### 📅 Dia 4 - Processos, Compressão e Redes
+
 - **Comandos de Processos**
   - `ps` - Listar processos
   - `top`, `htop` - Monitoramento em tempo real
@@ -115,6 +120,7 @@
 ---
 
 ### 📅 Dia 5 - Administração de Utilizadores, Grupos e Ficheiros
+
 - **Criação, Modificação e Remoção de Utilizadores e Grupos**
   - `useradd`, `usermod`, `userdel` - Gestão de utilizadores
   - `groupadd`, `groupmod`, `groupdel` - Gestão de grupos
@@ -144,6 +150,7 @@
 ---
 
 ### 📅 Dia 6 - Redirecionamento, Pipes e Shell Scripting
+
 - **Uso de STDIN, STDOUT e STDERR**
   - File descriptors: 0 (stdin), 1 (stdout), 2 (stderr)
   - Compreensão dos fluxos de entrada e saída
@@ -181,6 +188,7 @@
 ---
 
 ### Configurações Gerais
+
 - [Certbot com Let's Encrypt e Cloudflare](general/Certbot-LetsEncrypt-Cloudflare.md)
 
 ---
@@ -205,4 +213,3 @@ Ao final desta trilha, o desenvolvedor será capaz de:
 - Man pages (`man <comando>`)
 - [Linux Command Line Basics](https://www.linux.org)
 - Comunidades e fóruns de suporte
-

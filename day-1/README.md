@@ -4,7 +4,8 @@
 
 - [Linux For Developers](#linux-for-developers)
   - [Table of Contents](#table-of-contents)
-  - [**Objetivo do Dia 1**](#objetivo-do-dia-1)
+  - [**Objetivos Dia 1**](#objetivos-dia-1)
+  - [Exercício Prático](#exercício-prático)
   - [**Introdução ao Linux**](#introdução-ao-linux)
     - [História e evolução do Linux](#história-e-evolução-do-linux)
     - [Distribuições Populares (Ubuntu, Fedora, Debian, Redhat, Arch)](#distribuições-populares-ubuntu-fedora-debian-redhat-arch)
@@ -17,14 +18,23 @@
       - [Videos](#videos)
   - [**Instalação**](#instalação)
 
-## **Objetivo do Dia 1**
+## **Objetivos Dia 1**
 
-- Apresentar a história e evolução do Linux, destacando o seu desenvolvimento, licenciamento e impacto global.
-- Explicar as principais distribuições Linux, suas características, público-alvo e diferenças.
-- Introduzir a filosofia Open Source, seus princípios, benefícios e tipos de licenças.
-- Demonstrar as opções de virtualização no Windows, incluindo Hyper-V, VirtualBox, VMware, QEMU, WSL 2 e KVM no WSL 2.
-- Instalar uma distribuição Linux (Ubuntu ou debian) num computador ou Máquina Virtual.
+  - Apresentar a história e evolução do Linux, destacando o seu desenvolvimento, licenciamento e impacto global.
+  - Explicar as principais distribuições Linux, suas características, público-alvo e diferenças.
+  - Introduzir a filosofia Open Source, seus princípios, benefícios e tipos de licenças.
+  - Demonstrar as opções de virtualização no Windows, incluindo Hyper-V, VirtualBox, VMware, QEMU, WSL 2 e KVM no WSL 2.
+  - Instalar uma distribuição Linux (Ubuntu ou debian) num computador ou Máquina Virtual.
 
+## Exercício Prático
+
+Instalar uma das distribuições abaixo num computador ou máquina virtual.
+- Zorin OS 18
+- Ubuntu Desktop 24.04
+- Ubuntu Server 24.04
+- Debian 13 
+
+**Opcionalmente:** Instalar Fedora 43 ou Almalinux 10 noutra máquina virtual.
 
 ## **Introdução ao Linux**
 
