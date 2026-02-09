@@ -28,13 +28,15 @@
 
 ## Exercício Prático
 
-Instalar uma das distribuições abaixo num computador ou máquina virtual.
+1. Instalar uma das distribuições abaixo num computador ou máquina virtual.
 - Zorin OS 18
 - Ubuntu Desktop 24.04
 - Ubuntu Server 24.04
 - Debian 13 
 
-**Opcionalmente:** Instalar Fedora 43 ou Almalinux 10 noutra máquina virtual.
+2. Obter o IP da interface de rede principal.
+
+3. **Opcionalmente:** Instalar Fedora 43 ou Almalinux 10 noutra máquina virtual.
 
 ## **Introdução ao Linux**
 

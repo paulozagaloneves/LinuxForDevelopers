@@ -26,7 +26,6 @@
   - Navegação básica
   - Variáveis de ambiente (PATH, .bashrc, .zshrc)
 
-  -
 - **Documentação (man)**
   - `man <comando>` - Manual de comandos
   - Navegação: espaço, setas, `q` para sair
@@ -187,7 +186,7 @@
 
 ---
 
-### Configurações Gerais
+### Configurações Avançadas
 
 - [Certbot com Let's Encrypt e Cloudflare](general/Certbot-LetsEncrypt-Cloudflare.md)
 
@@ -195,17 +194,17 @@
 
 ## 🎯 Objetivos do Treinamento
 
-Ao final desta trilha, o desenvolvedor será capaz de:
+No final desta formação, o programador será capaz de:
 - Navegar e operar com confiança em ambientes Linux
-- Gerenciar pacotes e dependências
-- Manipular arquivos e diretórios de forma eficiente
-- Conectar-se remotamente via SSH
-- Monitorar e gerenciar processos do sistema
+- Gerir pacotes e dependências
+- Manipular ficheiros e diretórios de forma eficiente
+- Ligar-se remotamente via SSH
+- Monitorizar e gerir processos do sistema
 - Trabalhar com compressão e arquivamento
 - Executar operações básicas de rede
 - Administrar utilizadores, grupos e permissões de segurança
 - Utilizar redirecionamento de I/O e criar pipelines eficientes
-- Desenvolver scripts shell para automação de tarefas
+- Desenvolver scripts shell para automatizar tarefas
 
 ## 📚 Recursos Adicionais
 
