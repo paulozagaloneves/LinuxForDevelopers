@@ -15,7 +15,7 @@
 
 ---
 
-### 📅 Dia 2 - Acesso Remoto e Gerenciamento de Pacotes
+### 📅 [Dia 2 - Acesso Remoto e Gerenciamento de Pacotes](day-2/README.md)
 
 - **Acesso SSH**
   - Configuração de SSH
