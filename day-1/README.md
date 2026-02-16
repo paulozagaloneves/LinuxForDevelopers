@@ -1,29 +1,27 @@
 # Linux For Developers
 
-## Table of Contents
+## Índice
 
-- [Linux For Developers](#linux-for-developers)
-  - [Table of Contents](#table-of-contents)
-  - [**Objetivos Dia 1**](#objetivos-dia-1)
-  - [Exercício Prático](#exercício-prático)
-  - [**Introdução ao Linux**](#introdução-ao-linux)
-    - [História e evolução do Linux](#história-e-evolução-do-linux)
-    - [Distribuições Populares (Ubuntu, Fedora, Debian, Redhat, Arch)](#distribuições-populares-ubuntu-fedora-debian-redhat-arch)
-    - [Filosofia Open Source](#filosofia-open-source)
-  - [**Virtualização do Linux**](#virtualização-do-linux)
-    - [Tipos de Virtualização no Windows](#tipos-de-virtualização-no-windows)
-    - [Hyper-V](#hyper-v)
-      - [Como habilitar o Hyper-V no Windows](#como-habilitar-o-hyper-v-no-windows)
-      - [Criar uma nova VM no Hyper-V](#criar-uma-nova-vm-no-hyper-v)
-      - [Videos](#videos)
-  - [**Instalação**](#instalação)
-  - [**Comandos Básicos**](#comandos-básicos)
-    - [Tabela rápida de comandos](#tabela-rápida-de-comandos)
-    - [1) Comando SUDO](#1-comando-sudo)
-    - [2) Atualizar e instalar pacotes com APT](#2-atualizar-e-instalar-pacotes-com-apt)
-    - [3) Acesso remoto com SSH](#3-acesso-remoto-com-ssh)
-    - [4) Nome da máquina: `hostname` e `hostnamectl`](#4-nome-da-máquina-hostname-e-hostnamectl)
-    - [5) Navegação no sistema](#5-navegação-no-sistema)
+- [Objetivos Dia 1](#objetivos-dia-1)
+- [Exercício Prático](#exercício-prático)
+- [Introdução ao Linux](#introdução-ao-linux)
+  - [História e evolução do Linux](#história-e-evolução-do-linux)
+  - [Distribuições Populares (Ubuntu, Fedora, Debian, Redhat, Arch)](#distribuições-populares-ubuntu-fedora-debian-redhat-arch)
+  - [Filosofia Open Source](#filosofia-open-source)
+- [Virtualização do Linux](#virtualização-do-linux)
+  - [Tipos de Virtualização no Windows](#tipos-de-virtualização-no-windows)
+  - [Hyper-V](#hyper-v)
+    - [Como habilitar o Hyper-V no Windows](#como-habilitar-o-hyper-v-no-windows)
+    - [Criar uma nova VM no Hyper-V](#criar-uma-nova-vm-no-hyper-v)
+- [Instalação](#instalação)
+- [Comandos Básicos](#comandos-básicos)
+  - [Tabela rápida de comandos](#tabela-rápida-de-comandos)
+  - [1) Comando SUDO](#1-comando-sudo)
+  - [2) Atualizar e instalar pacotes com APT](#2-atualizar-e-instalar-pacotes-com-apt)
+  - [3) Acesso remoto com SSH](#3-acesso-remoto-com-ssh)
+  - [4) Nome da máquina: hostname e hostnamectl](#4-nome-da-máquina-hostname-e-hostnamectl)
+  - [5) Navegação no sistema](#5-navegação-no-sistema)
+
 
 
 ## **Objetivos Dia 1**
@@ -188,6 +186,7 @@ Siga estes passos para ativar o Hyper-V no Windows 10 ou 11 (edições Pro, Ente
 
 
   1. [Manual de Instalação do Ubuntu 24.04 Desktop](Ubuntu.Desktop.md)
+  2. [Tutorial: Debian 13 Cloud no Windows com QEMU + cloud-init](Debian13.Cloud.md)
 
 
 ## **Comandos Básicos**
@@ -263,6 +262,8 @@ $ sudo apt install -y curl vim git
 
 ### 3) Acesso remoto com SSH
 
+#### Instalar servidor ssh (Openssh)
+
 ```bash 
 $ sudo apt update                               # atualiza a bd de pacotes
 $ sudo apt install -y openssh-server            # instalar o servidor openssh
@@ -270,6 +271,9 @@ $ sudo apt install -y openssh-server            # instalar o servidor openssh
 $ sudo systemctl enable --now ssh               # habilita o serviço ssh. Em distribuições mais recentes o ssh já fica habilitado após instalação
 $ sudo systemctl status ssh                     # verifica o estado do serviço ssh
 ```
+
+
+#### Descobrir o IP
 
 Para descobrir o IP da máquina:
 
@@ -281,13 +285,60 @@ Para descobrir o IP da máquina:
 
 ```bash
 $ ip address
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:7c:ee:d7 brd ff:ff:ff:ff:ff:ff
+    altname enp2s1
+    inet 192.168.231.128/24 brd 192.168.231.255 scope global dynamic noprefixroute ens33
+       valid_lft 1731sec preferred_lft 1731sec
+    inet6 fe80::20c:29ff:fe7c:eed7/64 scope link
+       valid_lft forever preferred_lft forever
 ```
+
+Neste exemplo a interface de rede é **ens33** e o IP **192.168.231.128**
+
+Outra forma de obter o endereço IP
+
+```bash
+$ hostname -I
+192.168.231.128
+```
+
+#### Conectar por ssh
 
 Conectar a partir de outra máquina:
 
 ```bash
 $ ssh <utilizador>@<ip-da-maquina>
 ```
+
+Exemplo:
+
+```powershell
+C: ❯ ssh paulo@192.168.231.128
+paulo@192.168.231.128's password:
+Welcome to Ubuntu 24.04.4 LTS (GNU/Linux 6.17.0-14-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+6 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+Last login: Mon Feb 16 16:08:23 2026 from 192.168.231.1
+paulo@Ubuntu-Lab:~$
+```
+
 
 ### 4) Nome da máquina: `hostname` e `hostnamectl`
 
