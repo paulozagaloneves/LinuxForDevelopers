@@ -18,6 +18,7 @@
     - [NANO](#nano)
     - [Principais atalhos do Nano](#principais-atalhos-do-nano)
   - [Descomplicando o Sudo](#descomplicando-o-sudo)
+    - [Videos](#videos)
     - [Comando Sudo](#comando-sudo)
     - [O que é o ficheiro sudoers](#o-que-é-o-ficheiro-sudoers)
     - [Listar permissões sudo](#listar-permissões-sudo)
@@ -27,9 +28,16 @@
   - [Interface Linha de Comandos (CLI)](#interface-linha-de-comandos-cli)
   - [Gerenciamento de Pacotes](#gerenciamento-de-pacotes)
   - [Pacotes SNAP e FLATPAK](#pacotes-snap-e-flatpak)
+  - [Ambiente DEV Java](#ambiente-dev-java)
+    - [SDKMAN: Instalação](#sdkman-instalação)
+    - [SDKMAN: Comandos básicos](#sdkman-comandos-básicos)
+    - [SDKMAN: Exercícios](#sdkman-exercícios)
+    - [Instalação maven](#instalação-maven)
+    - [Projeto: Gerador Senhas Java](#projeto-gerador-senhas-java)
+      - [Compilar](#compilar)
+      - [Executar](#executar)
+  - [Ambiente DEV .NET](#ambiente-dev-net)
   - [IDEs para Programação](#ides-para-programação)
-  - [SDKMAN](#sdkman)
-  - [.NET](#net)
 
 ## Objetivos Dia 2
 
