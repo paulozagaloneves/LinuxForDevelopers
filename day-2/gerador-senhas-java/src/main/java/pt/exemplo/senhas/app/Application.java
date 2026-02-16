@@ -1,3 +1,5 @@
+package pt.exemplo.senhas.app;
+
 import java.security.SecureRandom;
 import java.util.Locale;
 

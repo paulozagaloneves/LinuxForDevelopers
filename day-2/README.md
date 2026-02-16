@@ -676,9 +676,18 @@ $
 
 ```bash
 $ cd gerador-senhas-java
-$ mvn package
+$ mvn clean package                               
 ```
 
+#### Executar
+
+```bash
+$ java -jar .\target\gerador-senhas-java-1.0.0.jar gerar 
+$
+$ java -jar .\target\gerador-senhas-java-1.0.0.jar gerar 10
+$
+$ java -jar .\target\gerador-senhas-java-1.0.0.jar version
+```
 
 
 ## Ambiente DEV .NET
