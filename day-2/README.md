@@ -590,6 +590,57 @@ Um **shell** é um interpretador de comandos que funciona como intermediário en
 
 ## Ambiente DEV Java
 
+### GIT
+
+**Instalar**
+
+```bash
+$ sudo apt install git
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libllvm19
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  git-man liberror-perl
+Suggested packages:
+  git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+The following NEW packages will be installed:
+  git git-man liberror-perl
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 4,806 kB of archives.
+After this operation, 24.5 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://pt.archive.ubuntu.com/ubuntu noble/main amd64 liberror-perl all 0.17029-2 [25.6 kB]
+Get:2 https://pt.archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.3 [1,100 kB]
+Get:3 https://pt.archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.3 [3,680 kB]
+Fetched 4,806 kB in 1s (8,171 kB/s)
+Selecting previously unselected package liberror-perl.
+(Reading database ... 155914 files and directories currently installed.)
+Preparing to unpack .../liberror-perl_0.17029-2_all.deb ...
+Unpacking liberror-perl (0.17029-2) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a2.43.0-1ubuntu7.3_all.deb ...
+Unpacking git-man (1:2.43.0-1ubuntu7.3) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a2.43.0-1ubuntu7.3_amd64.deb ...
+Unpacking git (1:2.43.0-1ubuntu7.3) ...
+Setting up liberror-perl (0.17029-2) ...
+Setting up git-man (1:2.43.0-1ubuntu7.3) ...
+Setting up git (1:2.43.0-1ubuntu7.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+$
+$
+$ # verificar git instalado
+$ git version
+git version 2.43.0
+$
+$ # localização
+$ command -v git
+/usr/bin/git
+```
+
 ### SDKMAN: Instalação
 
 [SDKMAN.io](https://sdkman.io/)
