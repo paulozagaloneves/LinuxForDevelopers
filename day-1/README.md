@@ -18,6 +18,7 @@
       - [Videos](#videos)
   - [**Instalação**](#instalação)
 
+
 ## **Objetivos Dia 1**
 
   - Apresentar a história e evolução do Linux, destacando o seu desenvolvimento, licenciamento e impacto global.
@@ -51,6 +52,12 @@ Ao longo das décadas, o Linux evoluiu de um kernel experimental para a fundaç�
 O kernel Linux actual possui mais de 30 milhões de linhas de código e conta com milhares de programadores a contribuir de empresas como Google, Intel, Red Hat, Samsung e muitas outras. É um dos maiores e mais bem-sucedidos projectos de código aberto da história.
 
 ### Distribuições Populares (Ubuntu, Fedora, Debian, Redhat, Arch)
+
+#### Videos
+
+1. [Linux Crash Course - What is a "Distribution" of Linux?](https://www.youtube.com/watch?v=6EKzuBAEbOA&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=39)
+2. [Teste distros Linux online!](https://distrosea.com/pt/)
+
 
 Uma **distribuição Linux** (ou "distro") é um sistema operativo completo construído sobre o kernel Linux. Enquanto o kernel é apenas o núcleo do sistema, uma distribuição empacota o kernel juntamente com ferramentas do sistema, gestores de pacotes, ambientes gráficos, aplicações e configurações pré-definidas, formando um sistema operativo utilizável.
 
@@ -90,9 +97,7 @@ A **filosofia Open Source** (código aberto) é o fundamento sobre o qual o Linu
 - **Qualidade superior**: A revisão colaborativa constante tende a produzir software mais robusto e bem testado.
 - **Educação e aprendizagem**: Estudantes e programadores podem aprender com código real de projectos de qualidade mundial.
 
-**Licenças Open Source:**
 
-Diferentes licenças definem como o software pode ser utilizado e redistribuído:
 
 - **GPL (General Public License)**: Utilizada pelo kernel Linux. Garante que derivados também sejam open source (copyleft).
 - **MIT/BSD**: Licenças permissivas que permitem uso em software proprietário.
@@ -175,6 +180,149 @@ Siga estes passos para ativar o Hyper-V no Windows 10 ou 11 (edições Pro, Ente
   - Instalação de distribuições
 
   1. [Manual de Instalação do Ubuntu 24.04 Desktop](Ubuntu.Desktop.md)
-  2. [Manual de Instalação do Debian Trixie Desktop](Debian.Desktop.md)
-  3. [Manual de Instalação do Debian Server](Debian.Server.md)
+
+
+## **Comandos Básicos**
+Abaixo estão os comandos essenciais para começar a usar Linux logo após a instalação (Ubuntu/Debian).
+
+### Tabela rápida de comandos
+
+| Comando | Descrição | Exemplo |
+|---|---|---|
+| `clear` | Limpa o ecrã do terminal | `clear` |
+| `pwd` | Mostra a diretoria atual | `pwd` |
+| `ls` | Lista ficheiros e pastas | `ls -la` |
+| `cd` | Muda de diretoria | `cd /etc` |
+| `mkdir` | Cria uma nova pasta | `mkdir projetos` |
+| `rm` | Remove ficheiros (ou pastas com `-r`) | `rm ficheiro.txt` |
+| `rmdir` | Remove pasta vazia | `rmdir pasta-vazia` |
+| `touch` | Cria ficheiro vazio ou atualiza data de modificação | `touch notas.txt` |
+| `cat` | Mostra conteúdo de ficheiro | `cat notas.txt` |
+| `less` | Visualiza ficheiro página a página (navegação) | `less /var/log/syslog` |
+| `more` | Visualiza ficheiro página a página (simples) | `more notas.txt` |
+| `tail` | Mostra linhas finais de ficheiro | `tail -n 20 /var/log/syslog` |
+| `head` | Mostra linhas iniciais de ficheiro | `head -n 20 /var/log/syslog` |
+| `mv` | Move ou renomeia ficheiros/pastas | `mv antigo.txt novo.txt` |
+| `cp` | Copia ficheiros/pastas | `cp ficheiro.txt copia.txt` |
+| `sudo` | Executa comando com privilégios administrativos | `sudo apt update` |
+
+
+### 1) Comando SUDO
+
+O `sudo` (superuser do) permite executar comandos com privilégios administrativos de forma temporária, sem precisar iniciar sessão como root. É usado para tarefas que exigem permissões elevadas, como instalar software ou alterar configurações do sistema.
+
+**Exemplo:**
+
+```bash
+sudo apt install -y git
+```
+
+
+### 2) Atualizar e instalar pacotes com APT
+
+O APT (Advanced Package Tool) é o gestor de pacotes e aplicações do Debian/Ubuntu, usado para atualizar, instalar, pesquisar e remover software a partir dos repositórios.
+No windows temos o comando WinGet que possui uma funcionalidade similar.
+
+#### Videos
+
+1. [Linux Crash Course - The apt Command](https://www.youtube.com/watch?v=1kicKTbK768&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=82)
+
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install -y <pacote>
+sudo apt search <termo>
+sudo apt remove <pacote>
+```
+
+**Exemplo:**
+
+```bash
+sudo apt install -y curl vim git
+```
+
+### 3) Acesso remoto com SSH
+
+```bash
+sudo apt update
+sudo apt install -y openssh-server
+sudo systemctl enable --now ssh
+sudo systemctl status ssh
+```
+
+Para descobrir o IP da máquina:
+
+**Para mais detalhes:**
+
+1. [How to Use the ip Command in Linux: A Beginner’s Guide](https://www.youtube.com/watch?v=wHfIFZlDxtU&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=12)
+2. [Guia Prático do Comando ip no Linux](https://labs.iximiuz.com/playgrounds?category=linux)
+
+
+```bash
+ip address
+```
+
+Conectar a partir de outra máquina:
+
+```bash
+ssh <utilizador>@<ip-da-maquina>
+```
+
+### 4) Nome da máquina: `hostname` e `hostnamectl`
+
+
+**Videos**
+
+1. [Linux Crash Course - Setting the Hostname of your Linux Workstation or Server](https://www.youtube.com/watch?v=91dNq4C6260)
+
+Os dois comandos mostram (e podem alterar) o nome da máquina, mas com objetivos diferentes:
+
+| Comando | Para quê | Persistência |
+|---|---|---|
+| `hostname` | Ver o hostname atual e, em alguns sistemas, alterar de forma rápida | Normalmente temporária |
+| `hostnamectl` | Ver detalhes do sistema e definir hostname de forma moderna (systemd) | Persistente |
+
+**Exemplos:**
+
+```bash
+# Ver hostname atual
+hostname
+
+# Definir hostname (pode ser temporário)
+sudo hostname servidor-dev
+
+# Ver informações completas (hostname, OS, kernel, etc.)
+hostnamectl
+
+# Definir hostname persistente
+sudo hostnamectl set-hostname servidor-dev
+
+# Mostrar apenas o hostname estático
+hostnamectl --static
+```
+
+Opcionalmente, atualize o ficheiro /etc/hosts para manter consistência:
+
+```bash
+sudo nano /etc/hosts
+```
+
+**Para sair do editor nano use CTRL+X**
+
+### 5) Navegação no sistema
+
+
+```bash
+pwd
+ls
+ls -la
+cd <pasta>
+cd ..
+cd ~
+cd -
+
+```
+
 

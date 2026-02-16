@@ -21,6 +21,11 @@
 
 ## Exercício Prático
 
+Para a realização dos exercicios pode usar:
+
+1. (Preferencialmente) Linux instalado da aula 1 em computador ou VM.
+2. Usar [KillerCoda - Playground Ubuntu Linux](https://killercoda.com/playgrounds/scenario/ubuntu) 
+3. Usar [Iximiuz Labs - Ubuntu 24.04](https://labs.iximiuz.com/playgrounds?category=linux)
 
 
 ## Acesso Remoto SSH
@@ -95,6 +100,12 @@ ubuntu@linux-lab-ubuntu:~$
 ### Acesso remoto ao linux sem senha
 
 Para se poder aceder remotamente ao linux sem senha é necessário criar um par de chaves publica/privada e configurar o linux com a chave pública.
+
+
+#### Videos
+
+1. [Linux Crash Course - Public Key Authentication](https://www.youtube.com/watch?v=bfwfRCCFTVI&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=67)
+2. [Domine o OpenSSH: Acesso Remoto Seguro para Servidores Linux.](https://www.youtube.com/watch?v=rxJaC59d9sc)
 
 **Configurar acesso SSH por chave**
 
