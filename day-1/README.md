@@ -236,28 +236,39 @@ No windows temos o comando WinGet que possui uma funcionalidade similar.
 1. [Linux Crash Course - The apt Command](https://www.youtube.com/watch?v=1kicKTbK768&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=82)
 
 
-```bash
-sudo apt update
-sudo apt upgrade -y
+| Comando    | Descrição                | Exemplo |
+|------------|--------------------------|---------|
+| apt update | atualizar bd de pacotes | sudo apt update |
+| apt install| instalar um pacote ou siftware | sudo apt install openssh-server |
+| apt search | procurar um pacote ou software | apt search openjdk | grep 25 | 
+| apt remove | remove/desinstala um pacote ou software | sudo apt remove openjdk-25-jdk |
 
-sudo apt install -y <pacote>
-sudo apt search <termo>
-sudo apt remove <pacote>
+**Nota:** pode adicionar o parâmetro `-y` aos comandos para que sejam executados automaticamente, sem pedir confirmação.
+
+
+```bash
+$ sudo apt update
+$ sudo apt upgrade -y
+
+$ sudo apt install -y <pacote>
+$ sudo apt search <termo>
+$ sudo apt remove <pacote>
 ```
 
 **Exemplo:**
 
 ```bash
-sudo apt install -y curl vim git
+$ sudo apt install -y curl vim git
 ```
 
 ### 3) Acesso remoto com SSH
 
-```bash
-sudo apt update
-sudo apt install -y openssh-server
-sudo systemctl enable --now ssh
-sudo systemctl status ssh
+```bash 
+$ sudo apt update                               # atualiza a bd de pacotes
+$ sudo apt install -y openssh-server            # instalar o servidor openssh
+# Em debian e ubuntu mais recenets não necessita dos comandos abaixo
+$ sudo systemctl enable --now ssh               # habilita o serviço ssh. Em distribuições mais recentes o ssh já fica habilitado após instalação
+$ sudo systemctl status ssh                     # verifica o estado do serviço ssh
 ```
 
 Para descobrir o IP da máquina:
@@ -269,13 +280,13 @@ Para descobrir o IP da máquina:
 
 
 ```bash
-ip address
+$ ip address
 ```
 
 Conectar a partir de outra máquina:
 
 ```bash
-ssh <utilizador>@<ip-da-maquina>
+$ ssh <utilizador>@<ip-da-maquina>
 ```
 
 ### 4) Nome da máquina: `hostname` e `hostnamectl`
@@ -296,25 +307,25 @@ Os dois comandos mostram (e podem alterar) o nome da máquina, mas com objetivos
 
 ```bash
 # Ver hostname atual
-hostname
+$ hostname
 
 # Definir hostname (pode ser temporário)
-sudo hostname servidor-dev
+$ sudo hostname servidor-dev
 
 # Ver informações completas (hostname, OS, kernel, etc.)
-hostnamectl
+$ hostnamectl
 
 # Definir hostname persistente
-sudo hostnamectl set-hostname servidor-dev
+$ sudo hostnamectl set-hostname servidor-dev
 
 # Mostrar apenas o hostname estático
-hostnamectl --static
+$ hostnamectl --static
 ```
 
 Opcionalmente, atualize o ficheiro /etc/hosts para manter consistência:
 
 ```bash
-sudo nano /etc/hosts
+$ sudo nano /etc/hosts
 ```
 
 **Para sair do editor nano use CTRL+X**
@@ -323,13 +334,13 @@ sudo nano /etc/hosts
 
 
 ```bash
-pwd
-ls
-ls -la
-cd <pasta>
-cd ..
-cd ~
-cd -
+$ pwd
+$ ls
+$ ls -la
+$ cd <pasta>
+$ cd ..
+$ cd ~
+$ cd -
 
 ```
 
