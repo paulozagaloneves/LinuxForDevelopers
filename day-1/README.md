@@ -17,6 +17,13 @@
       - [Criar uma nova VM no Hyper-V](#criar-uma-nova-vm-no-hyper-v)
       - [Videos](#videos)
   - [**Instalação**](#instalação)
+  - [**Comandos Básicos**](#comandos-básicos)
+    - [Tabela rápida de comandos](#tabela-rápida-de-comandos)
+    - [1) Comando SUDO](#1-comando-sudo)
+    - [2) Atualizar e instalar pacotes com APT](#2-atualizar-e-instalar-pacotes-com-apt)
+    - [3) Acesso remoto com SSH](#3-acesso-remoto-com-ssh)
+    - [4) Nome da máquina: `hostname` e `hostnamectl`](#4-nome-da-máquina-hostname-e-hostnamectl)
+    - [5) Navegação no sistema](#5-navegação-no-sistema)
 
 
 ## **Objetivos Dia 1**
@@ -37,7 +44,9 @@
 
 2. Obter o IP da interface de rede principal.
 
-3. **Opcionalmente:** Instalar Fedora 43 ou Almalinux 10 noutra máquina virtual.
+3. Aceder remotamente
+
+4. **Opcionalmente:** Instalar Fedora 43 ou Almalinux 10 noutra máquina virtual.
 
 ## **Introdução ao Linux**
 
@@ -177,7 +186,6 @@ Siga estes passos para ativar o Hyper-V no Windows 10 ou 11 (edições Pro, Ente
 
 ## **Instalação**
 
-  - Instalação de distribuições
 
   1. [Manual de Instalação do Ubuntu 24.04 Desktop](Ubuntu.Desktop.md)
 

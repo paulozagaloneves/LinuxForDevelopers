@@ -4,6 +4,8 @@
 
 ### 📅 [Dia 1 - Fundamentos do Linux](day-1/README.md)
 
+- **Objetivos Dia 1**
+- Exercício Prático
 - **Introdução ao Linux**
   - História e evolução do Linux
   - Distribuições Populares (Ubuntu, Debian, Fedora, CentOS)
@@ -12,6 +14,13 @@
 - **Instalação e Configuração**
   - Instalação de distribuições
 - **Comandos básicos essenciais**
+    - Tabela rápida de comandos
+    - Comando SUDO
+    - Atualizar e instalar pacotes com APT
+    - Acesso remoto com SSH
+    - Nome da máquina: `hostname` e `hostnamectl`
+    - Navegação no sistema
+
 
 ---
 
