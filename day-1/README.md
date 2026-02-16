@@ -16,11 +16,12 @@
 - [Instalação](#instalação)
 - [Comandos Básicos](#comandos-básicos)
   - [Tabela rápida de comandos](#tabela-rápida-de-comandos)
-  - [1) Comando SUDO](#1-comando-sudo)
-  - [2) Atualizar e instalar pacotes com APT](#2-atualizar-e-instalar-pacotes-com-apt)
-  - [3) Acesso remoto com SSH](#3-acesso-remoto-com-ssh)
-  - [4) Nome da máquina: hostname e hostnamectl](#4-nome-da-máquina-hostname-e-hostnamectl)
-  - [5) Navegação no sistema](#5-navegação-no-sistema)
+  - [1) Neofetch](#1-neofetch)
+  - [2) Comando SUDO](#2-comando-sudo)
+  - [3) Atualizar e instalar pacotes com APT](#3-atualizar-e-instalar-pacotes-com-apt)
+  - [4) Acesso remoto com SSH](#4-acesso-remoto-com-ssh)
+  - [5) Nome da máquina: hostname e hostnamectl](#5-nome-da-máquina-hostname-e-hostnamectl)
+  - [6) Navegação no sistema](#6-navegação-no-sistema)
 
 
 
@@ -214,7 +215,39 @@ Abaixo estão os comandos essenciais para começar a usar Linux logo após a ins
 | `sudo` | Executa comando com privilégios administrativos | `sudo apt update` |
 
 
-### 1) Comando SUDO
+
+### 1) Neofetch
+
+Obter informações básicas do sistema
+
+```bash
+$ sudo apt install neofetch -y
+$ neofetch
+$ neofetch
+            .-/+oossssoo+/-.               paulo@Ubuntu-Lab
+        `:+ssssssssssssssssss+:`           ----------------
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 24.04.4 LTS x86_64
+    .ossssssssssssssssssdMMMNysssso.       Host: VMware Virtual Platform None
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.17.0-14-generic
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 3 hours, 34 mins
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 1542 (dpkg), 10 (snap)
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.2.21
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 3638x2000
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   Terminal: /dev/pts/1
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   CPU: 13th Gen Intel i7-13700H (2) @ 2.918GHz
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   GPU: 00:0f.0 VMware SVGA II Adapter
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Memory: 1430MiB / 3867MiB
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/
+  +sssssssssdmydMMMMMMMMddddyssssssss+
+   /ssssssssssshdmNNNNmyNMMMMhssssss/
+    .ossssssssssssssssssdMMMNysssso.
+      -+sssssssssssssssssyyyssss+-
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.
+
+```
+
+### 2) Comando SUDO
 
 O `sudo` (superuser do) permite executar comandos com privilégios administrativos de forma temporária, sem precisar iniciar sessão como root. É usado para tarefas que exigem permissões elevadas, como instalar software ou alterar configurações do sistema.
 
@@ -225,7 +258,7 @@ sudo apt install -y git
 ```
 
 
-### 2) Atualizar e instalar pacotes com APT
+### 3) Atualizar e instalar pacotes com APT
 
 O APT (Advanced Package Tool) é o gestor de pacotes e aplicações do Debian/Ubuntu, usado para atualizar, instalar, pesquisar e remover software a partir dos repositórios.
 No windows temos o comando WinGet que possui uma funcionalidade similar.
@@ -260,7 +293,7 @@ $ sudo apt remove <pacote>
 $ sudo apt install -y curl vim git
 ```
 
-### 3) Acesso remoto com SSH
+### 4) Acesso remoto com SSH
 
 #### Instalar servidor ssh (Openssh)
 
@@ -340,7 +373,7 @@ paulo@Ubuntu-Lab:~$
 ```
 
 
-### 4) Nome da máquina: `hostname` e `hostnamectl`
+### 5) Nome da máquina: `hostname` e `hostnamectl`
 
 
 **Videos**
@@ -381,7 +414,7 @@ $ sudo nano /etc/hosts
 
 **Para sair do editor nano use CTRL+X**
 
-### 5) Navegação no sistema
+### 6) Navegação no sistema
 
 
 ```bash
