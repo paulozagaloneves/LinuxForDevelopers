@@ -12,7 +12,8 @@
   - Filosofia Open Source
 - **Virtualização do Linux**
 - **Instalação e Configuração**
-  - Instalação de distribuições
+   [Manual de Instalação do Ubuntu 24.04 Desktop
+  -Tutorial: Debian 13 Cloud no Windows com QEMU + cloud-init
 - **Comandos básicos essenciais**
     - Tabela rápida de comandos
     - Comando SUDO
