@@ -11,13 +11,16 @@
   - [Acesso Remoto SSH](#acesso-remoto-ssh)
     - [Configuração de SSH](#configuração-de-ssh)
     - [Acesso remoto ao linux sem senha](#acesso-remoto-ao-linux-sem-senha)
+      - [Videos](#videos)
   - [Comandos: Command e Which](#comandos-command-e-which)
   - [Editores de texto no terminal](#editores-de-texto-no-terminal)
     - [VIM](#vim)
-    - [Principais atalhos do Vim](#principais-atalhos-do-vim)
+      - [Principais atalhos do Vim](#principais-atalhos-do-vim)
     - [NANO](#nano)
-    - [Principais atalhos do Nano](#principais-atalhos-do-nano)
+      - [Principais atalhos do Nano](#principais-atalhos-do-nano)
+    - [Visual Studio Code Remote](#visual-studio-code-remote)
   - [Descomplicando o Sudo](#descomplicando-o-sudo)
+    - [Videos](#videos-1)
     - [Comando Sudo](#comando-sudo)
     - [O que é o ficheiro sudoers](#o-que-é-o-ficheiro-sudoers)
     - [Listar permissões sudo](#listar-permissões-sudo)
@@ -43,30 +46,27 @@
 
 - Acesso remoto com ssh (com e sem senha);
 - Aprender a usar os editores VIM ou nano;
-- Executando comando com privilégios de administrador; 
+- Executando comando com privilégios de administrador;
 - Configurar ambiente de desenvolvimento Java;
   - Instalar JDK 21;
   - Instalar JDK 25;
 - Configurar ambiente de desenvolvimento .NET;
 
-
 ## Exercícios Práticos
 
 ### Preparação
+
 Para a realização dos exercicios pode usar:
 
 1. (Preferencialmente) Linux instalado da aula 1 em computador ou VM.
-2. Usar [KillerCoda - Playground Ubuntu Linux](https://killercoda.com/playgrounds/scenario/ubuntu) 
+2. Usar [KillerCoda - Playground Ubuntu Linux](https://killercoda.com/playgrounds/scenario/ubuntu)
 3. Usar [Iximiuz Labs - Ubuntu 24.04](https://labs.iximiuz.com/playgrounds?category=linux)
-
 
 ### Exercícios
 
 1. Configurar o acesso ssh para aceder de forma segura sem senha;
 2. Configurar as permissões sudo do utilizador de testes para não pedir senha;
 3. 
-
-
 
 ## Acesso Remoto SSH
 
@@ -136,11 +136,9 @@ Last login: Mon Feb  9 18:47:38 2026 from 192.168.1.205
 ubuntu@linux-lab-ubuntu:~$ 
 ```
 
-
 ### Acesso remoto ao linux sem senha
 
 Para se poder aceder remotamente ao linux sem senha é necessário criar um par de chaves publica/privada e configurar o linux com a chave pública.
-
 
 #### Videos
 
@@ -152,7 +150,8 @@ Para se poder aceder remotamente ao linux sem senha é necessário criar um par 
 Configurar o acesso SSH por chave no Linux é um processo direto que aumenta drasticamente a segurança do teu servidor. 
 Passo a passo: 
 
-1. Gerar o par de chaves (na tua máquina local) 
+1. Gerar o par de chaves (na tua máquina local)
+
 No teu computador (Linux, macOS ou Windows com PowerShell), executa o comando para criar as chaves: 
 
 ```powershell
@@ -161,13 +160,14 @@ C:> ssh-keygen -t ed25519
 
 **Dica:** O algoritmo ed25519 é atualmente o mais recomendado por ser mais seguro e rápido que o RSA tradicional.
 
-2. Copiar a chave pública para o servidor 
+2. Copiar a chave pública para o servidor
 
 Usa o utilitário ssh-copy-id para automatizar a transferência: 
 
 ```powershell
 C:> ssh-copy-id utilizador@ip-do-servidor
 ```
+
 Este comando pede a tua senha atual uma última vez e adiciona a tua chave pública ao ficheiro ~/.ssh/authorized_keys no servidor.
 
 3. Abre outra janela do powershell e testa o acesso ssh agora
@@ -176,13 +176,12 @@ Este comando pede a tua senha atual uma última vez e adiciona a tua chave públ
 C:> ssh utilizador@ip-do-servidor
 ```
 
-
 ## Comandos: Command e Which
 
-| Comando | Descrição | Exemplo |
-|---|---|---|
+| Comando   | Descrição                                                                                                                                                                      | Exemplo              |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
 | `command` | Comando interno do shell para verificar como um comando será resolvido (builtin, alias, função ou executável). Muito usado com `-v` para mostrar o caminho/comando encontrado. | `command -v python3` |
-| `which` | Mostra o caminho do executável encontrado no `PATH` (normalmente para comandos externos). | `which python3` |
+| `which`   | Mostra o caminho do executável encontrado no `PATH` (normalmente para comandos externos).                                                                                      | `which python3`      |
 
 Exemplo:
 
@@ -207,28 +206,28 @@ O **Vim** é um editor de texto avançado que corre no terminal e é muito usado
 - **Insert:** inserir/editar texto
 - **Command-line:** executar comandos como gravar, sair ou procurar
 
-### Principais atalhos do Vim
+#### Principais atalhos do Vim
 
-| Atalho | Descrição |
-|---|---|
-| `i` | Entra no modo Insert (insere antes do cursor) |
-| `a` | Entra no modo Insert (insere depois do cursor) |
-| `o` | Cria nova linha abaixo e entra em Insert |
-| `Esc` | Volta ao modo Normal |
-| `:w` | Guarda o ficheiro |
-| `:q` | Sai do Vim (se não houver alterações por gravar) |
-| `:wq` | Guarda e sai |
-| `:q!` | Sai sem guardar alterações |
-| `dd` | Apaga a linha atual |
-| `yy` | Copia (yank) a linha atual |
-| `p` | Cola após o cursor |
-| `u` | Desfaz a última alteração |
-| `Ctrl+r` | Refaz alteração desfeita |
-| `/texto` | Procura `texto` no ficheiro |
-| `n` | Vai para a próxima ocorrência da pesquisa |
-| `N` | Vai para a ocorrência anterior da pesquisa |
-| `gg` | Vai para o início do ficheiro |
-| `G` | Vai para o fim do ficheiro |
+| Atalho   | Descrição                                        |
+| -------- | ------------------------------------------------ |
+| `i`      | Entra no modo Insert (insere antes do cursor)    |
+| `a`      | Entra no modo Insert (insere depois do cursor)   |
+| `o`      | Cria nova linha abaixo e entra em Insert         |
+| `Esc`    | Volta ao modo Normal                             |
+| `:w`     | Guarda o ficheiro                                |
+| `:q`     | Sai do Vim (se não houver alterações por gravar) |
+| `:wq`    | Guarda e sai                                     |
+| `:q!`    | Sai sem guardar alterações                       |
+| `dd`     | Apaga a linha atual                              |
+| `yy`     | Copia (yank) a linha atual                       |
+| `p`      | Cola após o cursor                               |
+| `u`      | Desfaz a última alteração                        |
+| `Ctrl+r` | Refaz alteração desfeita                         |
+| `/texto` | Procura `texto` no ficheiro                      |
+| `n`      | Vai para a próxima ocorrência da pesquisa        |
+| `N`      | Vai para a ocorrência anterior da pesquisa       |
+| `gg`     | Vai para o início do ficheiro                    |
+| `G`      | Vai para o fim do ficheiro                       |
 
 Exemplo:
 
@@ -239,7 +238,6 @@ escreve o texto
 <ESC> Entra no modo Normal para executar comandos
 <:wq> w - Write (Grava) q - Quit (sai)
 ```
-
 
 ### NANO
 
@@ -252,34 +250,135 @@ Ao contrário do Vim, não é modal: escreve-se diretamente e os atalhos aparece
 $ nano ficheiro.txt
 ```
 
-### Principais atalhos do Nano
+#### Principais atalhos do Nano
 
-| Atalho | Descrição |
-|---|---|
-| `Ctrl+O` | Grava o ficheiro (Write Out) |
-| `Ctrl+X` | Sai do Nano |
-| `Ctrl+K` | Corta a linha atual |
-| `Ctrl+U` | Cola o conteúdo cortado |
-| `Ctrl+W` | Procura texto |
-| `Alt+W` | Vai para a próxima ocorrência da pesquisa |
-| `Ctrl+\\` | Procurar e substituir |
-| `Ctrl+G` | Mostra a ajuda |
-| `Ctrl+C` | Mostra posição do cursor (linha/coluna) |
-| `Ctrl+_` | Ir para linha e coluna |
-| `Ctrl+A` | Início da linha |
-| `Ctrl+E` | Fim da linha |
+| Atalho    | Descrição                                 |
+| --------- | ----------------------------------------- |
+| `Ctrl+O`  | Grava o ficheiro (Write Out)              |
+| `Ctrl+X`  | Sai do Nano                               |
+| `Ctrl+K`  | Corta a linha atual                       |
+| `Ctrl+U`  | Cola o conteúdo cortado                   |
+| `Ctrl+W`  | Procura texto                             |
+| `Alt+W`   | Vai para a próxima ocorrência da pesquisa |
+| `Ctrl+\\` | Procurar e substituir                     |
+| `Ctrl+G`  | Mostra a ajuda                            |
+| `Ctrl+C`  | Mostra posição do cursor (linha/coluna)   |
+| `Ctrl+_`  | Ir para linha e coluna                    |
+| `Ctrl+A`  | Início da linha                           |
+| `Ctrl+E`  | Fim da linha                              |
 
 **Dica:** no Nano, `^` significa tecla `Ctrl` (ex.: `^X` = `Ctrl+X`).
+
+
+### Visual Studio Code Remote
+É possivel usar o VS Code para editar ficheiros num Linux remoto.
+O VS Code Remote - SSH é uma das formas mais produtivas de editar ficheiros remotamente como se estivessem na tua máquina local.
+
+Vou mostrar:
+
+✅ Como configurar o acesso remoto
+
+✅ Como editar ficheiros no diretório do utilizador
+
+🔐 Como editar ficheiros que precisam de permissões de administrador (sudo)
+
+
+1️⃣ **Instalar o VS Code e a extensão Remote SSH**
+
+🧩 Instalar o Visual Studio Code
+
+Se ainda não tiveres:
+
+👉 Instala o Visual Studio Code no Windows ou Linux
+
+
+🔌 Instalar a extensão Remote - SSH
+
+1. Abre o VS Code
+
+2. Vai a Extensions (Ctrl+Shift+X)
+
+3. Procura por: Remote - SSH
+
+4. Instala a extensão da Microsoft
+
+Nome completo:
+
+Remote - SSH (da Microsoft)
+
+
+2️⃣ **Preparar o servidor Linux**
+
+No servidor remoto precisas de:
+
+- SSH ativo
+
+- Um utilizador com acesso SSH
+
+Verifica no servidor:
+
+```bash
+$ sudo systemctl status ssh
+```
+
+
+Se não estiver instalado:
+
+```bash
+$ sudo apt install openssh-server
+```
+
+3️⃣ **Configurar ligação SSH no teu computador**
+
+No teu PC (Windows/Linux/Mac), edita o ficheiro:
+
+```powershell
+$USER/.ssh/config
+```
+
+**Exemplo:**
+
+Host vigilant
+    HostName 192.168.1.199
+    User paulo
+    IdentityFile ~/.ssh/id_rsa
+
+Agora no VS Code:
+
+1. Ctrl + Shift + P
+2. Escreve: Remote-SSH: Connect to Host
+3. Escolhe o host configurado
+
+O VS Code vai instalar automaticamente um servidor interno no Linux remoto.
+
+
+4️⃣ **Editar ficheiros no diretório do utilizador (modo normal)**
+
+Depois de conectado:
+
+1. Vai a File → Open Folder
+2. Escolhe /home/paulo
+3. Abre qualquer ficheiro normalmente
+
+Exemplo:
+
+```bash
+/home/paulo/appsettings.json
+/home/paulo/docker-compose.yml
+```
+
+
+💡 Aqui estás a usar as permissões normais do utilizador SSH.
+
+Se o utilizador tiver acesso, tudo funciona normalmente.
 
 
 
 ## Descomplicando o Sudo
 
-
 ### Videos
 
 1. [Linux Crash Course - sudo](https://www.youtube.com/watch?v=07JOqKOBRnU&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=59)
-
 
 ### Comando Sudo
 
@@ -298,7 +397,6 @@ O ficheiro `sudoers` define **quem** pode usar `sudo`, **como** pode usar e **qu
 Normalmente fica em `/etc/sudoers` e pode incluir regras adicionais em `/etc/sudoers.d/`.
 
 **Importante:** este ficheiro deve ser editado com `visudo` (e não com editor direto), para validar a sintaxe e evitar bloquear o acesso administrativo.
-
 
 ### Listar permissões sudo 
 
@@ -376,7 +474,6 @@ root    ALL=(ALL:ALL) ALL
 @includedir /etc/sudoers.d
 ```
 
-
 **Explicar a linha que define as permissões sudo dos utilizadores do grupo sudo (utilizadores comuns a que foi atribuído sudo)** 
 
 ```bash
@@ -392,7 +489,6 @@ Essa linha é uma regra do ficheiro **sudoers** e significa:
 
 **Em resumo:** qualquer utilizador que pertença ao grupo sudo pode usar sudo para correr qualquer comando com privilégios elevados (incluindo root), pedindo palavra-passe conforme a política definida.
 
-
 ### Editar permissões Sudo
 
 **Editar ficheiro sudo**
@@ -400,7 +496,6 @@ Essa linha é uma regra do ficheiro **sudoers** e significa:
 Por segurança, o `sudo` pede a palavra-passe do utilizador quando executa comandos administrativos.
 Num laboratório de testes, pode ser útil evitar esse passo para agilizar os exercícios.
 Para este cenário, vamos ajustar o ficheiro `sudoers` para o nosso utilizador não pedir palavra-passe ao usar `sudo`.
-
 
 Edite o ficheiro `sudoers` e acrescente a linha abaixo (substitua `paulo` pelo seu utilizador).
 
@@ -414,7 +509,6 @@ paulo ALL=(ALL:ALL) NOPASSWD: ALL
 ```bash
 sudo visudo
 ```
-
 
 **Extrato como deve ficar:**
 
@@ -432,7 +526,6 @@ root    ALL=(ALL:ALL) ALL
 # Definir permissões especificas para o utilizador de testes
 paulo ALL=(ALL:ALL) NOPASSWD: ALL
 ```
-
 
 ## Documentação (man)
 
@@ -545,7 +638,6 @@ DESCRIPTION
        -k      When loading keys into or deleting keys from the agent, process plain private keys only and skip certificates.
 ```
 
-
 ## Interface Linha de Comandos (CLI)
 
 - Introdução ao shell (bash, zsh)
@@ -574,19 +666,19 @@ Um **shell** é um interpretador de comandos que funciona como intermediário en
 - Melhor experiência interativa para desenvolvedores
 - Presets prontos para aumentar produtividade
 
-
 - Navegação básica
 - Variáveis de ambiente (PATH, .bashrc, .zshrc)
 
 ## Gerenciamento de Pacotes
+
 - APT (Debian/Ubuntu): `apt-get`, `apt`
 - YUM/DNF (RedHat/Fedora)
 - Instalar, atualizar e remover software
 
 ## Pacotes SNAP e FLATPAK
+
 - Conceitos e diferenças
 - Instalação e gerenciamento
-
 
 ## Ambiente DEV Java
 
@@ -671,17 +763,17 @@ native: 0.7.16 (linux x86_64)
 
 ### SDKMAN: Comandos básicos
 
-| Comando | Descrição |
-|---|---|
-| `sdk version` | Mostra a versão do SDKMAN instalada |
-| `sdk list java` | Lista as versões de Java disponíveis para instalação |
-| `sdk install java 25.0.2-tem` | Instala a versão 25.0.2 do Temurin (Java) |
-| `sdk use java 21.0.2-tem` | Usa a versão indicada apenas na sessão atual |
-| `sdk default java 21.0.2-tem` | Define a versão indicada como padrão |
-| `sdk current java` | Mostra a versão de Java ativa |
-| `sdk uninstall java 25.0.2-tem` | Remove a versão instalada |
-| `sdk list maven` | Lista versões do Maven disponíveis |
-| `sdk install maven 3.9.6` | Instala o Maven na versão indicada |
+| Comando                         | Descrição                                            |
+| ------------------------------- | ---------------------------------------------------- |
+| `sdk version`                   | Mostra a versão do SDKMAN instalada                  |
+| `sdk list java`                 | Lista as versões de Java disponíveis para instalação |
+| `sdk install java 25.0.2-tem`   | Instala a versão 25.0.2 do Temurin (Java)            |
+| `sdk use java 21.0.2-tem`       | Usa a versão indicada apenas na sessão atual         |
+| `sdk default java 21.0.2-tem`   | Define a versão indicada como padrão                 |
+| `sdk current java`              | Mostra a versão de Java ativa                        |
+| `sdk uninstall java 25.0.2-tem` | Remove a versão instalada                            |
+| `sdk list maven`                | Lista versões do Maven disponíveis                   |
+| `sdk install maven 3.9.6`       | Instala o Maven na versão indicada                   |
 
 **Exemplo de uso rápido:**
 
@@ -698,9 +790,9 @@ java -version
 1. Instalar JDK 21 (21.0.10-tem)
 2. Instalar JDK 25 (25.0.2-tem)
 3. Verificar a versão de java atual
+
 Ajuda: use java --version e sdk current java
 4. Alterar versão java default para jdk 21
-
 
 ### Instalação maven
 
@@ -748,20 +840,15 @@ $
 $ java -jar .\target\gerador-senhas-java-1.0.0.jar version
 ```
 
-
 ## Ambiente DEV .NET
+
 - Instalação de SDK
 - Projeto básico
 
-
 ## IDEs para Programação
+
 - Visual Studio Code
 - IntelliJ IDEA
 - Rider
 - PyCharm
 - GoLand
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 ## Trilha de Treinamento
 
-### 📅 [Dia 1 - Fundamentos do Linux](day-1/README.md)
+### 📅 [Dia 1 - Setup](day-1/README.md)
 
 - **Objetivos Dia 1**
 - Exercício Prático
@@ -12,8 +12,8 @@
   - Filosofia Open Source
 - **Virtualização do Linux**
 - **Instalação e Configuração**
-   [Manual de Instalação do Ubuntu 24.04 Desktop
-  -Tutorial: Debian 13 Cloud no Windows com QEMU + cloud-init
+  - Manual de Instalação do Ubuntu 24.04 Desktop
+  - Tutorial: Debian 13 Cloud no Windows com QEMU + cloud-init
 - **Comandos básicos essenciais**
     - Tabela rápida de comandos
     - Comando SUDO
@@ -22,51 +22,44 @@
     - Nome da máquina: `hostname` e `hostnamectl`
     - Navegação no sistema
 
-
 ---
 
 ### 📅 [Dia 2 - Acesso Remoto e Gerenciamento de Pacotes](day-2/README.md)
-
-- **Acesso SSH**
+- **Objetivos Dia 2**
+- Exercícios Práticos
+  - Preparação
+  - Exercícios
+- Acesso Remoto SSH
   - Configuração de SSH
-  - Autenticação por chave pública/privada
-
-- **Interface Linha de Comandos (CLI)**
-  - Introdução ao shell (bash, zsh)
-  - Navegação básica
-  - Variáveis de ambiente (PATH, .bashrc, .zshrc)
-
-- **Documentação (man)**
-  - `man <comando>` - Manual de comandos
-  - Navegação: espaço, setas, `q` para sair
-  - Seções do manual (1-9)
-  - `man -k <palavra>` - Pesquisar por palavra-chave
-  - `apropos` - Buscar comandos relacionados
-  - `whatis` - Descrição breve de comandos
-  - `info` - Sistema alternativo de documentação
-  - `--help` ou `-h` - Ajuda rápida dos comandos
-- **Gerenciamento de Pacotes**
-  - APT (Debian/Ubuntu): `apt-get`, `apt`
-  - YUM/DNF (RedHat/Fedora)
-  - Instalar, atualizar e remover software
-- **Pacotes SNAP e FLATPAK**
-  - Conceitos e diferenças
-  - Instalação e gerenciamento
-- **Editores e IDE**
-  - Visual Studio Code
-  - IntelliJ IDEA
-  - Rider
-  - PyCharm
-  - GoLand
-- **SDKMAN**
-  - Instalação
-  - Comandos básicos
-  - Java
-  - Maven
-  - Projeto básico
-- **.NET**    
-  - Instalação
-  - Projeto básico
+  - Acesso remoto ao linux sem senha
+- Comandos: Command e Which]
+- Editores de texto no terminal
+  - VIM
+    - Principais atalhos do Vim
+  - Nano
+    - Principais atalhos do Nano
+  - Visual Studio Code Remote
+- Descomplicando o Sudo
+  - Comando Sudo
+  - O que é o ficheiro sudoers
+  - Listar permissões sudo
+  - Editar permissões Sudo
+- Documentação (man)
+  - MAN - Manual de comandos
+- Interface Linha de Comandos (CLI)
+- Gerenciamento de Pacotes
+- Pacotes SNAP e FLATPAK
+- Ambiente DEV Java
+  - GIT
+  - SDKMAN: Instalação
+  - SDKMAN: Comandos básicos
+  - SDKMAN: Exercícios
+  - Instalação maven
+  - Projeto: Gerador Senhas Java
+    - Compilar
+    - Executar
+- Ambiente DEV .NET
+- IDEs para Programação
 
 ---
 
