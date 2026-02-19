@@ -12,10 +12,9 @@
 4. Permissões e Segurança
    - Administração de Utilizadores e Grupos
    - Modo administrador com Sudo
-   - Permissões de ficheiros 
+   - Permissões de ficheiros
 5. Processos e Background Jobs
 6. Redirecionamento, Pipes e Shell Scripting
 7. Agendamento
 8. Setup Ambiente Desenvolvimento Java
 9. Setup Ambiente Desenvolvimento .NET
-

@@ -14,17 +14,39 @@
 - **Instalação e Configuração**
   - Manual de Instalação do Ubuntu 24.04 Desktop
   - Tutorial: Debian 13 Cloud no Windows com QEMU + cloud-init
-- **Comandos básicos essenciais**
-    - Tabela rápida de comandos
-    - Comando SUDO
-    - Atualizar e instalar pacotes com APT
-    - Acesso remoto com SSH
-    - Nome da máquina: `hostname` e `hostnamectl`
-    - Navegação no sistema
+
+
+---
+
+### 📅 [Dia 2 - Shell Básico](day-2/README.md)
+  - Objetivos Dia 2
+  - Exercícios Práticos
+    - Preparação
+    - Exercícios
+  - O Despertar do Terminal
+    - Mapa de Sobrevivência: Comandos Essenciais
+    - Raio-X do Sistema: Conhecendo a Máquina com Neofetch
+    - Poder Elevado: Usando o Sudo
+    - O Ecossistema de Pacotes: Atualizações e Instalações com APT
+      - Videos
+    - Localizando a Máquina na Rede: Descobrindo o IP do Servidor
+    - Identidade Digital: Gerenciando o Hostname da Máquina
+  - Além das Fronteiras: Acesso Remoto com SSH
+    - Configuração de SSH
+      - Instalar servidor ssh (Openssh)
+    - Acesso remoto ao linux sem senha
+      - Videos
+  - A Arquitetura do Sistema: Entendendo o FHS
+  - Explorando o Território: Navegação e Listagem no Sistema de Arquivos
+  - Construindo e Remodelando: Manipulação de Ficheiros e Diretórios
+  - Memória do Shell: Produtividade e Eficiência com History
+  - Estética e Poder: Transformando o Terminal com Oh-My-Zsh
+  
 
 ---
 
 ### 📅 [Dia 2 - Acesso Remoto e Gerenciamento de Pacotes](day-2/README.md)
+
 - **Objetivos Dia 2**
 - Exercícios Práticos
   - Preparação

@@ -1,0 +1,650 @@
+
+
+
+## Editores de texto no terminal
+
+### VIM
+
+O **Vim** é um editor de texto avançado que corre no terminal e é muito usado em Linux/Unix para edição rápida de ficheiros de configuração, código e scripts.
+É um editor **modal**, ou seja, tem modos diferentes para escrever texto, navegar e executar comandos.
+
+**Modos principais:**
+
+- **Normal:** navegar e executar comandos
+- **Insert:** inserir/editar texto
+- **Command-line:** executar comandos como gravar, sair ou procurar
+
+#### Principais atalhos do Vim
+
+| Atalho   | Descrição                                        |
+| -------- | ------------------------------------------------ |
+| `i`      | Entra no modo Insert (insere antes do cursor)    |
+| `a`      | Entra no modo Insert (insere depois do cursor)   |
+| `o`      | Cria nova linha abaixo e entra em Insert         |
+| `Esc`    | Volta ao modo Normal                             |
+| `:w`     | Guarda o ficheiro                                |
+| `:q`     | Sai do Vim (se não houver alterações por gravar) |
+| `:wq`    | Guarda e sai                                     |
+| `:q!`    | Sai sem guardar alterações                       |
+| `dd`     | Apaga a linha atual                              |
+| `yy`     | Copia (yank) a linha atual                       |
+| `p`      | Cola após o cursor                               |
+| `u`      | Desfaz a última alteração                        |
+| `Ctrl+r` | Refaz alteração desfeita                         |
+| `/texto` | Procura `texto` no ficheiro                      |
+| `n`      | Vai para a próxima ocorrência da pesquisa        |
+| `N`      | Vai para a ocorrência anterior da pesquisa       |
+| `gg`     | Vai para o início do ficheiro                    |
+| `G`      | Vai para o fim do ficheiro                       |
+
+Exemplo:
+
+```bash
+$ vim ficheiro.txt
+<carrega tecla i> Entra no modo edição
+escreve o texto
+<ESC> Entra no modo Normal para executar comandos
+<:wq> w - Write (Grava) q - Quit (sai)
+```
+
+### NANO
+
+O **Nano** é um editor de texto simples e intuitivo para terminal, muito usado para editar ficheiros de configuração de forma rápida.
+Ao contrário do Vim, não é modal: escreve-se diretamente e os atalhos aparecem no rodapé do editor.
+
+**Exemplo de utilização:**
+
+```bash
+$ nano ficheiro.txt
+```
+
+#### Principais atalhos do Nano
+
+| Atalho    | Descrição                                 |
+| --------- | ----------------------------------------- |
+| `Ctrl+O`  | Grava o ficheiro (Write Out)              |
+| `Ctrl+X`  | Sai do Nano                               |
+| `Ctrl+K`  | Corta a linha atual                       |
+| `Ctrl+U`  | Cola o conteúdo cortado                   |
+| `Ctrl+W`  | Procura texto                             |
+| `Alt+W`   | Vai para a próxima ocorrência da pesquisa |
+| `Ctrl+\\` | Procurar e substituir                     |
+| `Ctrl+G`  | Mostra a ajuda                            |
+| `Ctrl+C`  | Mostra posição do cursor (linha/coluna)   |
+| `Ctrl+_`  | Ir para linha e coluna                    |
+| `Ctrl+A`  | Início da linha                           |
+| `Ctrl+E`  | Fim da linha                              |
+
+**Dica:** no Nano, `^` significa tecla `Ctrl` (ex.: `^X` = `Ctrl+X`).
+
+### Visual Studio Code Remote
+
+É possivel usar o VS Code para editar ficheiros num Linux remoto.
+O VS Code Remote - SSH é uma das formas mais produtivas de editar ficheiros remotamente como se estivessem na tua máquina local.
+
+Vou mostrar:
+
+✅ Como configurar o acesso remoto
+
+✅ Como editar ficheiros no diretório do utilizador
+
+🔐 Como editar ficheiros que precisam de permissões de administrador (sudo)
+
+1️⃣ **Instalar o VS Code e a extensão Remote SSH**
+
+🧩 Instalar o Visual Studio Code
+
+Se ainda não tiveres:
+
+👉 Instala o Visual Studio Code no Windows ou Linux
+
+🔌 Instalar a extensão Remote - SSH
+
+1. Abre o VS Code
+2. Vai a Extensions (Ctrl+Shift+X)
+3. Procura por: Remote - SSH
+4. Instala a extensão da Microsoft
+
+Nome completo:
+
+Remote - SSH (da Microsoft)
+
+2️⃣ **Preparar o servidor Linux**
+
+No servidor remoto precisas de:
+
+- SSH ativo
+- Um utilizador com acesso SSH
+
+Verifica no servidor:
+
+```bash
+$ sudo systemctl status ssh
+```
+
+Se não estiver instalado:
+
+```bash
+$ sudo apt install openssh-server
+```
+
+3️⃣ **Configurar ligação SSH no teu computador**
+
+No teu PC (Windows/Linux/Mac), edita o ficheiro:
+
+```powershell
+$USER/.ssh/config
+```
+
+**Exemplo:**
+
+Host vigilant
+    HostName 192.168.1.199
+    User paulo
+    IdentityFile ~/.ssh/id_rsa
+
+Agora no VS Code:
+
+1. Ctrl + Shift + P
+2. Escreve: Remote-SSH: Connect to Host
+3. Escolhe o host configurado
+
+O VS Code vai instalar automaticamente um servidor interno no Linux remoto.
+
+4️⃣ **Editar ficheiros no diretório do utilizador (modo normal)**
+
+Depois de conectado:
+
+1. Vai a File → Open Folder
+2. Escolhe /home/paulo
+3. Abre qualquer ficheiro normalmente
+
+Exemplo:
+
+```bash
+/home/paulo/appsettings.json
+/home/paulo/docker-compose.yml
+```
+
+💡 Aqui estás a usar as permissões normais do utilizador SSH.
+
+Se o utilizador tiver acesso, tudo funciona normalmente.
+
+## Descomplicando o Sudo
+
+### Videos
+
+1. [Linux Crash Course - sudo](https://www.youtube.com/watch?v=07JOqKOBRnU&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=59)
+
+### Comando Sudo
+
+O comando `sudo` (**superuser do**) permite executar comandos com privilégios elevados (normalmente como `root`) sem iniciar sessão diretamente como `root`.
+É a forma recomendada para tarefas administrativas no Linux, porque mantém registo de auditoria e reduz riscos de segurança.
+
+**Exemplos comuns:**
+
+- `sudo apt update`
+- `sudo systemctl restart ssh`
+- `sudo -l` (lista os comandos permitidos ao utilizador atual)
+
+### O que é o ficheiro sudoers
+
+O ficheiro `sudoers` define **quem** pode usar `sudo`, **como** pode usar e **que comandos** pode executar.
+Normalmente fica em `/etc/sudoers` e pode incluir regras adicionais em `/etc/sudoers.d/`.
+
+**Importante:** este ficheiro deve ser editado com `visudo` (e não com editor direto), para validar a sintaxe e evitar bloquear o acesso administrativo.
+
+### Listar permissões sudo 
+
+```bash
+$ sudo -l
+[sudo] password for paulo:
+Matching Defaults entries for paulo on Ubuntu-Lab:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User paulo may run the following commands on Ubuntu-Lab:
+    (ALL : ALL) ALL
+$
+```
+
+ou 
+
+```bash
+$ sudo cat /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults        env_reset
+Defaults        mail_badpass
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+
+# This fixes CVE-2005-4890 and possibly breaks some versions of kdesu
+# (#1011624, https://bugs.kde.org/show_bug.cgi?id=452532)
+Defaults        use_pty
+
+# This preserves proxy settings from user environments of root
+# equivalent users (group sudo)
+#Defaults:%sudo env_keep += "http_proxy https_proxy ftp_proxy all_proxy no_proxy"
+
+# This allows running arbitrary commands, but so does ALL, and it means
+# different sudoers have their choice of editor respected.
+#Defaults:%sudo env_keep += "EDITOR"
+
+# Completely harmless preservation of a user preference.
+#Defaults:%sudo env_keep += "GREP_COLOR"
+
+# While you shouldn't normally run git as root, you need to with etckeeper
+#Defaults:%sudo env_keep += "GIT_AUTHOR_* GIT_COMMITTER_*"
+
+# Per-user preferences; root won't have sensible values for them.
+#Defaults:%sudo env_keep += "EMAIL DEBEMAIL DEBFULLNAME"
+
+# "sudo scp" or "sudo rsync" should be able to use your SSH agent.
+#Defaults:%sudo env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"
+
+# Ditto for GPG agent
+#Defaults:%sudo env_keep += "GPG_AGENT_INFO"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "@include" directives:
+
+@includedir /etc/sudoers.d
+```
+
+**Explicar a linha que define as permissões sudo dos utilizadores do grupo sudo (utilizadores comuns a que foi atribuído sudo)** 
+
+```bash
+%sudo   ALL=(ALL:ALL) ALL
+```
+
+Essa linha é uma regra do ficheiro **sudoers** e significa:
+
+- `%sudo` → aplica-se ao grupo sudo (o % indica grupo, não utilizador individual).
+- `ALL (1º)` → válida em todos os hosts.
+- `(ALL:ALL)` → os membros do grupo podem executar comandos como qualquer utilizador e qualquer grupo.
+- `ALL (final)` → podem executar qualquer comando.
+
+**Em resumo:** qualquer utilizador que pertença ao grupo sudo pode usar sudo para correr qualquer comando com privilégios elevados (incluindo root), pedindo palavra-passe conforme a política definida.
+
+### Editar permissões Sudo
+
+**Editar ficheiro sudo**
+
+Por segurança, o `sudo` pede a palavra-passe do utilizador quando executa comandos administrativos.
+Num laboratório de testes, pode ser útil evitar esse passo para agilizar os exercícios.
+Para este cenário, vamos ajustar o ficheiro `sudoers` para o nosso utilizador não pedir palavra-passe ao usar `sudo`.
+
+Edite o ficheiro `sudoers` e acrescente a linha abaixo (substitua `paulo` pelo seu utilizador).
+
+```
+# Definir permissões especificas para o utilizador de testes
+paulo ALL=(ALL:ALL) NOPASSWD: ALL
+```
+
+**Como editar**
+
+```bash
+sudo visudo
+```
+
+**Extrato como deve ficar:**
+
+```
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+
+
+# Definir permissões especificas para o utilizador de testes
+paulo ALL=(ALL:ALL) NOPASSWD: ALL
+```
+
+## Documentação (man)
+
+### MAN - Manual de comandos
+
+O comando **man** abre o **manual** de referência de comandos e programas no Linux.
+
+Exemplo:
+
+**Pesquisar comandos por palavra chave**
+
+```bash
+$ man -k ssh
+authorized_keys (5)  - OpenSSH daemon
+EVP_KDF-SSHKDF (7ssl) - The SSHKDF EVP_KDF implementation
+rrsync (1)           - a script to setup restricted rsync users via ssh logins
+scp (1)              - OpenSSH secure file copy
+sftp (1)             - OpenSSH secure file transfer
+sftp-server (8)      - OpenSSH SFTP server subsystem
+slogin (1)           - OpenSSH remote login client
+ssh (1)              - OpenSSH remote login client
+ssh-add (1)          - adds private key identities to the OpenSSH authentication agent
+ssh-agent (1)        - OpenSSH authentication agent
+ssh-argv0 (1)        - replaces the old ssh command-name as hostname handling
+ssh-copy-id (1)      - use locally available keys to authorise logins on a remote machine
+ssh-import-id (1)    - retrieve one or more public keys from a public keyserver and append them to the current user's authorized_keys file (or some other specified file)
+ssh-import-id-gh (1) - retrieve one or more public keys from a public keyserver and append them to the current user's authorized_keys file (or some other specified file)
+ssh-import-id-lp (1) - retrieve one or more public keys from a public keyserver and append them to the current user's authorized_keys file (or some other specified file)
+ssh-keygen (1)       - OpenSSH authentication key utility
+ssh-keyscan (1)      - gather SSH public keys from servers
+ssh-keysign (8)      - OpenSSH helper for host-based authentication
+ssh-pkcs11-helper (8) - OpenSSH helper for PKCS#11 support
+ssh-sk-helper (8)    - OpenSSH helper for FIDO authenticator support
+ssh_config (5)       - OpenSSH client configuration file
+sshd (8)             - OpenSSH daemon
+sshd_config (5)      - OpenSSH daemon configuration file
+sss_ssh_authorizedkeys (1) - get OpenSSH authorized keys
+sss_ssh_knownhostsproxy (1) - get OpenSSH host keys
+```
+
+**Consultar manual do comando ssh-add**
+
+```bash
+$ man ssh-add
+SSH-ADD(1)                                 General Commands Manual                                                                                                  SSH-ADD(1)
+
+NAME
+       ssh-add — adds private key identities to the OpenSSH authentication agent
+
+SYNOPSIS
+       ssh-add [-cCDdKkLlqvXx] [-E fingerprint_hash] [-H hostkey_file] [-h destination_constraint] [-S provider] [-t life] [file ...]
+       ssh-add -s pkcs11 [-vC] [certificate ...]
+       ssh-add -e pkcs11
+       ssh-add -T pubkey ...
+
+DESCRIPTION
+       ssh-add  adds  private  key  identities  to  the  authentication  agent,  ssh-agent(1).   When  run  without arguments, it adds the files ~/.ssh/id_rsa, ~/.ssh/id_ecdsa, ~/.ssh/id_ecdsa_sk, ~/.ssh/id_ed25519, ~/.ssh/id_ed25519_sk, and
+       ~/.ssh/id_dsa.  After loading a private key, ssh-add will try to load corresponding certificate information from the filename obtained by appending -cert.pub to the name of the private key file.  Alternative file names can be given on
+       the command line.
+
+       If any file requires a passphrase, ssh-add asks for the passphrase from the user.  The passphrase is read from the user's tty.  ssh-add retries the last passphrase if multiple identity files are given.
+
+       The authentication agent must be running and the SSH_AUTH_SOCK environment variable must contain the name of its socket for ssh-add to work.
+
+       The options are as follows:
+
+       -c      Indicates that added identities should be subject to confirmation before being used for authentication.  Confirmation is  performed  by  ssh-askpass(1).   Successful  confirmation  is  signaled  by  a  zero  exit  status  from
+               ssh-askpass(1), rather than text entered into the requester.
+
+       -C      When loading keys into or deleting keys from the agent, process certificates only and skip plain keys.
+
+       -D      Deletes all identities from the agent.
+
+       -d      Instead  of  adding  identities, removes identities from the agent.  If ssh-add has been run without arguments, the keys for the default identities and their corresponding certificates will be removed.  Otherwise, the argument
+               list will be interpreted as a list of paths to public key files to specify keys and certificates to be removed from the agent.  If no public key is found at a given path, ssh-add will append .pub and retry.   If  the  argument
+               list consists of “-” then ssh-add will read public keys to be removed from standard input.
+
+       -E fingerprint_hash
+               Specifies the hash algorithm used when displaying key fingerprints.  Valid options are: “md5” and “sha256”.  The default is “sha256”.
+
+       -e pkcs11
+               Remove keys provided by the PKCS#11 shared library pkcs11.
+
+       -H hostkey_file
+               Specifies a known hosts file to look up hostkeys when using destination-constrained keys via the -h flag.  This option may be specified multiple times to allow multiple files to be searched.  If no files are specified, ssh-add
+               will use the default ssh_config(5) known hosts files: ~/.ssh/known_hosts, ~/.ssh/known_hosts2, /etc/ssh/ssh_known_hosts, and /etc/ssh/ssh_known_hosts2.
+
+       -h destination_constraint
+               When adding keys, constrain them to be usable only through specific hosts or to specific destinations.
+
+               Destination constraints of the form ‘[user@]dest-hostname’ permit use of the key only from the origin host (the one running ssh-agent(1)) to the listed destination host, with optional user name.
+
+               Constraints of the form ‘src-hostname>[user@]dst-hostname’ allow a key available on a forwarded ssh-agent(1) to be used through a particular host (as specified by ‘src-hostname’) to authenticate to a further host, specified by
+               ‘dst-hostname’.
+
+               Multiple  destination  constraints  may  be  added when loading keys.  When attempting authentication with a key that has destination constraints, the whole connection path, including ssh-agent(1) forwarding, is tested against
+               those constraints and each hop must be permitted for the attempt to succeed.  For example, if key is forwarded to a remote host, ‘host-b’, and is attempting authentication to another host, ‘host-c’, then the operation will  be
+               successful only if ‘host-b’ was permitted from the origin host and the subsequent ‘host-b>host-c’ hop is also permitted by destination constraints.
+
+               Hosts  are  identified  by their host keys, and are looked up from known hosts files by ssh-add.  Wildcards patterns may be used for hostnames and certificate host keys are supported.  By default, keys added by ssh-add are not
+               destination constrained.
+
+               Destination constraints were added in OpenSSH release 8.9.  Support in both the remote SSH client and server is required when using destination-constrained keys over a forwarded ssh-agent(1) channel.
+
+               It is also important to note that destination constraints can only be enforced by ssh-agent(1) when a key is used, or when it is forwarded by a cooperating ssh(1).  Specifically, it does not prevent an attacker with access  to
+               a remote SSH_AUTH_SOCK from forwarding it again and using it on a different host (but only to a permitted destination).
+
+       -K      Load resident keys from a FIDO authenticator.
+
+       -k      When loading keys into or deleting keys from the agent, process plain private keys only and skip certificates.
+```
+
+## Interface Linha de Comandos (CLI)
+
+- Introdução ao shell (bash, zsh)
+
+**O que é um Shell?**
+
+Um **shell** é um interpretador de comandos que funciona como intermediário entre o utilizador e o kernel do Linux. Ele permite que você execute comandos, scripts e navegue pelo sistema de ficheiros através de uma interface de linha de comandos (CLI).
+
+**Em resumo:** O shell é a porta de entrada para o poder do Linux, permitindo controlo completo do sistema através de comandos.
+
+**Shells mais famosos**
+
+**Bash (Bourne Again Shell)**
+- Shell padrão na maioria das distribuições Linux
+- Desenvolvido como evolução do sh original
+- Versátil e amplamente suportado
+- Ideal para scripts de automação
+- Sintaxe simples e direta
+- Excelente para iniciantes
+
+**Zsh (Z Shell)**
+- Shell moderno e poderoso com recursos avançados
+- Oferece autocompletar inteligente e histórico melhorado
+- Suporta temas e plugins (via frameworks como Oh My Zsh)
+- Sintaxe compatível com bash, mas com mais funcionalidades
+- Melhor experiência interativa para desenvolvedores
+- Presets prontos para aumentar produtividade
+
+- Navegação básica
+- Variáveis de ambiente (PATH, .bashrc, .zshrc)
+
+## Gerenciamento de Pacotes
+
+- APT (Debian/Ubuntu): `apt-get`, `apt`
+- YUM/DNF (RedHat/Fedora)
+- Instalar, atualizar e remover software
+
+## Pacotes SNAP e FLATPAK
+
+- Conceitos e diferenças
+- Instalação e gerenciamento
+
+## Ambiente DEV Java
+
+### GIT
+
+**Instalar**
+
+```bash
+$ sudo apt install git
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libllvm19
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  git-man liberror-perl
+Suggested packages:
+  git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+The following NEW packages will be installed:
+  git git-man liberror-perl
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 4,806 kB of archives.
+After this operation, 24.5 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://pt.archive.ubuntu.com/ubuntu noble/main amd64 liberror-perl all 0.17029-2 [25.6 kB]
+Get:2 https://pt.archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.3 [1,100 kB]
+Get:3 https://pt.archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.3 [3,680 kB]
+Fetched 4,806 kB in 1s (8,171 kB/s)
+Selecting previously unselected package liberror-perl.
+(Reading database ... 155914 files and directories currently installed.)
+Preparing to unpack .../liberror-perl_0.17029-2_all.deb ...
+Unpacking liberror-perl (0.17029-2) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a2.43.0-1ubuntu7.3_all.deb ...
+Unpacking git-man (1:2.43.0-1ubuntu7.3) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a2.43.0-1ubuntu7.3_amd64.deb ...
+Unpacking git (1:2.43.0-1ubuntu7.3) ...
+Setting up liberror-perl (0.17029-2) ...
+Setting up git-man (1:2.43.0-1ubuntu7.3) ...
+Setting up git (1:2.43.0-1ubuntu7.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+$
+$
+$ # verificar git instalado
+$ git version
+git version 2.43.0
+$
+$ # localização
+$ command -v git
+/usr/bin/git
+```
+
+### SDKMAN: Instalação
+
+[SDKMAN.io](https://sdkman.io/)
+
+O **SDKMAN!** é um gestor de versões para SDKs e ferramentas de linha de comandos (ex.: Java, Maven, Gradle, Kotlin). Permite instalar, atualizar e alternar versões facilmente, por projeto ou por utilizador.
+
+**Instalação (Linux/macOS):**
+
+```bash
+$ sudo apt update
+$ sudo apt install -y curl zip unzip
+
+$ curl -s "https://get.sdkman.io" | bash
+```
+
+Depois, carregue o SDKMAN na sessão atual:
+
+```bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+$ sdk version
+
+SDKMAN!
+script: 5.20.0
+native: 0.7.16 (linux x86_64)
+
+```
+
+### SDKMAN: Comandos básicos
+
+| Comando                         | Descrição                                            |
+| ------------------------------- | ---------------------------------------------------- |
+| `sdk version`                   | Mostra a versão do SDKMAN instalada                  |
+| `sdk list java`                 | Lista as versões de Java disponíveis para instalação |
+| `sdk install java 25.0.2-tem`   | Instala a versão 25.0.2 do Temurin (Java)            |
+| `sdk use java 21.0.2-tem`       | Usa a versão indicada apenas na sessão atual         |
+| `sdk default java 21.0.2-tem`   | Define a versão indicada como padrão                 |
+| `sdk current java`              | Mostra a versão de Java ativa                        |
+| `sdk uninstall java 25.0.2-tem` | Remove a versão instalada                            |
+| `sdk list maven`                | Lista versões do Maven disponíveis                   |
+| `sdk install maven 3.9.6`       | Instala o Maven na versão indicada                   |
+
+**Exemplo de uso rápido:**
+
+```bash
+sdk list java
+sdk install java 21.0.2-tem
+sdk install java 25.0.2-tem
+sdk use java 21.0.2-tem
+java -version
+```
+
+### SDKMAN: Exercícios
+
+1. Instalar JDK 21 (21.0.10-tem)
+2. Instalar JDK 25 (25.0.2-tem)
+3. Verificar a versão de java atual
+
+Ajuda: use java --version e sdk current java
+4. Alterar versão java default para jdk 21
+
+### Instalação maven
+
+```bash
+$ sdk install maven 3.9.12
+$ sdk install maven 3.9.12
+
+Downloading: maven 3.9.12
+
+In progress...
+
+################################################################################################################################################################################ 100.0%
+
+Installing: maven 3.9.12
+Done installing!
+
+
+Setting maven 3.9.12 as default.
+$
+$ mvn --version
+Apache Maven 3.9.12 (848fbb4bf2d427b72bdb2471c22fced7ebd9a7a1)
+Maven home: /home/paulo/.sdkman/candidates/maven/current
+Java version: 25.0.2, vendor: Eclipse Adoptium, runtime: /home/paulo/.sdkman/candidates/java/25.0.2-tem
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.17.0-14-generic", arch: "amd64", family: "unix"
+$
+```
+
+### Projeto: Gerador Senhas Java
+
+#### Compilar
+
+```bash
+$ cd gerador-senhas-java
+$ mvn clean package                               
+```
+
+#### Executar
+
+```bash
+$ java -jar .\target\gerador-senhas-java-1.0.0.jar gerar 
+$
+$ java -jar .\target\gerador-senhas-java-1.0.0.jar gerar 10
+$
+$ java -jar .\target\gerador-senhas-java-1.0.0.jar version
+```
+
+## Ambiente DEV .NET
+
+- Instalação de SDK
+- Projeto básico
+
+## IDEs para Programação
+
+- Visual Studio Code
+- IntelliJ IDEA
+- Rider
+- PyCharm
+- GoLand

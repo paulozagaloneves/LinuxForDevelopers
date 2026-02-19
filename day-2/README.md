@@ -8,51 +8,47 @@
   - [Exercícios Práticos](#exercícios-práticos)
     - [Preparação](#preparação)
     - [Exercícios](#exercícios)
-  - [Acesso Remoto SSH](#acesso-remoto-ssh)
+  - [O Despertar do Terminal](#o-despertar-do-terminal)
+    - [Videos](#videos)
+    - [Mapa de Sobrevivência: Comandos Essenciais](#mapa-de-sobrevivência-comandos-essenciais)
+    - [Raio-X do Sistema: Conhecendo a Máquina com Neofetch](#raio-x-do-sistema-conhecendo-a-máquina-com-neofetch)
+    - [Poder Elevado: Usando o Sudo](#poder-elevado-usando-o-sudo)
+    - [O Ecossistema de Pacotes: Atualizações e Instalações com APT](#o-ecossistema-de-pacotes-atualizações-e-instalações-com-apt)
+      - [Videos](#videos-1)
+    - [Localizando a Máquina na Rede: Descobrindo o IP do Servidor](#localizando-a-máquina-na-rede-descobrindo-o-ip-do-servidor)
+    - [Identidade Digital: Gerenciando o Hostname da Máquina](#identidade-digital-gerenciando-o-hostname-da-máquina)
+  - [Além das Fronteiras: Acesso Remoto com SSH](#além-das-fronteiras-acesso-remoto-com-ssh)
     - [Configuração de SSH](#configuração-de-ssh)
+      - [Instalar servidor ssh (Openssh)](#instalar-servidor-ssh-openssh)
     - [Acesso remoto ao linux sem senha](#acesso-remoto-ao-linux-sem-senha)
-      - [Videos](#videos)
-  - [Comandos: Command e Which](#comandos-command-e-which)
-  - [Editores de texto no terminal](#editores-de-texto-no-terminal)
-    - [VIM](#vim)
-      - [Principais atalhos do Vim](#principais-atalhos-do-vim)
-    - [NANO](#nano)
-      - [Principais atalhos do Nano](#principais-atalhos-do-nano)
-    - [Visual Studio Code Remote](#visual-studio-code-remote)
-  - [Descomplicando o Sudo](#descomplicando-o-sudo)
-    - [Videos](#videos-1)
-    - [Comando Sudo](#comando-sudo)
-    - [O que é o ficheiro sudoers](#o-que-é-o-ficheiro-sudoers)
-    - [Listar permissões sudo](#listar-permissões-sudo)
-    - [Editar permissões Sudo](#editar-permissões-sudo)
-  - [Documentação (man)](#documentação-man)
-    - [MAN - Manual de comandos](#man---manual-de-comandos)
-  - [Interface Linha de Comandos (CLI)](#interface-linha-de-comandos-cli)
-  - [Gerenciamento de Pacotes](#gerenciamento-de-pacotes)
-  - [Pacotes SNAP e FLATPAK](#pacotes-snap-e-flatpak)
-  - [Ambiente DEV Java](#ambiente-dev-java)
-    - [GIT](#git)
-    - [SDKMAN: Instalação](#sdkman-instalação)
-    - [SDKMAN: Comandos básicos](#sdkman-comandos-básicos)
-    - [SDKMAN: Exercícios](#sdkman-exercícios)
-    - [Instalação maven](#instalação-maven)
-    - [Projeto: Gerador Senhas Java](#projeto-gerador-senhas-java)
-      - [Compilar](#compilar)
-      - [Executar](#executar)
-  - [Ambiente DEV .NET](#ambiente-dev-net)
-  - [IDEs para Programação](#ides-para-programação)
+      - [Videos](#videos-2)
+  - [A Arquitetura do Sistema: Entendendo o FHS](#a-arquitetura-do-sistema-entendendo-o-fhs)
+    - [Videos](#videos-3)
+    - [Configuração do Sistema: Explorando o /etc](#configuração-do-sistema-explorando-o-etc)
+    - [Telemetria do Sistema: Extraindo Dados do /proc](#telemetria-do-sistema-extraindo-dados-do-proc)
+    - [Início do Sistema: Decodificando o /boot](#início-do-sistema-decodificando-o-boot)
+  - [Explorando o Território: Navegação e Listagem no Sistema de Arquivos](#explorando-o-território-navegação-e-listagem-no-sistema-de-arquivos)
+    - [Videos](#videos-4)
+    - [Comandos de Navegação](#comandos-de-navegação)
+    - [Comandos de Listagem](#comandos-de-listagem)
+      - [Exemplo prático:](#exemplo-prático)
+  - [Construindo e Remodelando: Manipulação de Ficheiros e Diretórios](#construindo-e-remodelando-manipulação-de-ficheiros-e-diretórios)
+    - [Videos](#videos-5)
+      - [Exemplo prático:](#exemplo-prático-1)
+  - [Memória do Shell: Produtividade e Eficiência com History](#memória-do-shell-produtividade-e-eficiência-com-history)
+    - [Videos](#videos-6)
+      - [Exemplo prático:](#exemplo-prático-2)
+  - [Estética e Poder: Transformando o Terminal com Oh-My-Zsh](#estética-e-poder-transformando-o-terminal-com-oh-my-zsh)
+    - [Instalação do Zsh e Oh-My-Zsh (Ubuntu 24.04)](#instalação-do-zsh-e-oh-my-zsh-ubuntu-2404)
+    - [Exemplo prático:](#exemplo-prático-3)
+    - [Vídeos recomendados](#vídeos-recomendados)
 
 ## Objetivos Dia 2
 
-- Acesso remoto com ssh (com e sem senha);
-- Aprender a usar os editores VIM ou nano;
-- Executando comando com privilégios de administrador;
-- Configurar ambiente de desenvolvimento Java;
-  - Instalar JDK 21;
-  - Instalar JDK 25;
-- Configurar ambiente de desenvolvimento .NET;
 
 ## Exercícios Práticos
+
+
 
 ### Preparação
 
@@ -68,7 +64,247 @@ Para a realização dos exercicios pode usar:
 2. Configurar as permissões sudo do utilizador de testes para não pedir senha;
 3. 
 
-## Acesso Remoto SSH
+
+## O Despertar do Terminal
+
+Comandos essenciais para começar a usar Linux logo após a instalação (Ubuntu/Debian).
+
+### Videos
+
+- [Getting Started with Linux CLI: Must-Know Commands | Linux Basics](https://www.youtube.com/watch?v=eafVBUh5-pQ)
+
+
+### Mapa de Sobrevivência: Comandos Essenciais
+
+| Comando | Descrição                                           | Exemplo                      |
+| ------- | --------------------------------------------------- | ---------------------------- |
+| `clear` | Limpa o ecrã do terminal                            | `clear`                      |
+| `pwd`   | Mostra a diretoria atual                            | `pwd`                        |
+| `ls`    | Lista ficheiros e pastas                            | `ls -la`                     |
+| `cd`    | Muda de diretoria                                   | `cd /etc`                    |
+| `mkdir` | Cria uma nova pasta                                 | `mkdir projetos`             |
+| `rm`    | Remove ficheiros (ou pastas com `-r`)               | `rm ficheiro.txt`            |
+| `rmdir` | Remove pasta vazia                                  | `rmdir pasta-vazia`          |
+| `touch` | Cria ficheiro vazio ou atualiza data de modificação | `touch notas.txt`            |
+| `cat`   | Mostra conteúdo de ficheiro                         | `cat notas.txt`              |
+| `less`  | Visualiza ficheiro página a página (navegação)      | `less /var/log/syslog`       |
+| `more`  | Visualiza ficheiro página a página (simples)        | `more notas.txt`             |
+| `tail`  | Mostra linhas finais de ficheiro                    | `tail -n 20 /var/log/syslog` |
+| `head`  | Mostra linhas iniciais de ficheiro                  | `head -n 20 /var/log/syslog` |
+| `mv`    | Move ou renomeia ficheiros/pastas                   | `mv antigo.txt novo.txt`     |
+| `cp`    | Copia ficheiros/pastas                              | `cp ficheiro.txt copia.txt`  |
+| `sudo`  | Executa comando com privilégios administrativos     | `sudo apt update`            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
+| `command` | Comando interno do shell para verificar como um comando será resolvido (builtin, alias, função ou executável). Muito usado com `-v` para mostrar o caminho/comando encontrado. | `command -v python3` |
+| `which`   | Mostra o caminho do executável encontrado no `PATH` (normalmente para comandos externos).                                                                                      | `which python3`      |
+
+Exemplo:
+
+```bash
+$ pwd
+/home/paulo/workspace/ITSector/LinuxForDevelopers
+$
+$ ls -la                                                                                                                                                                                                 2 ↵
+total 76
+drwxrwxr-x  7 paulo paulo  4096 fev 17 18:36 .
+drwxr-xr-x 21 paulo paulo  4096 fev 17 16:56 ..
+drwxrwxr-x  2 paulo paulo  4096 fev 17 16:56 day-1
+drwxrwxr-x  3 paulo paulo  4096 fev 17 16:56 day-2
+-rw-rw-r--  1 paulo paulo   568 fev 18 17:21 Estrutura.md
+drwxrwxr-x  2 paulo paulo  4096 fev 17 16:56 general
+drwxrwxr-x  9 paulo paulo  4096 fev 17 19:03 .git
+drwxrwxr-x  2 paulo paulo  4096 fev 17 16:56 images
+-rw-rw-r--  1 paulo paulo 35149 fev 17 16:56 LICENSE
+-rw-rw-r--  1 paulo paulo  7282 fev 18 17:23 README.md
+$
+$ head -n 10 README.md
+# Linux For Developers
+
+## Trilha de Treinamento
+
+### 📅 [Dia 1 - Setup](day-1/README.md)
+
+- **Objetivos Dia 1**
+- Exercício Prático
+- **Introdução ao Linux**
+  - História e evolução do Linux 
+$
+$ $ tail -n 10 README.md
+- Administrar utilizadores, grupos e permissões de segurança
+- Utilizar redirecionamento de I/O e criar pipelines eficientes
+- Desenvolver scripts shell para automatizar tarefas
+
+## 📚 Recursos Adicionais
+
+- Documentação oficial das distribuições
+- Man pages (`man <comando>`)
+- [Linux Command Line Basics](https://www.linux.org)
+- Comunidades e fóruns de suporte% 
+$ 
+$ sudo apt update
+$
+$ command -v python3
+/usr/bin/python3
+$ which python3
+/usr/bin/python3
+$
+```
+
+### Raio-X do Sistema: Conhecendo a Máquina com Neofetch
+
+Obter informações básicas do sistema
+
+```bash
+$ sudo apt install neofetch -y
+$ neofetch
+$ neofetch
+            .-/+oossssoo+/-.               paulo@Ubuntu-Lab
+        `:+ssssssssssssssssss+:`           ----------------
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 24.04.4 LTS x86_64
+    .ossssssssssssssssssdMMMNysssso.       Host: VMware Virtual Platform None
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.17.0-14-generic
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 3 hours, 34 mins
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 1542 (dpkg), 10 (snap)
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.2.21
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 3638x2000
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   Terminal: /dev/pts/1
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   CPU: 13th Gen Intel i7-13700H (2) @ 2.918GHz
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   GPU: 00:0f.0 VMware SVGA II Adapter
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Memory: 1430MiB / 3867MiB
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/
+  +sssssssssdmydMMMMMMMMddddyssssssss+
+   /ssssssssssshdmNNNNmyNMMMMhssssss/
+    .ossssssssssssssssssdMMMNysssso.
+      -+sssssssssssssssssyyyssss+-
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.
+
+```
+
+### Poder Elevado: Usando o Sudo
+
+O `sudo` (superuser do) permite executar comandos com privilégios administrativos de forma temporária, sem precisar iniciar sessão como root. É usado para tarefas que exigem permissões elevadas, como instalar software ou alterar configurações do sistema.
+
+**Exemplo:**
+
+```bash
+sudo apt install -y git
+```
+
+### O Ecossistema de Pacotes: Atualizações e Instalações com APT
+
+O APT (Advanced Package Tool) é o gestor de pacotes e aplicações do Debian/Ubuntu, usado para atualizar, instalar, pesquisar e remover software a partir dos repositórios.
+No windows temos o comando WinGet que possui uma funcionalidade similar.
+
+#### Videos
+
+1. [Linux Crash Course - The apt Command](https://www.youtube.com/watch?v=1kicKTbK768&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=82)
+
+| Comando     | Descrição                               | Exemplo                         |
+| ----------- | --------------------------------------- | ------------------------------- |
+| apt update  | atualizar bd de pacotes                 | sudo apt update                 |
+| apt install | instalar um pacote ou siftware          | sudo apt install openssh-server |
+| apt search  | procurar um pacote ou software          | apt search openjdk              | grep 25 |
+| apt remove  | remove/desinstala um pacote ou software | sudo apt remove openjdk-25-jdk  |
+
+|
+
+**Nota:** pode adicionar o parâmetro `-y` aos comandos para que sejam executados automaticamente, sem pedir confirmação.
+
+```bash
+$ sudo apt update
+$ sudo apt upgrade -y
+
+$ sudo apt install -y <pacote>
+$ sudo apt search <termo>
+$ sudo apt remove <pacote>
+```
+
+**Exemplo:**
+
+```bash
+$ sudo apt install -y curl vim git
+```
+
+### Localizando a Máquina na Rede: Descobrindo o IP do Servidor
+
+Para descobrir o IP da máquina:
+
+**Para mais detalhes:**
+
+1. [How to Use the ip Command in Linux: A Beginner’s Guide](https://www.youtube.com/watch?v=wHfIFZlDxtU&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=12)
+2. [Guia Prático do Comando ip no Linux](https://labs.iximiuz.com/playgrounds?category=linux)
+
+```bash
+$ ip address
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:7c:ee:d7 brd ff:ff:ff:ff:ff:ff
+    altname enp2s1
+    inet 192.168.231.128/24 brd 192.168.231.255 scope global dynamic noprefixroute ens33
+       valid_lft 1731sec preferred_lft 1731sec
+    inet6 fe80::20c:29ff:fe7c:eed7/64 scope link
+       valid_lft forever preferred_lft forever
+```
+
+Neste exemplo a interface de rede é **ens33** e o IP **192.168.231.128**
+
+Outra forma de obter o endereço IP
+
+```bash
+$ hostname -I
+192.168.231.128
+```
+
+
+### Identidade Digital: Gerenciando o Hostname da Máquina
+
+**Videos**
+
+1. [Linux Crash Course - Setting the Hostname of your Linux Workstation or Server](https://www.youtube.com/watch?v=91dNq4C6260)
+
+Os dois comandos mostram (e podem alterar) o nome da máquina, mas com objetivos diferentes:
+
+| Comando       | Para quê                                                              | Persistência           |
+| ------------- | --------------------------------------------------------------------- | ---------------------- |
+| `hostname`    | Ver o hostname atual e, em alguns sistemas, alterar de forma rápida   | Normalmente temporária |
+| `hostnamectl` | Ver detalhes do sistema e definir hostname de forma moderna (systemd) | Persistente            |
+
+**Exemplos:**
+
+```bash
+# Ver hostname atual
+$ hostname
+
+# Definir hostname (pode ser temporário)
+$ sudo hostname servidor-dev
+
+# Ver informações completas (hostname, OS, kernel, etc.)
+$ hostnamectl
+
+# Definir hostname persistente
+$ sudo hostnamectl set-hostname servidor-dev
+
+# Mostrar apenas o hostname estático
+$ hostnamectl --static
+```
+
+Opcionalmente, atualize o ficheiro /etc/hosts para manter consistência:
+
+```bash
+$ sudo nano /etc/hosts
+```
+
+**Para sair do editor nano use CTRL+X**
+
+
+
+## Além das Fronteiras: Acesso Remoto com SSH
 
 O acesso SSH (Secure Shell) é um protocolo que permite ligar-se de forma segura a um servidor remoto, normalmente via linha de comandos, para administrar o sistema, transferir ficheiros e executar comandos. A ligação é encriptada, protegendo dados e credenciais contra interceptação.
 
@@ -86,10 +322,16 @@ SSH é preferido para administração remota, por ser seguro, flexível e permit
 
 ### Configuração de SSH
 
-No servidor linux instalar OpenSSH e habilitar serviço ssh.
+#### Instalar servidor ssh (Openssh)
 
-```bash
-$ sudo apt install openssh-server
+No servidor linux deve primeiro instalar OpenSSH e habilitar serviço ssh.
+
+```bash 
+$ sudo apt update                               # atualiza a bd de pacotes
+$ sudo apt install -y openssh-server            # instalar o servidor openssh
+# Em debian e ubuntu mais recenets não necessita dos comandos abaixo
+$ sudo systemctl enable --now ssh               # habilita o serviço ssh. Em distribuições mais recentes o ssh já fica habilitado após instalação
+$ sudo systemctl status ssh                     # verifica o estado do serviço ssh
 ```
 
 Agora já consegue aceder remotamente ao linux.
@@ -176,679 +418,459 @@ Este comando pede a tua senha atual uma última vez e adiciona a tua chave públ
 C:> ssh utilizador@ip-do-servidor
 ```
 
-## Comandos: Command e Which
-
-| Comando   | Descrição                                                                                                                                                                      | Exemplo              |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
-| `command` | Comando interno do shell para verificar como um comando será resolvido (builtin, alias, função ou executável). Muito usado com `-v` para mostrar o caminho/comando encontrado. | `command -v python3` |
-| `which`   | Mostra o caminho do executável encontrado no `PATH` (normalmente para comandos externos).                                                                                      | `which python3`      |
-
-Exemplo:
-
-```bash
-paulo@Ubuntu-Lab:~$ command -v python3
-/usr/bin/python3
-paulo@Ubuntu-Lab:~$ which python3
-/usr/bin/python3
-paulo@Ubuntu-Lab:~$
-```
-
-## Editores de texto no terminal
-
-### VIM
-
-O **Vim** é um editor de texto avançado que corre no terminal e é muito usado em Linux/Unix para edição rápida de ficheiros de configuração, código e scripts.
-É um editor **modal**, ou seja, tem modos diferentes para escrever texto, navegar e executar comandos.
-
-**Modos principais:**
-
-- **Normal:** navegar e executar comandos
-- **Insert:** inserir/editar texto
-- **Command-line:** executar comandos como gravar, sair ou procurar
-
-#### Principais atalhos do Vim
-
-| Atalho   | Descrição                                        |
-| -------- | ------------------------------------------------ |
-| `i`      | Entra no modo Insert (insere antes do cursor)    |
-| `a`      | Entra no modo Insert (insere depois do cursor)   |
-| `o`      | Cria nova linha abaixo e entra em Insert         |
-| `Esc`    | Volta ao modo Normal                             |
-| `:w`     | Guarda o ficheiro                                |
-| `:q`     | Sai do Vim (se não houver alterações por gravar) |
-| `:wq`    | Guarda e sai                                     |
-| `:q!`    | Sai sem guardar alterações                       |
-| `dd`     | Apaga a linha atual                              |
-| `yy`     | Copia (yank) a linha atual                       |
-| `p`      | Cola após o cursor                               |
-| `u`      | Desfaz a última alteração                        |
-| `Ctrl+r` | Refaz alteração desfeita                         |
-| `/texto` | Procura `texto` no ficheiro                      |
-| `n`      | Vai para a próxima ocorrência da pesquisa        |
-| `N`      | Vai para a ocorrência anterior da pesquisa       |
-| `gg`     | Vai para o início do ficheiro                    |
-| `G`      | Vai para o fim do ficheiro                       |
-
-Exemplo:
-
-```bash
-$ vim ficheiro.txt
-<carrega tecla i> Entra no modo edição
-escreve o texto
-<ESC> Entra no modo Normal para executar comandos
-<:wq> w - Write (Grava) q - Quit (sai)
-```
-
-### NANO
-
-O **Nano** é um editor de texto simples e intuitivo para terminal, muito usado para editar ficheiros de configuração de forma rápida.
-Ao contrário do Vim, não é modal: escreve-se diretamente e os atalhos aparecem no rodapé do editor.
-
-**Exemplo de utilização:**
-
-```bash
-$ nano ficheiro.txt
-```
-
-#### Principais atalhos do Nano
-
-| Atalho    | Descrição                                 |
-| --------- | ----------------------------------------- |
-| `Ctrl+O`  | Grava o ficheiro (Write Out)              |
-| `Ctrl+X`  | Sai do Nano                               |
-| `Ctrl+K`  | Corta a linha atual                       |
-| `Ctrl+U`  | Cola o conteúdo cortado                   |
-| `Ctrl+W`  | Procura texto                             |
-| `Alt+W`   | Vai para a próxima ocorrência da pesquisa |
-| `Ctrl+\\` | Procurar e substituir                     |
-| `Ctrl+G`  | Mostra a ajuda                            |
-| `Ctrl+C`  | Mostra posição do cursor (linha/coluna)   |
-| `Ctrl+_`  | Ir para linha e coluna                    |
-| `Ctrl+A`  | Início da linha                           |
-| `Ctrl+E`  | Fim da linha                              |
-
-**Dica:** no Nano, `^` significa tecla `Ctrl` (ex.: `^X` = `Ctrl+X`).
-
-
-### Visual Studio Code Remote
-É possivel usar o VS Code para editar ficheiros num Linux remoto.
-O VS Code Remote - SSH é uma das formas mais produtivas de editar ficheiros remotamente como se estivessem na tua máquina local.
-
-Vou mostrar:
-
-✅ Como configurar o acesso remoto
-
-✅ Como editar ficheiros no diretório do utilizador
-
-🔐 Como editar ficheiros que precisam de permissões de administrador (sudo)
-
-
-1️⃣ **Instalar o VS Code e a extensão Remote SSH**
-
-🧩 Instalar o Visual Studio Code
-
-Se ainda não tiveres:
-
-👉 Instala o Visual Studio Code no Windows ou Linux
-
-
-🔌 Instalar a extensão Remote - SSH
-
-1. Abre o VS Code
-
-2. Vai a Extensions (Ctrl+Shift+X)
-
-3. Procura por: Remote - SSH
-
-4. Instala a extensão da Microsoft
-
-Nome completo:
-
-Remote - SSH (da Microsoft)
-
-
-2️⃣ **Preparar o servidor Linux**
-
-No servidor remoto precisas de:
-
-- SSH ativo
-
-- Um utilizador com acesso SSH
-
-Verifica no servidor:
-
-```bash
-$ sudo systemctl status ssh
-```
-
-
-Se não estiver instalado:
-
-```bash
-$ sudo apt install openssh-server
-```
-
-3️⃣ **Configurar ligação SSH no teu computador**
-
-No teu PC (Windows/Linux/Mac), edita o ficheiro:
-
-```powershell
-$USER/.ssh/config
-```
-
-**Exemplo:**
-
-Host vigilant
-    HostName 192.168.1.199
-    User paulo
-    IdentityFile ~/.ssh/id_rsa
-
-Agora no VS Code:
-
-1. Ctrl + Shift + P
-2. Escreve: Remote-SSH: Connect to Host
-3. Escolhe o host configurado
-
-O VS Code vai instalar automaticamente um servidor interno no Linux remoto.
-
-
-4️⃣ **Editar ficheiros no diretório do utilizador (modo normal)**
-
-Depois de conectado:
-
-1. Vai a File → Open Folder
-2. Escolhe /home/paulo
-3. Abre qualquer ficheiro normalmente
-
-Exemplo:
-
-```bash
-/home/paulo/appsettings.json
-/home/paulo/docker-compose.yml
-```
-
-
-💡 Aqui estás a usar as permissões normais do utilizador SSH.
-
-Se o utilizador tiver acesso, tudo funciona normalmente.
-
-
-
-## Descomplicando o Sudo
+## A Arquitetura do Sistema: Entendendo o FHS
 
 ### Videos
 
-1. [Linux Crash Course - sudo](https://www.youtube.com/watch?v=07JOqKOBRnU&list=PLT98CRl2KxKHKd_tH3ssq0HPrThx2hESW&index=59)
+- [Linux Directories Explained in 100 Seconds](https://youtu.be/42iQKuQodW4?si=3hrV5VA4AlbJCpCt)
+- [Linux File System Structure Explained: From / to /usr | Linux Basics](https://www.youtube.com/watch?v=ISJ44S5sZu8)
+- [Como Dominar o Terminal e Aprender Linux de Verdade em 2026.](https://www.youtube.com/watch?v=9XZUSXidaFY)
+- [Aula 2 – Shell e diretórios Linux | Curso Linux para Computação Científica](https://www.youtube.com/watch?v=heWlrsf6BIw)
 
-### Comando Sudo
+O FHS (Filesystem Hierarchy Standard) é um padrão que define a estrutura e a organização dos diretórios principais em sistemas Linux e Unix-like. Este especifica onde devem estar localizados os ficheiros e diretórios importantes, facilitando a padronização, manutenção e portabilidade de aplicações entre diferentes distribuições.
 
-O comando `sudo` (**superuser do**) permite executar comandos com privilégios elevados (normalmente como `root`) sem iniciar sessão diretamente como `root`.
-É a forma recomendada para tarefas administrativas no Linux, porque mantém registo de auditoria e reduz riscos de segurança.
+Principais diretórios definidos pelo FHS:
 
-**Exemplos comuns:**
+  - `/` - Diretório raiz: ponto de partida de toda a hierarquia.
+  - `/bin` - Binários essenciais do sistema, comandos básicos disponíveis para todos os utilizadores.
+  - `/boot` - Ficheiros necessários para a inicialização do sistema, como o kernel e o GRUB.
+  - `/dev` - Ficheiros de dispositivos (devices), representando hardware e periféricos.
+  - `/etc` - Ficheiros de configuração do sistema.
+  - `/home` - Diretórios pessoais dos utilizadores.
+  - `/lib` - Bibliotecas partilhadas essenciais para os programas em /bin e /sbin.
+  - `/mnt` - Pontos de montagem temporários para sistemas de ficheiros.
+  - `/opt` - Pacotes de software opcionais.
+  - `/proc` - Sistema de ficheiros virtual com informações sobre processos e kernel.
+  - `/root` - Diretório pessoal do superutilizador (root).
+  - `/sbin` - Binários do sistema, geralmente para administração e uso do root.
+  - `/srv` - Dados de serviços fornecidos pelo sistema.
+  - `/tmp` - Ficheiros temporários, apagados periodicamente.
+  - `/usr` - Hierarquia secundária para programas, bibliotecas e documentação de utilizadores.
+  - `/var` - Dados variáveis, como logs, cache e filas de impressão.
+  
 
-- `sudo apt update`
-- `sudo systemctl restart ssh`
-- `sudo -l` (lista os comandos permitidos ao utilizador atual)
+O FHS garante que utilizadores e administradores encontrem ficheiros e programas em locais previsíveis, tornando a gestão do sistema mais eficiente.
 
-### O que é o ficheiro sudoers
 
-O ficheiro `sudoers` define **quem** pode usar `sudo`, **como** pode usar e **que comandos** pode executar.
-Normalmente fica em `/etc/sudoers` e pode incluir regras adicionais em `/etc/sudoers.d/`.
+### Configuração do Sistema: Explorando o /etc
 
-**Importante:** este ficheiro deve ser editado com `visudo` (e não com editor direto), para validar a sintaxe e evitar bloquear o acesso administrativo.
+O diretório /etc contém ficheiros de configuração essenciais do sistema. Eis alguns exemplos úteis:
 
-### Listar permissões sudo 
+- /etc/passwd — Contém informações sobre as contas de utilizador do sistema.
+- /etc/group — Define os grupos de utilizadores.
+- /etc/hostname — Define o nome da máquina.
+- /etc/hosts — Mapeia nomes de hosts para endereços IP.
+- resolv.conf — Configura os servidores DNS.
+- /etc/fstab — Define os sistemas de ficheiros a montar automaticamente no arranque.
+- /etc/ssh/sshd_config — Configuração do servidor SSH.
+- /etc/network/interfaces ou /etc/netplan/ — Configuração de interfaces de rede (dependendo da distribuição).
+- /etc/apt - Diretório onde se encontram as configurações e listas de repositórios do gestor de pacotes APT (Debian/Ubuntu), como o ficheiro sources.list e as definições de repositórios adicionais.
 
-```bash
-$ sudo -l
-[sudo] password for paulo:
-Matching Defaults entries for paulo on Ubuntu-Lab:
-    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
 
-User paulo may run the following commands on Ubuntu-Lab:
-    (ALL : ALL) ALL
-$
-```
-
-ou 
-
-```bash
-$ sudo cat /etc/sudoers
-#
-# This file MUST be edited with the 'visudo' command as root.
-#
-# Please consider adding local content in /etc/sudoers.d/ instead of
-# directly modifying this file.
-#
-# See the man page for details on how to write a sudoers file.
-#
-Defaults        env_reset
-Defaults        mail_badpass
-Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
-
-# This fixes CVE-2005-4890 and possibly breaks some versions of kdesu
-# (#1011624, https://bugs.kde.org/show_bug.cgi?id=452532)
-Defaults        use_pty
-
-# This preserves proxy settings from user environments of root
-# equivalent users (group sudo)
-#Defaults:%sudo env_keep += "http_proxy https_proxy ftp_proxy all_proxy no_proxy"
-
-# This allows running arbitrary commands, but so does ALL, and it means
-# different sudoers have their choice of editor respected.
-#Defaults:%sudo env_keep += "EDITOR"
-
-# Completely harmless preservation of a user preference.
-#Defaults:%sudo env_keep += "GREP_COLOR"
-
-# While you shouldn't normally run git as root, you need to with etckeeper
-#Defaults:%sudo env_keep += "GIT_AUTHOR_* GIT_COMMITTER_*"
-
-# Per-user preferences; root won't have sensible values for them.
-#Defaults:%sudo env_keep += "EMAIL DEBEMAIL DEBFULLNAME"
-
-# "sudo scp" or "sudo rsync" should be able to use your SSH agent.
-#Defaults:%sudo env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"
-
-# Ditto for GPG agent
-#Defaults:%sudo env_keep += "GPG_AGENT_INFO"
-
-# Host alias specification
-
-# User alias specification
-
-# Cmnd alias specification
-
-# User privilege specification
-root    ALL=(ALL:ALL) ALL
-
-# Members of the admin group may gain root privileges
-%admin ALL=(ALL) ALL
-
-# Allow members of group sudo to execute any command
-%sudo   ALL=(ALL:ALL) ALL
-
-# See sudoers(5) for more information on "@include" directives:
-
-@includedir /etc/sudoers.d
-```
-
-**Explicar a linha que define as permissões sudo dos utilizadores do grupo sudo (utilizadores comuns a que foi atribuído sudo)** 
+Exemplo prático: adicionar um mapeamento ao /etc/hosts
 
 ```bash
-%sudo   ALL=(ALL:ALL) ALL
+$ echo "192.168.1.100 servidor-local" | sudo tee -a /etc/hosts
 ```
 
-Essa linha é uma regra do ficheiro **sudoers** e significa:
 
-- `%sudo` → aplica-se ao grupo sudo (o % indica grupo, não utilizador individual).
-- `ALL (1º)` → válida em todos os hosts.
-- `(ALL:ALL)` → os membros do grupo podem executar comandos como qualquer utilizador e qualquer grupo.
-- `ALL (final)` → podem executar qualquer comando.
+### Telemetria do Sistema: Extraindo Dados do /proc
 
-**Em resumo:** qualquer utilizador que pertença ao grupo sudo pode usar sudo para correr qualquer comando com privilégios elevados (incluindo root), pedindo palavra-passe conforme a política definida.
-
-### Editar permissões Sudo
-
-**Editar ficheiro sudo**
-
-Por segurança, o `sudo` pede a palavra-passe do utilizador quando executa comandos administrativos.
-Num laboratório de testes, pode ser útil evitar esse passo para agilizar os exercícios.
-Para este cenário, vamos ajustar o ficheiro `sudoers` para o nosso utilizador não pedir palavra-passe ao usar `sudo`.
-
-Edite o ficheiro `sudoers` e acrescente a linha abaixo (substitua `paulo` pelo seu utilizador).
-
+- Ver informações sobre a CPU:
+  
+```bash
+$ cat /proc/cpuinfo                         
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 117
+model name      : AMD Ryzen 7 255 w/ Radeon 780M Graphics
+stepping        : 2
+microcode       : 0xa70520a
+cpu MHz         : 1395.800
+cache size      : 1024 KB
+physical id     : 0
+siblings        : 16
+core id         : 0
+cpu cores       : 8
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 16
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid overflow_recov succor smca fsrm flush_l1d amd_lbr_pmc_freeze
+bugs            : sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass srso tsa vmscape
+bogomips        : 7585.45
+TLB size        : 3584 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate cpb eff_freq_ro [13] [14] [15]
 ```
-# Definir permissões especificas para o utilizador de testes
-paulo ALL=(ALL:ALL) NOPASSWD: ALL
+
+- Verificar a versão do kernel:
+  
+```bash
+$ cat /proc/version
+Linux version 6.12.69+deb13-amd64 (debian-kernel@lists.debian.org) (x86_64-linux-gnu-gcc-14 (Debian 14.2.0-19) 14.2.0, GNU ld (GNU Binutils for Debian) 2.44) #1 SMP PREEMPT_DYNAMIC Debian 6.12.69-1 (2026-02-08)
 ```
 
-**Como editar**
+- Verificar a quantidade de memória RAM disponível e usada:
 
 ```bash
-sudo visudo
+$ cat /proc/meminfo
+MemTotal:       28483520 kB
+MemFree:        13438688 kB
+MemAvailable:   19976488 kB
+Buffers:          209028 kB
+Cached:          6691904 kB
+SwapCached:            0 kB
+Active:         10407460 kB
+Inactive:        3295836 kB
+Active(anon):    7003992 kB
+Inactive(anon):        0 kB
+Active(file):    3403468 kB
+Inactive(file):  3295836 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:      32768308 kB
+SwapFree:       32768308 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:               248 kB
+Writeback:             0 kB
+AnonPages:       6572408 kB
+Mapped:          2116132 kB
+Shmem:            214232 kB
+KReclaimable:     272240 kB
+Slab:             515072 kB
+SReclaimable:     272240 kB
+SUnreclaim:       242832 kB
+KernelStack:       36768 kB
+PageTables:        81536 kB
+SecPageTables:      4960 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    47010068 kB
+Committed_AS:   32973812 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      138140 kB
+VmallocChunk:          0 kB
+Percpu:            20672 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   2906112 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+Unaccepted:            0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      845540 kB
+DirectMap2M:    17776640 kB
+DirectMap1G:    11534336 kB
 ```
 
-**Extrato como deve ficar:**
 
-```
-# User privilege specification
-root    ALL=(ALL:ALL) ALL
-
-# Members of the admin group may gain root privileges
-%admin ALL=(ALL) ALL
-
-# Allow members of group sudo to execute any command
-%sudo   ALL=(ALL:ALL) ALL
-
-
-# Definir permissões especificas para o utilizador de testes
-paulo ALL=(ALL:ALL) NOPASSWD: ALL
-```
-
-## Documentação (man)
-
-### MAN - Manual de comandos
-
-O comando **man** abre o **manual** de referência de comandos e programas no Linux.
-
-Exemplo:
-
-**Pesquisar comandos por palavra chave**
+- Consultar o tempo de atividade do sistema:
 
 ```bash
-$ man -k ssh
-authorized_keys (5)  - OpenSSH daemon
-EVP_KDF-SSHKDF (7ssl) - The SSHKDF EVP_KDF implementation
-rrsync (1)           - a script to setup restricted rsync users via ssh logins
-scp (1)              - OpenSSH secure file copy
-sftp (1)             - OpenSSH secure file transfer
-sftp-server (8)      - OpenSSH SFTP server subsystem
-slogin (1)           - OpenSSH remote login client
-ssh (1)              - OpenSSH remote login client
-ssh-add (1)          - adds private key identities to the OpenSSH authentication agent
-ssh-agent (1)        - OpenSSH authentication agent
-ssh-argv0 (1)        - replaces the old ssh command-name as hostname handling
-ssh-copy-id (1)      - use locally available keys to authorise logins on a remote machine
-ssh-import-id (1)    - retrieve one or more public keys from a public keyserver and append them to the current user's authorized_keys file (or some other specified file)
-ssh-import-id-gh (1) - retrieve one or more public keys from a public keyserver and append them to the current user's authorized_keys file (or some other specified file)
-ssh-import-id-lp (1) - retrieve one or more public keys from a public keyserver and append them to the current user's authorized_keys file (or some other specified file)
-ssh-keygen (1)       - OpenSSH authentication key utility
-ssh-keyscan (1)      - gather SSH public keys from servers
-ssh-keysign (8)      - OpenSSH helper for host-based authentication
-ssh-pkcs11-helper (8) - OpenSSH helper for PKCS#11 support
-ssh-sk-helper (8)    - OpenSSH helper for FIDO authenticator support
-ssh_config (5)       - OpenSSH client configuration file
-sshd (8)             - OpenSSH daemon
-sshd_config (5)      - OpenSSH daemon configuration file
-sss_ssh_authorizedkeys (1) - get OpenSSH authorized keys
-sss_ssh_knownhostsproxy (1) - get OpenSSH host keys
+$ cat /proc/uptime
+4987.85 77056.54
+# O primeiro valor (4987.85) indica o tempo, em segundos, desde que o sistema foi iniciado (uptime).
+# O segundo valor (77056.54) mostra o tempo total, em segundos, em que todos os processadores estiveram inactivos (idle) desde o arranque.
+
+# Converter o tempo de uptime em horas minuts segundos
+$ awk '{print int($1/3600)"h "int(($1%3600)/60)"m "int($1%60)"s"}' /proc/uptime
+1h 24m 8s
+# Converter o tempo de inatividade de todos os processadores em horas minuts segundos
+$ awk '{print int($2/3600)"h "int(($2%3600)/60)"m "int($2%60)"s"}' /proc/uptime
+22h 10m 29s
 ```
 
-**Consultar manual do comando ssh-add**
+- Obter informações sobre dispositivos de bloco:
 
 ```bash
-$ man ssh-add
-SSH-ADD(1)                                 General Commands Manual                                                                                                  SSH-ADD(1)
+$ cat /proc/partitions
+major minor  #blocks  name
 
-NAME
-       ssh-add — adds private key identities to the OpenSSH authentication agent
-
-SYNOPSIS
-       ssh-add [-cCDdKkLlqvXx] [-E fingerprint_hash] [-H hostkey_file] [-h destination_constraint] [-S provider] [-t life] [file ...]
-       ssh-add -s pkcs11 [-vC] [certificate ...]
-       ssh-add -e pkcs11
-       ssh-add -T pubkey ...
-
-DESCRIPTION
-       ssh-add  adds  private  key  identities  to  the  authentication  agent,  ssh-agent(1).   When  run  without arguments, it adds the files ~/.ssh/id_rsa, ~/.ssh/id_ecdsa, ~/.ssh/id_ecdsa_sk, ~/.ssh/id_ed25519, ~/.ssh/id_ed25519_sk, and
-       ~/.ssh/id_dsa.  After loading a private key, ssh-add will try to load corresponding certificate information from the filename obtained by appending -cert.pub to the name of the private key file.  Alternative file names can be given on
-       the command line.
-
-       If any file requires a passphrase, ssh-add asks for the passphrase from the user.  The passphrase is read from the user's tty.  ssh-add retries the last passphrase if multiple identity files are given.
-
-       The authentication agent must be running and the SSH_AUTH_SOCK environment variable must contain the name of its socket for ssh-add to work.
-
-       The options are as follows:
-
-       -c      Indicates that added identities should be subject to confirmation before being used for authentication.  Confirmation is  performed  by  ssh-askpass(1).   Successful  confirmation  is  signaled  by  a  zero  exit  status  from
-               ssh-askpass(1), rather than text entered into the requester.
-
-       -C      When loading keys into or deleting keys from the agent, process certificates only and skip plain keys.
-
-       -D      Deletes all identities from the agent.
-
-       -d      Instead  of  adding  identities, removes identities from the agent.  If ssh-add has been run without arguments, the keys for the default identities and their corresponding certificates will be removed.  Otherwise, the argument
-               list will be interpreted as a list of paths to public key files to specify keys and certificates to be removed from the agent.  If no public key is found at a given path, ssh-add will append .pub and retry.   If  the  argument
-               list consists of “-” then ssh-add will read public keys to be removed from standard input.
-
-       -E fingerprint_hash
-               Specifies the hash algorithm used when displaying key fingerprints.  Valid options are: “md5” and “sha256”.  The default is “sha256”.
-
-       -e pkcs11
-               Remove keys provided by the PKCS#11 shared library pkcs11.
-
-       -H hostkey_file
-               Specifies a known hosts file to look up hostkeys when using destination-constrained keys via the -h flag.  This option may be specified multiple times to allow multiple files to be searched.  If no files are specified, ssh-add
-               will use the default ssh_config(5) known hosts files: ~/.ssh/known_hosts, ~/.ssh/known_hosts2, /etc/ssh/ssh_known_hosts, and /etc/ssh/ssh_known_hosts2.
-
-       -h destination_constraint
-               When adding keys, constrain them to be usable only through specific hosts or to specific destinations.
-
-               Destination constraints of the form ‘[user@]dest-hostname’ permit use of the key only from the origin host (the one running ssh-agent(1)) to the listed destination host, with optional user name.
-
-               Constraints of the form ‘src-hostname>[user@]dst-hostname’ allow a key available on a forwarded ssh-agent(1) to be used through a particular host (as specified by ‘src-hostname’) to authenticate to a further host, specified by
-               ‘dst-hostname’.
-
-               Multiple  destination  constraints  may  be  added when loading keys.  When attempting authentication with a key that has destination constraints, the whole connection path, including ssh-agent(1) forwarding, is tested against
-               those constraints and each hop must be permitted for the attempt to succeed.  For example, if key is forwarded to a remote host, ‘host-b’, and is attempting authentication to another host, ‘host-c’, then the operation will  be
-               successful only if ‘host-b’ was permitted from the origin host and the subsequent ‘host-b>host-c’ hop is also permitted by destination constraints.
-
-               Hosts  are  identified  by their host keys, and are looked up from known hosts files by ssh-add.  Wildcards patterns may be used for hostnames and certificate host keys are supported.  By default, keys added by ssh-add are not
-               destination constrained.
-
-               Destination constraints were added in OpenSSH release 8.9.  Support in both the remote SSH client and server is required when using destination-constrained keys over a forwarded ssh-agent(1) channel.
-
-               It is also important to note that destination constraints can only be enforced by ssh-agent(1) when a key is used, or when it is forwarded by a cooperating ssh(1).  Specifically, it does not prevent an attacker with access  to
-               a remote SSH_AUTH_SOCK from forwarding it again and using it on a different host (but only to a permitted destination).
-
-       -K      Load resident keys from a FIDO authenticator.
-
-       -k      When loading keys into or deleting keys from the agent, process plain private keys only and skip certificates.
+ 259        0  976762584 nvme0n1
+ 259        1     102400 nvme0n1p1
+ 259        2      16384 nvme0n1p2
+ 259        3    1024000 nvme0n1p3
+ 259        4  310018759 nvme0n1p4
+ 259        5  204800000 nvme0n1p5
+ 259        6    2097152 nvme0n1p6
+ 259        7   32768312 nvme0n1p7
+ 259        8  204800000 nvme0n1p8
 ```
 
-## Interface Linha de Comandos (CLI)
-
-- Introdução ao shell (bash, zsh)
-
-**O que é um Shell?**
-
-Um **shell** é um interpretador de comandos que funciona como intermediário entre o utilizador e o kernel do Linux. Ele permite que você execute comandos, scripts e navegue pelo sistema de ficheiros através de uma interface de linha de comandos (CLI).
-
-**Em resumo:** O shell é a porta de entrada para o poder do Linux, permitindo controlo completo do sistema através de comandos.
-
-**Shells mais famosos**
-
-**Bash (Bourne Again Shell)**
-- Shell padrão na maioria das distribuições Linux
-- Desenvolvido como evolução do sh original
-- Versátil e amplamente suportado
-- Ideal para scripts de automação
-- Sintaxe simples e direta
-- Excelente para iniciantes
-
-**Zsh (Z Shell)**
-- Shell moderno e poderoso com recursos avançados
-- Oferece autocompletar inteligente e histórico melhorado
-- Suporta temas e plugins (via frameworks como Oh My Zsh)
-- Sintaxe compatível com bash, mas com mais funcionalidades
-- Melhor experiência interativa para desenvolvedores
-- Presets prontos para aumentar produtividade
-
-- Navegação básica
-- Variáveis de ambiente (PATH, .bashrc, .zshrc)
-
-## Gerenciamento de Pacotes
-
-- APT (Debian/Ubuntu): `apt-get`, `apt`
-- YUM/DNF (RedHat/Fedora)
-- Instalar, atualizar e remover software
-
-## Pacotes SNAP e FLATPAK
-
-- Conceitos e diferenças
-- Instalação e gerenciamento
-
-## Ambiente DEV Java
-
-### GIT
-
-**Instalar**
+- Ver o estado da rede:
 
 ```bash
-$ sudo apt install git
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following package was automatically installed and is no longer required:
-  libllvm19
-Use 'sudo apt autoremove' to remove it.
-The following additional packages will be installed:
-  git-man liberror-perl
-Suggested packages:
-  git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
-The following NEW packages will be installed:
-  git git-man liberror-perl
-0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
-Need to get 4,806 kB of archives.
-After this operation, 24.5 MB of additional disk space will be used.
-Do you want to continue? [Y/n] y
-Get:1 https://pt.archive.ubuntu.com/ubuntu noble/main amd64 liberror-perl all 0.17029-2 [25.6 kB]
-Get:2 https://pt.archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.3 [1,100 kB]
-Get:3 https://pt.archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.3 [3,680 kB]
-Fetched 4,806 kB in 1s (8,171 kB/s)
-Selecting previously unselected package liberror-perl.
-(Reading database ... 155914 files and directories currently installed.)
-Preparing to unpack .../liberror-perl_0.17029-2_all.deb ...
-Unpacking liberror-perl (0.17029-2) ...
-Selecting previously unselected package git-man.
-Preparing to unpack .../git-man_1%3a2.43.0-1ubuntu7.3_all.deb ...
-Unpacking git-man (1:2.43.0-1ubuntu7.3) ...
-Selecting previously unselected package git.
-Preparing to unpack .../git_1%3a2.43.0-1ubuntu7.3_amd64.deb ...
-Unpacking git (1:2.43.0-1ubuntu7.3) ...
-Setting up liberror-perl (0.17029-2) ...
-Setting up git-man (1:2.43.0-1ubuntu7.3) ...
-Setting up git (1:2.43.0-1ubuntu7.3) ...
-Processing triggers for man-db (2.12.0-4build2) ...
-$
-$
-$ # verificar git instalado
-$ git version
-git version 2.43.0
-$
-$ # localização
-$ command -v git
-/usr/bin/git
+$ cat /proc/net/dev | column -t
+Inter-|           Receive    |        Transmit                                                                                                            
+face              |bytes     packets  errs      drop   fifo  frame  compressed  multicast|bytes  packets   errs   drop  fifo  colls  carrier  compressed  
+lo:               53998      479      0         0      0     0      0           0                53998     479    0     0     0      0        0           0
+eno1:             438441225  365369   0         4      0     0      0           32708            20707254  55736  0     2     0      0        0           0
+wlp2s0:           0          0        0         0      0     0      0           0                0         0      0     2     0      0        0           0
+br0:              420361135  115723   0         29680  0     0      0           32707            20375750  50696  0     18    0      0        0           0
+virbr0:           0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-322468ea0106:  0          0        0         0      0     0      0           0                0         0      0     27    0      0        0           0
+br-461bf010e726:  0          0        0         0      0     0      0           0                0         0      0     27    0      0        0           0
+br-4910c0cdee5d:  0          0        0         0      0     0      0           0                0         0      0     27    0      0        0           0
+br-4c7342555ce8:  4268       69       0         0      0     0      0           19               7026      45     0     7     0      0        0           0
+br-88094d7468ee:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-befb430168c3:  84         3        0         0      0     0      0           0                7848      55     0     6     0      0        0           0
+br-ca477001efb8:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-010e8c61f7d0:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-433e00e6b8c2:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-866d69256e97:  252        9        0         0      0     0      0           0                7854      55     0     6     0      0        0           0
+br-bccde02cd069:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-e51c722cc9df:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-2c1064bdfb30:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-477ee3a421d7:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-5b5bfc5c604f:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+br-83efec861006:  0          0        0         0      0     0      0           0                0         0      0     25    0      0        0           0
+docker0:          2744       98       0         0      0     0      0           0                20934     126    0     139   0      0        0           0
+br-8a217d0ccf9d:  0          0        0         0      0     0      0           0                0         0      0     8     0      0        0           0
+br-902e39ce27c3:  84         3        0         0      0     0      0           0                5219      33     0     2     0      0        0           0
+br-1213e605a4dc:  0          0        0         0      0     0      0           0                0         0      0     6     0      0        0           0
+veth90adde7:      126        3        0         0      0     0      0           0                12148     84     0     0     0      0        0           0
+veth56b0500:      126        3        0         0      0     0      0           0                12406     90     0     0     0      0        0           0
+veth44405bb:      5234       69       0         0      0     0      0           0                11326     74     0     0     0      0        0           0
+vethc9aabdd:      126        3        0         0      0     0      0           0                9519      62     0     0     0      0        0           0
+veth18eb8bf:      126        3        0         0      0     0      0           0                12364     89     0     0     0      0        0           0
+veth91a9723:      126        3        0         0      0     0      0           0                12322     88     0     0     0      0        0           0
 ```
 
-### SDKMAN: Instalação
 
-[SDKMAN.io](https://sdkman.io/)
 
-O **SDKMAN!** é um gestor de versões para SDKs e ferramentas de linha de comandos (ex.: Java, Maven, Gradle, Kotlin). Permite instalar, atualizar e alternar versões facilmente, por projeto ou por utilizador.
+### Início do Sistema: Decodificando o /boot
 
-**Instalação (Linux/macOS):**
+O diretório `/boot` contém todos os ficheiros essenciais para o arranque do sistema operativo. Qualquer alteração ou eliminação indevida de ficheiros neste diretório pode impedir o sistema de arrancar corretamente.
+
+Principais ficheiros e diretórios encontrados em `/boot`:
+
+- **vmlinuz-*** — Imagem comprimida do kernel Linux. Exemplo: `vmlinuz-6.1.0-18-amd64`
+- **initrd.img-*** ou **initramfs-*** — Imagem de disco temporária carregada na memória durante o arranque, usada para preparar o ambiente antes de montar o sistema de ficheiros principal. Exemplo: `initrd.img-6.1.0-18-amd64`
+- **grub/** — Diretório com os ficheiros de configuração e módulos do gestor de arranque GRUB (Grand Unified Bootloader), como `grub.cfg`.
+- **config-*** — Ficheiro de configuração do kernel compilado. Exemplo: `config-6.1.0-18-amd64`
+- **System.map-*** — Mapa de símbolos do kernel, útil para depuração. Exemplo: `System.map-6.1.0-18-amd64`
+- **efi/** — Diretório presente em sistemas com UEFI, contendo ficheiros de arranque EFI.
+
+Exemplo de listagem de `/boot` num sistema típico:
+
+```bash
+$ ls /boot
+config-6.1.0-18-amd64     initrd.img-6.1.0-18-amd64  vmlinuz-6.1.0-18-amd64
+grub/                     System.map-6.1.0-18-amd64   efi/
+```
+
+Resumo dos principais elementos:
+- **vmlinuz**: o kernel propriamente dito.
+- **initrd/initramfs**: sistema de ficheiros temporário para o arranque.
+- **grub/**: gestor de arranque e respetiva configuração.
+- **config** e **System.map**: ficheiros auxiliares para depuração e configuração.
+
+Alterações neste diretório devem ser feitas com extremo cuidado, normalmente apenas por processos de atualização do kernel ou do gestor de arranque.
+
+
+
+## Explorando o Território: Navegação e Listagem no Sistema de Arquivos
+
+### Videos
+
+- [Linux Crash Course: Navigating the Linux Filesystem](https://youtu.be/BNL3qBN9pP0?si=MRQ2kQ31DMF_pyhp)
+- [Aula 3 – Primeiros comandos: man, cd, ls e pwd | Curso Linux para Computação Científica](https://youtu.be/FgfwdUl3i-s?si=UdW-q95xLoYpkH1K)
+
+Navegar e listar ficheiros e diretórios é fundamental para trabalhar eficientemente no Linux. Abaixo estão comandos essenciais e exemplos práticos num sistema Ubuntu 24.04.
+
+### Comandos de Navegação
+
+| Comando         | Descrição                                 | Exemplo                  |
+|-----------------|-------------------------------------------|--------------------------|
+| `pwd`           | Mostra a diretoria atual                  | `pwd`                    |
+| `cd`            | Muda de diretoria                         | `cd /etc`                |
+| `cd ~`          | Vai para a home do utilizador             | `cd ~`                   |
+| `cd ..`         | Sobe um nível na hierarquia               | `cd ..`                  |
+| `cd -`          | Volta à diretoria anterior                | `cd -`                   |
+
+### Comandos de Listagem
+
+| Comando         | Descrição                                 | Exemplo                  |
+|-----------------|-------------------------------------------|--------------------------|
+| `ls`            | Lista ficheiros e pastas                  | `ls`                     |
+| `ls -l`         | Lista detalhada (permissões, datas, etc.) | `ls -l /etc`             |
+| `ls -a`         | Mostra ficheiros ocultos                  | `ls -a`                  |
+| `ls -lh`        | Lista detalhada com tamanhos legíveis      | `ls -lh /var/log`        |
+| `tree`          | Mostra a estrutura em árvore (requer instalação) | `tree /etc`         |
+
+#### Exemplo prático:
+
+```bash
+$ pwd
+/home/paulo
+
+$ cd /etc
+$ ls -lh
+-rw-r--r-- 1 root root  296 fev 18 10:12 adduser.conf
+-rw-r--r-- 1 root root 1,1K fev 18 10:12 aliases
+...
+$ cd ~
+$ ls -a
+.  ..  .bashrc  .profile  Documentos  Imagens
+```
+
+Para instalar o comando `tree`:
+```bash
+$ sudo apt update && sudo apt install tree -y
+```
+
+
+## Construindo e Remodelando: Manipulação de Ficheiros e Diretórios
+
+### Videos
+
+- [Aula 4 – Primeiros comandos: mkdir, rmdir, touch, rm e cp | Curso Linux para Computação Científica](https://www.youtube.com/watch?v=7Zl1yXe-MB8)
+
+Manipular ficheiros e diretórios é uma tarefa diária no Linux. Veja os comandos mais usados e exemplos práticos:
+
+| Comando                  | Descrição                                         | Exemplo                                 |
+|--------------------------|---------------------------------------------------|-----------------------------------------|
+| `touch`                  | Cria ficheiro vazio                               | `touch notas.txt`                       |
+| `mkdir`                  | Cria diretoria                                    | `mkdir projetos`                        |
+| `cp`                     | Copia ficheiro                                    | `cp notas.txt copia.txt`                |
+| `cp -r`                  | Copia diretoria recursivamente                    | `cp -r projetos projetos_backup`        |
+| `mv`                     | Move ou renomeia ficheiro/diretoria               | `mv notas.txt notas_antigas.txt`        |
+| `rm`                     | Remove ficheiro                                   | `rm copia.txt`                          |
+| `rm -r`                  | Remove diretoria e conteúdo                       | `rm -r projetos_backup`                 |
+| `rmdir`                  | Remove diretoria vazia                            | `rmdir pasta_vazia`                     |
+
+#### Exemplo prático:
+
+```bash
+$ mkdir exemplo
+$ cd exemplo
+$ touch ficheiro1.txt
+$ echo "Conteúdo de teste" > ficheiro1.txt
+$ cp ficheiro1.txt copia.txt
+$ mv copia.txt ficheiro2.txt
+$ ls
+ficheiro1.txt  ficheiro2.txt
+$ rm ficheiro2.txt
+$ cd ..
+$ rm -r exemplo
+```
+
+
+## Memória do Shell: Produtividade e Eficiência com History
+
+### Videos
+
+- [Linux Crash Course - Bash History](https://www.youtube.com/watch?v=Odo6leOY5Fw)
+- [Como aumentar a sua performance no Linux? Hacks que irão te ajudar!](https://youtu.be/X0fRA_MSkx4?si=meN7XN-Z320X8u46)
+
+O shell guarda um histórico dos comandos executados, permitindo repetir ou pesquisar comandos anteriores facilmente.
+
+| Comando            | Descrição                                         | Exemplo                  |
+|--------------------|---------------------------------------------------|--------------------------|
+| `history`          | Mostra o histórico de comandos                    | `history`                |
+| `!n`               | Executa o comando número n do histórico           | `!42`                    |
+| `!!`               | Repete o último comando                           | `!!`                     |
+| `!palavra`         | Executa o último comando que começa por 'palavra' | `!sudo`                  |
+| `Ctrl+R`           | Pesquisa interativa no histórico                  | (pressione Ctrl+R e digite parte do comando) |
+
+#### Exemplo prático:
+
+```bash
+$ history
+  1  pwd
+  2  cd /etc
+  3  ls -lh
+  4  cd ~
+  5  ls -a
+  6  sudo apt update
+  7  sudo apt install tree -y
+  8  tree /etc
+
+$ !6
+sudo apt update
+
+$ !!
+sudo apt update
+
+# Pesquisa rápida no histórico
+# (pressione Ctrl+R e digite 'tree' para encontrar o comando relacionado)
+```
+
+Estes comandos aumentam a produtividade e facilitam a repetição de tarefas no terminal.
+
+
+## Estética e Poder: Transformando o Terminal com Oh-My-Zsh
+
+O Oh-My-Zsh é uma framework open source para gerir configurações do Zsh, tornando o terminal mais bonito, funcional e produtivo. Permite personalizar o prompt, adicionar plugins e temas facilmente.
+
+### Instalação do Zsh e Oh-My-Zsh (Ubuntu 24.04)
+
+1. **Instalar o Zsh:**
+  ```bash
+  $ sudo apt update
+  $ sudo apt install zsh -y
+  ```
+
+2. **Definir o Zsh como shell padrão:**
+  ```bash
+  $ chsh -s $(which zsh)
+  # Terá de terminar sessão e voltar a entrar para ativar.
+  ```
+
+3. **Instalar o Oh-My-Zsh:**
+  ```bash
+  $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # Ou, se preferir usar wget:
+  $ sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+  ```
+
+4. **Mudar de tema (opcional):**
+  - Edite o ficheiro `~/.zshrc` e altere a linha `ZSH_THEME="robbyrussell"` para outro tema, por exemplo:
+    ```bash
+    ZSH_THEME="agnoster"
+    ```
+  - Para aplicar as alterações:
+    ```bash
+    $ source ~/.zshrc
+    ```
+
+5. **Adicionar plugins úteis (opcional):**
+  - No ficheiro `~/.zshrc`, adicione plugins à linha `plugins=(git)` (exemplo: `plugins=(git sudo history)`)
+  - Recarregue as configurações:
+    ```bash
+    $ source ~/.zshrc
+    ```
+
+### Exemplo prático:
 
 ```bash
 $ sudo apt update
-$ sudo apt install -y curl zip unzip
-
-$ curl -s "https://get.sdkman.io" | bash
+$ sudo apt install zsh -y
+$ chsh -s $(which zsh)
+# Termine sessão e volte a entrar
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Edite ~/.zshrc para mudar o tema ou adicionar plugins
+$ source ~/.zshrc
 ```
 
-Depois, carregue o SDKMAN na sessão atual:
+### Vídeos recomendados
 
-```bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-sdk version
-$ sdk version
-
-SDKMAN!
-script: 5.20.0
-native: 0.7.16 (linux x86_64)
-
-```
-
-### SDKMAN: Comandos básicos
-
-| Comando                         | Descrição                                            |
-| ------------------------------- | ---------------------------------------------------- |
-| `sdk version`                   | Mostra a versão do SDKMAN instalada                  |
-| `sdk list java`                 | Lista as versões de Java disponíveis para instalação |
-| `sdk install java 25.0.2-tem`   | Instala a versão 25.0.2 do Temurin (Java)            |
-| `sdk use java 21.0.2-tem`       | Usa a versão indicada apenas na sessão atual         |
-| `sdk default java 21.0.2-tem`   | Define a versão indicada como padrão                 |
-| `sdk current java`              | Mostra a versão de Java ativa                        |
-| `sdk uninstall java 25.0.2-tem` | Remove a versão instalada                            |
-| `sdk list maven`                | Lista versões do Maven disponíveis                   |
-| `sdk install maven 3.9.6`       | Instala o Maven na versão indicada                   |
-
-**Exemplo de uso rápido:**
-
-```bash
-sdk list java
-sdk install java 21.0.2-tem
-sdk install java 25.0.2-tem
-sdk use java 21.0.2-tem
-java -version
-```
-
-### SDKMAN: Exercícios
-
-1. Instalar JDK 21 (21.0.10-tem)
-2. Instalar JDK 25 (25.0.2-tem)
-3. Verificar a versão de java atual
-
-Ajuda: use java --version e sdk current java
-4. Alterar versão java default para jdk 21
-
-### Instalação maven
-
-```bash
-$ sdk install maven 3.9.12
-$ sdk install maven 3.9.12
-
-Downloading: maven 3.9.12
-
-In progress...
-
-################################################################################################################################################################################ 100.0%
-
-Installing: maven 3.9.12
-Done installing!
+- [APRENDA COMO INSTALAR E CONFIGURAR O OH MY ZSH E TENHA SUPER PODERES](https://www.youtube.com/watch?v=1-Lm4znOtaQ)
 
 
-Setting maven 3.9.12 as default.
-$
-$ mvn --version
-Apache Maven 3.9.12 (848fbb4bf2d427b72bdb2471c22fced7ebd9a7a1)
-Maven home: /home/paulo/.sdkman/candidates/maven/current
-Java version: 25.0.2, vendor: Eclipse Adoptium, runtime: /home/paulo/.sdkman/candidates/java/25.0.2-tem
-Default locale: en_US, platform encoding: UTF-8
-OS name: "linux", version: "6.17.0-14-generic", arch: "amd64", family: "unix"
-$
-```
 
-### Projeto: Gerador Senhas Java
 
-#### Compilar
-
-```bash
-$ cd gerador-senhas-java
-$ mvn clean package                               
-```
-
-#### Executar
-
-```bash
-$ java -jar .\target\gerador-senhas-java-1.0.0.jar gerar 
-$
-$ java -jar .\target\gerador-senhas-java-1.0.0.jar gerar 10
-$
-$ java -jar .\target\gerador-senhas-java-1.0.0.jar version
-```
-
-## Ambiente DEV .NET
-
-- Instalação de SDK
-- Projeto básico
-
-## IDEs para Programação
-
-- Visual Studio Code
-- IntelliJ IDEA
-- Rider
-- PyCharm
-- GoLand
