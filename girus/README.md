@@ -16,6 +16,7 @@
   - [Adicionar repositorio de Labs](#adicionar-repositorio-de-labs)
     - [Labs Linux4Developers](#labs-linux4developers)
     - [Listar Labs](#listar-labs)
+    - [Instalar um lab](#instalar-um-lab)
 
 ## Objetivos
 
@@ -364,4 +365,11 @@ terraform-fundamentos             1.0.0             girus-labs             Apren
 terraform-aws-infraestrutura      1.0.0             girus-labs             Crie e gerencie infraestrutura AWS com Terraform
 terraform-provisioners-modulos    1.0.0             girus-labs             Aprenda a utilizar provisioners e módulos no Terraform
 linux-comandos-basicos            1.0.0             linux-for-developers   Domine os comandos básicos e conceitos fundamentais do Linux
+```
+
+### Instalar um lab
+
+
+```bash
+$ girus lab install linux-for-developers linux-comandos-essenciais
 ```

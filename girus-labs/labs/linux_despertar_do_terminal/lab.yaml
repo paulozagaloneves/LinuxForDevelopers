@@ -1,0 +1,168 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: linux-despertar-do-terminal-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: |
+    name: linux-despertar-do-terminal
+    title: "O Despertar do Terminal: Laboratório Prático"
+    description: "Aprenda e pratique os comandos essenciais do Linux, conheça o sistema, eleve privilégios, gerencie pacotes, descubra informações de rede e configure a identidade digital da máquina. Este laboratório é ideal para iniciantes e desenvolvedores que querem dominar o terminal."
+    duration: 30m
+    image: "linuxtips/girus-devops:0.1"
+    tasks:
+      - name: "Mapa de sobrevivência: Comandos Essenciais"
+        description: "Pratique os comandos básicos do terminal: clear, pwd, ls, cd, mkdir, rm, rmdir, touch, cat, less, more, tail, head, mv, cp, sudo, command, which."
+        steps:
+          - "Execute cada comando e observe o resultado."
+          - "`clear`"
+          - "Obter o diretório atual:"
+          - "`pwd`"
+          - "Listar ficheiros e diretórios:"
+          - "`ls -la`"      
+          - "O comando **'apt'** é o gerenciador de pacotes do Debian e suas distribuições derivadas, como o Ubuntu. Ele é usado para instalar, atualizar e remover software no sistema. O comando **'sudo'** é necessário para executar **'apt'** com privilégios administrativos, pois a instalação de software afeta todo o sistema."
+          - "Atualizar lista de pacotes:"
+          - "`sudo apt update`"
+          - "Instalar o comando less:"
+          - "`sudo apt install less -y`"
+          - "Localizar o caminho do comando less:"
+          - "`command -v less`"
+          - "`which less`"
+          - "Experimente agora navegar, criar, remover e listar ficheiros e diretórios."
+          - "`mkdir lab-practice`"
+          - "Listar ficheiros e diretórios:"
+          - "`ls -la`"
+          - "`cd lab-practice`"
+          - "Criar ficheiros de texto vazios:"
+          - "`touch file1.txt file2.txt`"
+          - "Listar ficheiros e diretórios:"
+          - "`ls -la`"
+          - "Remover todos os ficheiros .txt e um diretório:"
+          - "`rm *.txt`"
+          - "`cd ..`"          
+          - "`rmdir lab-practice`"
+          - "`mkdir girus-lab`"
+          - "`cd girus-lab`"
+          - "Crie um ficheiro novo e experimente visualizar seu conteúdo usando diferentes comandos:"
+          - "`touch file3.txt`"
+          - "`cat file3.txt`"
+          - "Escreva algo no ficheiro usando echo e visualize novamente:"
+          - "`echo 'Hello, Linux!' > file3.txt`"
+          - "`less file3.txt`"
+          - "`more file3.txt`"
+          - "`tail file3.txt`"
+          - "`head file3.txt`"
+          - "Renomeia ficheiro"
+          - "`mv file3.txt file4.txt`"
+          - "Copie ficheiro"
+          - "`cp file4.txt file5.txt`"
+        tips:
+          - type: "info"
+            title: "Dica: Atalhos para Completar Nomes"
+            content: "A tecla Tab é extremamente útil para autocompletar nomes de ficheiros e diretórios. Pressione Tab uma vez para completar automaticamente se houver apenas uma opção, ou duas vezes para ver todas as possibilidades."
+          - type: "tip"
+            title: "Navegação Rápida"
+            content: "Para navegação rápida, você pode combinar múltiplos níveis em um único comando: '**cd ../../outro-dir**' move dois níveis acima e então para 'outro-dir'."
+          - type: "warning"
+            title: "Caminhos Absolutos vs Relativos"
+            content: "Caminhos que começam com / são absolutos (a partir da raiz), enquanto outros são relativos ao diretório atual. Usar caminhos relativos geralmente torna seus comandos mais portáveis."
+        validation:
+          - command: "test -d girus-lab && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Diretório 'girus-lab' não foi criado corretamente."
+          - command: "command -v less >/dev/null 2>&1 && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O comando less não está instalado ou não foi executado corretamente."
+
+      - name: "Raio-X do Sistema: Conhecendo a Máquina com Neofetch"
+        description: "O neofetch é uma ferramenta de linha de comando que exibe informações detalhadas sobre o sistema de forma visual e organizada, geralmente acompanhada de um logotipo da distribuição Linux em ASCII. Ele mostra dados como sistema operacional, kernel, uptime, uso de memória, CPU, GPU, resolução, shell, entre outros. É muito usado para rapidamente visualizar specs do sistema e para screenshots de ambientes Linux. Instale e execute o neofetch para visualizar informações do sistema."
+        steps:
+          - "Instale o **'apt'** para instalar o **'neofetch'**:"
+          - "`sudo apt install neofetch -y`"
+          - "Execute:"
+          - "`neofetch`"
+        tips:
+          - type: "info"
+            title: "Dica: Entendendo o comando `sudo apt install neofetch -y`"
+            content: "O comando `sudo apt install neofetch -y` é usado para instalar o neofetch no sistema. O `sudo` é necessário para obter privilégios administrativos, `apt install` é o comando para instalar pacotes, `neofetch` é o nome do pacote a ser instalado e `-y` automaticamente responde 'yes' a todas as perguntas durante a instalação, tornando o processo mais rápido e sem necessidade de intervenção manual."
+        validation:
+          - command: "command -v neofetch >/dev/null 2>&1 && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Neofetch não está instalado ou não foi executado corretamente."
+
+      - name: "Poder Elevado: Usando o Sudo"
+        description: "Utilize o sudo para executar comandos com privilégios administrativos."
+        steps:
+          - "Execute sudo para atualizar a lista de pacotes:"
+          - "`sudo apt update`"
+          - "Instale um pacote usando sudo, por exemplo: git"
+          - "`sudo apt install -y git`"
+          - "Validar se o git foi instalado corretamente usando"
+          - "`command -v git`"
+        tips:
+          - type: "warning"
+            title: "Cuidado com o Sudo"
+            content: "O sudo concede privilégios administrativos, então use-o com cuidado. Evite executar comandos desconhecidos ou potencialmente perigosos com sudo, pois isso pode afetar a estabilidade e segurança do sistema."
+        validation:
+          - command: "command -v git >/dev/null 2>&1 && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O git não foi instalado corretamente."
+      - name: "O Ecosistema de Pacotes: Atualizações e Instalações com APT"
+        description: "Atualize a base de pacotes, instale, procure e remova software usando o APT."
+        steps:
+          - "Execute apt update para atualizar a lista de pacotes:"
+          - "`sudo apt update`"
+          - "Execute apt upgrade para atualizar o sistema (se a sua internet for lenta não execute o comando pois pode demorar bastante):"
+          - "`sudo apt upgrade -y`"
+          - "Instale um pacote usando **apt install**, por exemplo: nano"
+          - "`sudo apt install -y nano`"
+          - "Valide a instalação usando ???????: (substituir pelo comando correto)"
+          - "`??????? -v nano`"
+          - "Procure um pacote usando **apt search**, por exemplo: neovim"
+          - "`apt search neovim`"
+          - "Remova um pacote usando **apt remove**, por exemplo: nano"
+          - "`sudo apt remove -y nano`"
+        validation:
+          - command: "echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "APT não foi utilizado corretamente para instalar/remover pacotes."
+
+      - name: "Localizando a Máquina na Rede: Descobrindo o IP do servidor"
+        description: "Descubra o endereço IP da máquina usando comandos de rede."
+        steps:
+          - "Obtenha informações de rede usando o comando ip address:"
+          - "`sudo apt install -y iproute2` # Instale o pacote necessário para usar o comando ip"
+          - "`ip address`"
+          - "Obtenha o endereço IP usando hostname -I:"
+          - "`hostname -I`"
+        tips:
+          - type: "info"
+            title: "Dica: Comando ip vs ifconfig"
+            content: "O comando `ip address` é parte do pacote iproute2 e é o método moderno para visualizar informações de rede no Linux. Ele substitui o antigo comando `ifconfig`, que ainda pode estar presente em algumas distribuições, mas é considerado obsoleto. O `ip address` fornece uma visão mais detalhada e precisa das interfaces de rede e seus endereços IP."
+        validation:
+          - command: "echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Não foi possível descobrir o IP da máquina."
+      - name: "Identidade Digital: Gerenciando o Hostname da Máquina"
+        description: "Visualize e altere o hostname da máquina."
+        steps:
+          - "Veja o hostname atual: hostname"
+          - "`hostname`"
+          - "Veja o hostname usando hostnamectl: hostnamectl --static"
+          - "`hostnamectl --static`"
+          - "Altere o hostname temporariamente: sudo hostname novo-hostname"
+          - "`sudo hostname meu-girus-lab`"
+          - "Valide de novo o hostname:"
+          - "`hostname`"
+          - "Altere o hostname de forma persistente: sudo hostnamectl set-hostname novo-hostname"
+          - "`sudo hostnamectl set-hostname meu-girus-lab`"
+        tips:
+          - type: "info"
+            title: "Dica: Hostname Temporário vs Persistente"
+            content: "Alterar o hostname usando `sudo hostname novo-hostname` é temporário e será revertido após um reboot. Para tornar a alteração permanente, use `sudo hostnamectl set-hostname novo-hostname`, que atualiza a configuração do sistema para manter o novo hostname mesmo após reinicializações."
+        validation:
+          - command: "echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O hostname não foi visualizado ou alterado corretamente."
