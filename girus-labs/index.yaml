@@ -8,7 +8,7 @@ labs:
     url: https://raw.githubusercontent.com/paulozagaloneves/LinuxForDevelopers/refs/heads/main/girus-labs/labs/linux_comandos-basicos/lab.yaml
   - id: linux-despertar-do-terminal
     title: O Despertar do Terminal - Laboratório Prático
-    description: Aprenda e pratique os comandos essenciais do Linux, conheça o sistema, eleve privilégios, gerencie pacotes, descubra informações de rede e configure a identidade digital da máquina. Este laboratório é ideal para iniciantes e desenvolvedores que querem dominar o terminal.
+    description: Este laboratório é ideal para iniciantes e desenvolvedores que querem iniciar no terminal.
     version: 1.0.0
     duration: 30m
     tags: [linux, terminal, commands, neofetch, sudo, apt, hostname]
