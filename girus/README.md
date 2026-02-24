@@ -324,5 +324,48 @@ Agora vai poder aceder à Plataforma Girus.
 ### Labs Linux4Developers
 
 ```bash
-$ girus repo add linuxfordevelopers https://github.com/paulozagaloneves/labs/raw/main
+$ girus repo add  linux-for-developers https://raw.githubusercontent.com/paulozagaloneves/LinuxForDevelopers/refs/heads/main/girus-labs --description "Repositório de labs co curso Linux For Developers"
+Repositório 'linux-for-developers' adicionado com sucesso.
 ```
+
+
+### Listar Labs
+
+```bash
+$ girus lab list
+Verificando cache em: /home/paulo/.girus/cache/girus-labs/index.yaml
+Usando índice do cache
+Verificando cache em: /home/paulo/.girus/cache/linux-for-developers/index.yaml
+Usando índice do cache
+LABORATÓRIOS DISPONÍVEIS
+────────────────────────────────────────────────────────────────────────────────
+NOME                              VERSÃO   REPOSITÓRIO   DESCRIÇÃO
+linux-processamento-texto         1.0.0             girus-labs             Domine as ferramentas essenciais de manipulação de texto no Linux - grep, sed, awk
+linux-gerenciamento-processos     1.0.0             girus-labs             Aprenda a monitorar, controlar e gerenciar processos no sistema Linux
+linux-shell-script                1.0.0             girus-labs             Aprenda a criar scripts de shell para automatizar tarefas no Linux
+linux-monitoramento-sistema       1.0.0             girus-labs             Aprenda a usar ferramentas como vmstat, iostat, free e o /proc para monitorar recursos do sistema
+linux-comandos-basicos            1.0.0             girus-labs             Domine os comandos básicos e conceitos fundamentais do Linux
+linux-gerenciamento-usuarios      1.0.0             girus-labs             Aprenda a gerenciar usuários, grupos e permissões no Linux
+linux-permissoes-arquivos         1.0.0             girus-labs             Entenda o sistema de permissões de arquivos e diretórios no Linux
+docker-fundamentos                1.1.0             girus-labs             Introdução ao Docker, criação de imagens e gerenciamento de containers
+docker-gerenciamento-containers   1.0.0             girus-labs             Aprenda técnicas avançadas para gerenciar containers Docker
+docker-fundamentos-redes          1.0.0             girus-labs             Entenda e configure redes no ecossistema Docker
+docker-volumes                    1.0.0             girus-labs             Aprenda a persistir dados com volumes no Docker
+docker-compose                    1.0.0             girus-labs             Aprenda a definir e executar aplicações multi-container Docker de forma declarativa
+kubernetes-exploracao-recursos    1.0.0             girus-labs             Conheça os principais recursos disponíveis no Kubernetes
+kubernetes-servicos-redes         1.0.0             girus-labs             Configure serviços e redes para suas aplicações no Kubernetes
+kubernetes-configmaps-secrets     1.0.0             girus-labs             Gerencie configurações e dados sensíveis no Kubernetes
+kubernetes-cronjobs               1.0.0             girus-labs             Configure tarefas agendadas no Kubernetes com CronJobs
+kubernetes-deployments            1.0.2             girus-labs             Aprenda a criar e gerenciar deployments no Kubernetes
+kubernetes-fundamentos            1.0.0             girus-labs             Aprenda os conceitos básicos do Kubernetes e sua arquitetura
+kubernetes-deployment             1.0.0             girus-labs             Aprenda técnicas avançadas de deployments no Kubernetes
+aws-localstack-terraform          1.0.0             girus-labs             Aprenda a usar AWS LocalStack para desenvolvimento local com Terraform
+aws-s3-storage                    2.0.0             girus-labs             Como utilizar o serviço S3 da AWS para armazenamento de objetos
+aws-dynamodb-nosql                1.0.0             girus-labs             Aprenda a utilizar o DynamoDB da AWS para armazenamento NoSQL
+aws-lambda-serverless             1.0.0             girus-labs             Explore a computação serverless com AWS Lambda
+terraform-fundamentos             1.0.0             girus-labs             Aprenda os princípios fundamentais do Terraform
+terraform-aws-infraestrutura      1.0.0             girus-labs             Crie e gerencie infraestrutura AWS com Terraform
+terraform-provisioners-modulos    1.0.0             girus-labs             Aprenda a utilizar provisioners e módulos no Terraform
+linux-comandos-basicos            1.0.0             linux-for-developers   Domine os comandos básicos e conceitos fundamentais do Linux
+```
+
