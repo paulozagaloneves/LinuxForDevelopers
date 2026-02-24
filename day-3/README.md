@@ -1,6 +1,5 @@
 
 
-
 ## Editores de texto no terminal
 
 ### VIM

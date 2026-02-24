@@ -39,16 +39,25 @@
     - [Videos](#videos-6)
       - [Exemplo prático:](#exemplo-prático-2)
   - [Estética e Poder: Transformando o Terminal com Oh-My-Zsh](#estética-e-poder-transformando-o-terminal-com-oh-my-zsh)
+    - [Vídeos recomendados](#vídeos-recomendados)
     - [Instalação do Zsh e Oh-My-Zsh (Ubuntu 24.04)](#instalação-do-zsh-e-oh-my-zsh-ubuntu-2404)
     - [Exemplo prático:](#exemplo-prático-3)
-    - [Vídeos recomendados](#vídeos-recomendados)
 
 ## Objetivos Dia 2
 
+Ao final deste dia, o participante deverá ser capaz de:
+
+- Utilizar comandos essenciais do terminal Linux para navegação e manipulação de ficheiros e diretórios.
+- Compreender a estrutura do sistema de ficheiros Linux (FHS) e identificar diretórios importantes.
+- Instalar, atualizar e remover pacotes utilizando o APT.
+- Utilizar o sudo para executar comandos com privilégios administrativos.
+- Configurar e aceder remotamente ao sistema via SSH, incluindo autenticação sem senha.
+- Gerir permissões de utilizador e configurar sudo sem senha para utilizadores específicos.
+- Explorar diretórios de configuração e telemetria do sistema (/etc, /proc, /boot).
+- Utilizar o histórico do shell para aumentar a produtividade.
+- Personalizar o terminal com Zsh e Oh-My-Zsh para maior eficiência e estética.
 
 ## Exercícios Práticos
-
-
 
 ### Preparação
 
@@ -60,9 +69,6 @@ Para a realização dos exercicios pode usar:
 
 ### Exercícios
 
-1. Configurar o acesso ssh para aceder de forma segura sem senha;
-2. Configurar as permissões sudo do utilizador de testes para não pedir senha;
-3. 
 
 
 ## O Despertar do Terminal
@@ -73,30 +79,29 @@ Comandos essenciais para começar a usar Linux logo após a instalação (Ubuntu
 
 - [Getting Started with Linux CLI: Must-Know Commands | Linux Basics](https://www.youtube.com/watch?v=eafVBUh5-pQ)
 
-
 ### Mapa de Sobrevivência: Comandos Essenciais
 
-| Comando | Descrição                                           | Exemplo                      |
-| ------- | --------------------------------------------------- | ---------------------------- |
-| `clear` | Limpa o ecrã do terminal                            | `clear`                      |
-| `pwd`   | Mostra a diretoria atual                            | `pwd`                        |
-| `ls`    | Lista ficheiros e pastas                            | `ls -la`                     |
-| `cd`    | Muda de diretoria                                   | `cd /etc`                    |
-| `mkdir` | Cria uma nova pasta                                 | `mkdir projetos`             |
-| `rm`    | Remove ficheiros (ou pastas com `-r`)               | `rm ficheiro.txt`            |
-| `rmdir` | Remove pasta vazia                                  | `rmdir pasta-vazia`          |
-| `touch` | Cria ficheiro vazio ou atualiza data de modificação | `touch notas.txt`            |
-| `cat`   | Mostra conteúdo de ficheiro                         | `cat notas.txt`              |
-| `less`  | Visualiza ficheiro página a página (navegação)      | `less /var/log/syslog`       |
-| `more`  | Visualiza ficheiro página a página (simples)        | `more notas.txt`             |
-| `tail`  | Mostra linhas finais de ficheiro                    | `tail -n 20 /var/log/syslog` |
-| `head`  | Mostra linhas iniciais de ficheiro                  | `head -n 20 /var/log/syslog` |
-| `mv`    | Move ou renomeia ficheiros/pastas                   | `mv antigo.txt novo.txt`     |
-| `cp`    | Copia ficheiros/pastas                              | `cp ficheiro.txt copia.txt`  |
-| `sudo`  | Executa comando com privilégios administrativos     | `sudo apt update`            |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
-| `command` | Comando interno do shell para verificar como um comando será resolvido (builtin, alias, função ou executável). Muito usado com `-v` para mostrar o caminho/comando encontrado. | `command -v python3` |
-| `which`   | Mostra o caminho do executável encontrado no `PATH` (normalmente para comandos externos).                                                                                      | `which python3`      |
+| Comando   | Descrição                                                                                                                                                                      | Exemplo                      |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| `clear`   | Limpa o ecrã do terminal                                                                                                                                                       | `clear`                      |
+| `pwd`     | Mostra a diretoria atual                                                                                                                                                       | `pwd`                        |
+| `ls`      | Lista ficheiros e pastas                                                                                                                                                       | `ls -la`                     |
+| `cd`      | Muda de diretoria                                                                                                                                                              | `cd /etc`                    |
+| `mkdir`   | Cria uma nova pasta                                                                                                                                                            | `mkdir projetos`             |
+| `rm`      | Remove ficheiros (ou pastas com `-r`)                                                                                                                                          | `rm ficheiro.txt`            |
+| `rmdir`   | Remove pasta vazia                                                                                                                                                             | `rmdir pasta-vazia`          |
+| `touch`   | Cria ficheiro vazio ou atualiza data de modificação                                                                                                                            | `touch notas.txt`            |
+| `cat`     | Mostra conteúdo de ficheiro                                                                                                                                                    | `cat notas.txt`              |
+| `less`    | Visualiza ficheiro página a página (navegação)                                                                                                                                 | `less /var/log/syslog`       |
+| `more`    | Visualiza ficheiro página a página (simples)                                                                                                                                   | `more notas.txt`             |
+| `tail`    | Mostra linhas finais de ficheiro                                                                                                                                               | `tail -n 20 /var/log/syslog` |
+| `head`    | Mostra linhas iniciais de ficheiro                                                                                                                                             | `head -n 20 /var/log/syslog` |
+| `mv`      | Move ou renomeia ficheiros/pastas                                                                                                                                              | `mv antigo.txt novo.txt`     |
+| `cp`      | Copia ficheiros/pastas                                                                                                                                                         | `cp ficheiro.txt copia.txt`  |
+| `sudo`    | Executa comando com privilégios administrativos                                                                                                                                | `sudo apt update`            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------         |
+| `command` | Comando interno do shell para verificar como um comando será resolvido (builtin, alias, função ou executável). Muito usado com `-v` para mostrar o caminho/comando encontrado. | `command -v python3`         |
+| `which`   | Mostra o caminho do executável encontrado no `PATH` (normalmente para comandos externos).                                                                                      | `which python3`              |
 
 Exemplo:
 
@@ -261,7 +266,6 @@ $ hostname -I
 192.168.231.128
 ```
 
-
 ### Identidade Digital: Gerenciando o Hostname da Máquina
 
 **Videos**
@@ -301,8 +305,6 @@ $ sudo nano /etc/hosts
 ```
 
 **Para sair do editor nano use CTRL+X**
-
-
 
 ## Além das Fronteiras: Acesso Remoto com SSH
 
@@ -451,7 +453,6 @@ Principais diretórios definidos pelo FHS:
 
 O FHS garante que utilizadores e administradores encontrem ficheiros e programas em locais previsíveis, tornando a gestão do sistema mais eficiente.
 
-
 ### Configuração do Sistema: Explorando o /etc
 
 O diretório /etc contém ficheiros de configuração essenciais do sistema. Eis alguns exemplos úteis:
@@ -466,17 +467,16 @@ O diretório /etc contém ficheiros de configuração essenciais do sistema. Eis
 - /etc/network/interfaces ou /etc/netplan/ — Configuração de interfaces de rede (dependendo da distribuição).
 - /etc/apt - Diretório onde se encontram as configurações e listas de repositórios do gestor de pacotes APT (Debian/Ubuntu), como o ficheiro sources.list e as definições de repositórios adicionais.
 
-
 Exemplo prático: adicionar um mapeamento ao /etc/hosts
 
 ```bash
 $ echo "192.168.1.100 servidor-local" | sudo tee -a /etc/hosts
 ```
 
-
 ### Telemetria do Sistema: Extraindo Dados do /proc
 
 - Ver informações sobre a CPU:
+
   
 ```bash
 $ cat /proc/cpuinfo                         
@@ -510,6 +510,7 @@ power management: ts ttp tm hwpstate cpb eff_freq_ro [13] [14] [15]
 ```
 
 - Verificar a versão do kernel:
+
   
 ```bash
 $ cat /proc/version
@@ -576,7 +577,6 @@ DirectMap4k:      845540 kB
 DirectMap2M:    17776640 kB
 DirectMap1G:    11534336 kB
 ```
-
 
 - Consultar o tempo de atividade do sistema:
 
@@ -650,8 +650,6 @@ veth18eb8bf:      126        3        0         0      0     0      0           
 veth91a9723:      126        3        0         0      0     0      0           0                12322     88     0     0     0      0        0           0
 ```
 
-
-
 ### Início do Sistema: Decodificando o /boot
 
 O diretório `/boot` contém todos os ficheiros essenciais para o arranque do sistema operativo. Qualquer alteração ou eliminação indevida de ficheiros neste diretório pode impedir o sistema de arrancar corretamente.
@@ -681,8 +679,6 @@ Resumo dos principais elementos:
 
 Alterações neste diretório devem ser feitas com extremo cuidado, normalmente apenas por processos de atualização do kernel ou do gestor de arranque.
 
-
-
 ## Explorando o Território: Navegação e Listagem no Sistema de Arquivos
 
 ### Videos
@@ -694,23 +690,23 @@ Navegar e listar ficheiros e diretórios é fundamental para trabalhar eficiente
 
 ### Comandos de Navegação
 
-| Comando         | Descrição                                 | Exemplo                  |
-|-----------------|-------------------------------------------|--------------------------|
-| `pwd`           | Mostra a diretoria atual                  | `pwd`                    |
-| `cd`            | Muda de diretoria                         | `cd /etc`                |
-| `cd ~`          | Vai para a home do utilizador             | `cd ~`                   |
-| `cd ..`         | Sobe um nível na hierarquia               | `cd ..`                  |
-| `cd -`          | Volta à diretoria anterior                | `cd -`                   |
+| Comando | Descrição                     | Exemplo   |
+| ------- | ----------------------------- | --------- |
+| `pwd`   | Mostra a diretoria atual      | `pwd`     |
+| `cd`    | Muda de diretoria             | `cd /etc` |
+| `cd ~`  | Vai para a home do utilizador | `cd ~`    |
+| `cd ..` | Sobe um nível na hierarquia   | `cd ..`   |
+| `cd -`  | Volta à diretoria anterior    | `cd -`    |
 
 ### Comandos de Listagem
 
-| Comando         | Descrição                                 | Exemplo                  |
-|-----------------|-------------------------------------------|--------------------------|
-| `ls`            | Lista ficheiros e pastas                  | `ls`                     |
-| `ls -l`         | Lista detalhada (permissões, datas, etc.) | `ls -l /etc`             |
-| `ls -a`         | Mostra ficheiros ocultos                  | `ls -a`                  |
-| `ls -lh`        | Lista detalhada com tamanhos legíveis      | `ls -lh /var/log`        |
-| `tree`          | Mostra a estrutura em árvore (requer instalação) | `tree /etc`         |
+| Comando  | Descrição                                        | Exemplo           |
+| -------- | ------------------------------------------------ | ----------------- |
+| `ls`     | Lista ficheiros e pastas                         | `ls`              |
+| `ls -l`  | Lista detalhada (permissões, datas, etc.)        | `ls -l /etc`      |
+| `ls -a`  | Mostra ficheiros ocultos                         | `ls -a`           |
+| `ls -lh` | Lista detalhada com tamanhos legíveis            | `ls -lh /var/log` |
+| `tree`   | Mostra a estrutura em árvore (requer instalação) | `tree /etc`       |
 
 #### Exemplo prático:
 
@@ -733,7 +729,6 @@ Para instalar o comando `tree`:
 $ sudo apt update && sudo apt install tree -y
 ```
 
-
 ## Construindo e Remodelando: Manipulação de Ficheiros e Diretórios
 
 ### Videos
@@ -742,16 +737,16 @@ $ sudo apt update && sudo apt install tree -y
 
 Manipular ficheiros e diretórios é uma tarefa diária no Linux. Veja os comandos mais usados e exemplos práticos:
 
-| Comando                  | Descrição                                         | Exemplo                                 |
-|--------------------------|---------------------------------------------------|-----------------------------------------|
-| `touch`                  | Cria ficheiro vazio                               | `touch notas.txt`                       |
-| `mkdir`                  | Cria diretoria                                    | `mkdir projetos`                        |
-| `cp`                     | Copia ficheiro                                    | `cp notas.txt copia.txt`                |
-| `cp -r`                  | Copia diretoria recursivamente                    | `cp -r projetos projetos_backup`        |
-| `mv`                     | Move ou renomeia ficheiro/diretoria               | `mv notas.txt notas_antigas.txt`        |
-| `rm`                     | Remove ficheiro                                   | `rm copia.txt`                          |
-| `rm -r`                  | Remove diretoria e conteúdo                       | `rm -r projetos_backup`                 |
-| `rmdir`                  | Remove diretoria vazia                            | `rmdir pasta_vazia`                     |
+| Comando | Descrição                           | Exemplo                          |
+| ------- | ----------------------------------- | -------------------------------- |
+| `touch` | Cria ficheiro vazio                 | `touch notas.txt`                |
+| `mkdir` | Cria diretoria                      | `mkdir projetos`                 |
+| `cp`    | Copia ficheiro                      | `cp notas.txt copia.txt`         |
+| `cp -r` | Copia diretoria recursivamente      | `cp -r projetos projetos_backup` |
+| `mv`    | Move ou renomeia ficheiro/diretoria | `mv notas.txt notas_antigas.txt` |
+| `rm`    | Remove ficheiro                     | `rm copia.txt`                   |
+| `rm -r` | Remove diretoria e conteúdo         | `rm -r projetos_backup`          |
+| `rmdir` | Remove diretoria vazia              | `rmdir pasta_vazia`              |
 
 #### Exemplo prático:
 
@@ -769,7 +764,6 @@ $ cd ..
 $ rm -r exemplo
 ```
 
-
 ## Memória do Shell: Produtividade e Eficiência com History
 
 ### Videos
@@ -779,13 +773,13 @@ $ rm -r exemplo
 
 O shell guarda um histórico dos comandos executados, permitindo repetir ou pesquisar comandos anteriores facilmente.
 
-| Comando            | Descrição                                         | Exemplo                  |
-|--------------------|---------------------------------------------------|--------------------------|
-| `history`          | Mostra o histórico de comandos                    | `history`                |
-| `!n`               | Executa o comando número n do histórico           | `!42`                    |
-| `!!`               | Repete o último comando                           | `!!`                     |
-| `!palavra`         | Executa o último comando que começa por 'palavra' | `!sudo`                  |
-| `Ctrl+R`           | Pesquisa interativa no histórico                  | (pressione Ctrl+R e digite parte do comando) |
+| Comando    | Descrição                                         | Exemplo                                      |
+| ---------- | ------------------------------------------------- | -------------------------------------------- |
+| `history`  | Mostra o histórico de comandos                    | `history`                                    |
+| `!n`       | Executa o comando número n do histórico           | `!42`                                        |
+| `!!`       | Repete o último comando                           | `!!`                                         |
+| `!palavra` | Executa o último comando que começa por 'palavra' | `!sudo`                                      |
+| `Ctrl+R`   | Pesquisa interativa no histórico                  | (pressione Ctrl+R e digite parte do comando) |
 
 #### Exemplo prático:
 
@@ -812,45 +806,54 @@ sudo apt update
 
 Estes comandos aumentam a produtividade e facilitam a repetição de tarefas no terminal.
 
-
 ## Estética e Poder: Transformando o Terminal com Oh-My-Zsh
 
 O Oh-My-Zsh é uma framework open source para gerir configurações do Zsh, tornando o terminal mais bonito, funcional e produtivo. Permite personalizar o prompt, adicionar plugins e temas facilmente.
 
+
+- [https://ohmyz.sh/](https://ohmyz.sh/)
+
+
+### Vídeos recomendados
+
+- [APRENDA COMO INSTALAR E CONFIGURAR O OH MY ZSH E TENHA SUPER PODERES](https://www.youtube.com/watch?v=1-Lm4znOtaQ)
+  
+
 ### Instalação do Zsh e Oh-My-Zsh (Ubuntu 24.04)
 
 1. **Instalar o Zsh:**
-  ```bash
-  $ sudo apt update
-  $ sudo apt install zsh -y
-  ```
 
+   ``bash
+    sudo apt update
+    sudo apt install zsh -y
+   ``
 2. **Definir o Zsh como shell padrão:**
-  ```bash
-  $ chsh -s $(which zsh)
-  # Terá de terminar sessão e voltar a entrar para ativar.
-  ```
 
+   ``bash
+    chsh -s $(which zsh)
+    Terá de terminar sessão e voltar a entrar para ativar.
+   ``
 3. **Instalar o Oh-My-Zsh:**
-  ```bash
-  $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # Ou, se preferir usar wget:
-  $ sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-  ```
 
+   ``bash
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    Ou, se preferir usar wget:
+    sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+   ``
 4. **Mudar de tema (opcional):**
-  - Edite o ficheiro `~/.zshrc` e altere a linha `ZSH_THEME="robbyrussell"` para outro tema, por exemplo:
+
+    Edite o ficheiro `~/.zshrc` e altere a linha `ZSH_THEME="robbyrussell"` para outro tema, por exemplo:
     ```bash
     ZSH_THEME="agnoster"
     ```
-  - Para aplicar as alterações:
+    Para aplicar as alterações:
     ```bash
     $ source ~/.zshrc
     ```
-
 5. **Adicionar plugins úteis (opcional):**
-  - No ficheiro `~/.zshrc`, adicione plugins à linha `plugins=(git)` (exemplo: `plugins=(git sudo history)`)
-  - Recarregue as configurações:
+
+    No ficheiro `~/.zshrc`, adicione plugins à linha `plugins=(git)` (exemplo: `plugins=(git sudo history)`)
+    Recarregue as configurações:
     ```bash
     $ source ~/.zshrc
     ```
@@ -866,11 +869,3 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/t
 # Edite ~/.zshrc para mudar o tema ou adicionar plugins
 $ source ~/.zshrc
 ```
-
-### Vídeos recomendados
-
-- [APRENDA COMO INSTALAR E CONFIGURAR O OH MY ZSH E TENHA SUPER PODERES](https://www.youtube.com/watch?v=1-Lm4znOtaQ)
-
-
-
-
