@@ -64,8 +64,10 @@ Ao final deste dia, o participante deverá ser capaz de:
 Para a realização dos exercicios pode usar:
 
 1. (Preferencialmente) Linux instalado da aula 1 em computador ou VM.
-2. Usar [KillerCoda - Playground Ubuntu Linux](https://killercoda.com/playgrounds/scenario/ubuntu)
-3. Usar [Iximiuz Labs - Ubuntu 24.04](https://labs.iximiuz.com/playgrounds?category=linux)
+2. Girus Labs [Girus](https://girus.io/)
+3. Usar [KillerCoda - Playground Ubuntu Linux](https://killercoda.com/playgrounds/scenario/ubuntu)
+4. Usar [Iximiuz Labs - Ubuntu 24.04](https://labs.iximiuz.com/playgrounds?category=linux)
+
 
 ### Exercícios
 
