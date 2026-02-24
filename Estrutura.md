@@ -5,7 +5,11 @@
    - Manipulação de Ficheiros e Diretórios
    - Tornando o seu terminal bonito (Oh-my-zsh)
    - Produtividade no shell (history)
-3. Instalação de Software
+3. Editores 
+   - VIM
+   - NANO
+   - Visual Studio Code Remote
+   Instalação de Software
    - APT
    - SNAP
    - Flatpak
