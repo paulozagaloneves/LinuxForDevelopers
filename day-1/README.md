@@ -1,8 +1,8 @@
-# Linux For Developers
+# Linux For Developers - Dia 1
 
 ## Índice
 
-- [Linux For Developers](#linux-for-developers)
+- [Linux For Developers - Dia 1](#linux-for-developers---dia-1)
   - [Índice](#índice)
   - [**Objetivos Dia 1**](#objetivos-dia-1)
   - [Exercício Prático](#exercício-prático)
@@ -165,4 +165,3 @@ Siga estes passos para ativar o Hyper-V no Windows 10 ou 11 (edições Pro, Ente
 
   1. [Manual de Instalação do Ubuntu 24.04 Desktop](Ubuntu.Desktop.md)
   2. [Tutorial: Debian 13 Cloud no Windows com QEMU + cloud-init](Debian13.Cloud.md)
-

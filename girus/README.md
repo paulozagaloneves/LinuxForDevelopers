@@ -1,19 +1,23 @@
-# Linux para Developers - Girus
+# Linux For Developers - Girus
 
 ## Índice
 
-- [Objetivos](#objetivos)
-- [Docker](#docker)
-   - [Docker em Ubuntu ou Debian](#docker-em-ubuntu-ou-debian)
-   - [Docker no WSL2 e Ubuntu ou Debian](#docker-no-wsl2-e-ubuntu-ou-debian)
-- [Girus-cli](#girus-cli)
-   - [Instalar](#instalar)
-   - [Criar a plataforma Girus](#criar-a-plataforma-girus)
-   - [Resolucao de problemas](#resolucao-de-problemas)
-   - [Aceder a Plataforma Girus](#aceder-a-plataforma-girus)
+- [Linux For Developers - Girus](#linux-for-developers---girus)
+  - [Índice](#índice)
+  - [Objetivos](#objetivos)
+  - [Docker](#docker)
+    - [Docker em Ubuntu ou Debian](#docker-em-ubuntu-ou-debian)
+    - [Docker no WSL2 e Ubuntu ou Debian](#docker-no-wsl2-e-ubuntu-ou-debian)
+  - [Girus-cli](#girus-cli)
+    - [Instalar](#instalar)
+    - [Criar a plataforma Girus](#criar-a-plataforma-girus)
+    - [Resolucao de problemas](#resolucao-de-problemas)
+    - [Aceder a Plataforma Girus](#aceder-a-plataforma-girus)
+  - [Adicionar repositorio de Labs](#adicionar-repositorio-de-labs)
+    - [Labs Linux4Developers](#labs-linux4developers)
+    - [Listar Labs](#listar-labs)
 
 ## Objetivos
-
 
 ## Docker
 
@@ -25,12 +29,10 @@ Um container empacota a aplicação com as suas dependências, garantindo que fu
 - **Isolado**: cada contentor corre com processos e recursos separados.
 - **Prático**: facilita CI/CD, microserviços e ambientes reproduzíveis.
 
-
 ### Docker em Ubuntu ou Debian
 
 - [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
-
 
 ```bash
 $ curl -fsSL https://get.docker.com/ | sudo sh
@@ -147,11 +149,9 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 $ 
 ```
 
-
 ## Girus-cli
 
 A [Plataforma Girus](https://girus.io/) é uma solução open source da [LINUXtips](https://linuxtips.io) para aprendizagem prática de DevOps e SRE através de laboratórios interativos executados localmente. Em vez de depender de ambientes remotos, o Girus roda na própria máquina do utilizador com Docker e Kubernetes, oferecendo cenários isolados, seguros e sem conflitos com o sistema anfitrião. A experiência combina terminal interativo, tarefas guiadas, dicas contextuais e validação automática de progresso, acelerando o aprendizado hands-on em tecnologias como Linux, Docker, Kubernetes, Terraform e AWS. Com instalação simples via CLI e catálogo de dezenas de labs, o Girus reduz barreiras técnicas e financeiras para quem quer praticar competências reais de cloud e infraestrutura.
-
 
 ### Instalar
 
@@ -317,8 +317,6 @@ Agora vai poder aceder à Plataforma Girus.
 
 ![Plataforma Girus](/images/Plataforma_Girus_Local.png)
 
-
-
 ## Adicionar repositorio de Labs
 
 ### Labs Linux4Developers
@@ -327,7 +325,6 @@ Agora vai poder aceder à Plataforma Girus.
 $ girus repo add  linux-for-developers https://raw.githubusercontent.com/paulozagaloneves/LinuxForDevelopers/refs/heads/main/girus-labs --description "Repositório de labs co curso Linux For Developers"
 Repositório 'linux-for-developers' adicionado com sucesso.
 ```
-
 
 ### Listar Labs
 
@@ -368,4 +365,3 @@ terraform-aws-infraestrutura      1.0.0             girus-labs             Crie 
 terraform-provisioners-modulos    1.0.0             girus-labs             Aprenda a utilizar provisioners e módulos no Terraform
 linux-comandos-basicos            1.0.0             linux-for-developers   Domine os comandos básicos e conceitos fundamentais do Linux
 ```
-

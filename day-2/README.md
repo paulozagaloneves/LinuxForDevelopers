@@ -1,8 +1,8 @@
-# Linux para Developers - Dia 2
+# Linux For Developers - Dia 2
 
 ## Índice
 
-- [Linux para Developers - Dia 2](#linux-para-developers---dia-2)
+- [Linux For Developers - Dia 2](#linux-for-developers---dia-2)
   - [Índice](#índice)
   - [Objetivos Dia 2](#objetivos-dia-2)
   - [Exercícios Práticos](#exercícios-práticos)

@@ -2,12 +2,15 @@
 
 ## Trilha de Treinamento
 
-### [Plataforma Girus](girus/README.md)
+### 🚀 [Plataforma Girus](girus/README.md)
+
 - Objetivos
 - Docker
+
    - Docker em Ubuntu ou Debian
    - Docker no WSL2 e Ubuntu ou Debian
 - Girus-cli
+
    - Instalar
    - Criar a plataforma Girus
 
@@ -24,10 +27,10 @@
   - Manual de Instalação do Ubuntu 24.04 Desktop
   - Tutorial: Debian 13 Cloud no Windows com QEMU + cloud-init
 
-
 ---
 
 ### 📅 [Dia 2 - Shell Básico](day-2/README.md)
+
   - Objetivos Dia 2
   - Exercícios Práticos
     - Preparação
