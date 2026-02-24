@@ -1,7 +1,7 @@
 labs:
-  - id: linux-comandos-basicos
+  - id: linux-comandos-essenciais
     title: Fundamentos do Linux - Navegação e Comandos Essenciais
-    description: Domine os comandos básicos e conceitos fundamentais do Linux
+    description: Domine os comandos essenciais e conceitos fundamentais do Linux
     version: 1.0.0
     duration: 25m
     tags: [linux, basics, commands, terminal]
