@@ -330,11 +330,11 @@ Repositório 'linux-for-developers' adicionado com sucesso.
 ### Listar Labs
 
 ```bash
-$ girus lab list
+ girus lab list                                                                   
 Verificando cache em: /home/paulo/.girus/cache/girus-labs/index.yaml
 Usando índice do cache
 Verificando cache em: /home/paulo/.girus/cache/linux-for-developers/index.yaml
-Usando índice do cache
+Buscando índice em: https://raw.githubusercontent.com/paulozagaloneves/LinuxForDevelopers/refs/heads/main/girus-labs/index.yaml
 LABORATÓRIOS DISPONÍVEIS
 ────────────────────────────────────────────────────────────────────────────────
 NOME                              VERSÃO   REPOSITÓRIO   DESCRIÇÃO
@@ -364,7 +364,8 @@ aws-lambda-serverless             1.0.0             girus-labs             Explo
 terraform-fundamentos             1.0.0             girus-labs             Aprenda os princípios fundamentais do Terraform
 terraform-aws-infraestrutura      1.0.0             girus-labs             Crie e gerencie infraestrutura AWS com Terraform
 terraform-provisioners-modulos    1.0.0             girus-labs             Aprenda a utilizar provisioners e módulos no Terraform
-linux-comandos-basicos            1.0.0             linux-for-developers   Domine os comandos básicos e conceitos fundamentais do Linux
+linux-comandos-essenciais         1.0.0             linux-for-developers   Domine os comandos essenciais e conceitos fundamentais do Linux
+linux-despertar-do-terminal       1.0.0             linux-for-developers   Este laboratório é ideal para iniciantes e desenvolvedores que querem iniciar no terminal.
 ```
 
 ### Instalar um lab
@@ -372,4 +373,5 @@ linux-comandos-basicos            1.0.0             linux-for-developers   Domin
 
 ```bash
 $ girus lab install linux-for-developers linux-comandos-essenciais
+$ girus lab install linux-for-developers linux-despertar-do-terminal
 ```
