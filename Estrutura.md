@@ -9,6 +9,7 @@
    - VIM
    - NANO
    - Visual Studio Code Remote
+
    Instalação de Software
    - APT
    - SNAP

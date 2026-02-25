@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: linux_fhs_navegacao_manipulacao_lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: |
+    name: linux-fhs-navegacao-manipulacao
+    title: "FHS, Navegação, Manipulação e History: Laboratório Prático"
+    description: "Explore a arquitetura do sistema Linux (FHS), navegue e liste diretórios, manipule ficheiros e diretórios, e utilize o histórico do shell para aumentar a produtividade."
+    duration: 40m
+    image: "linuxtips/girus-devops:0.1"
+    tasks:
+      - name: "A Arquitetura do Sistema: Entendendo o FHS"
+        description: "Compreenda a estrutura de diretórios do Linux segundo o FHS. Identifique os principais diretórios e suas funções."
+        steps:
+          - "Liste os principais diretórios do sistema: /, /bin, /boot, /dev, /etc, /home, /lib, /mnt, /opt, /proc, /root, /sbin, /srv, /tmp, /usr, /var."
+          - "Use o comando ls para explorar cada diretório."
+          - "Leia o conteúdo de /etc e /proc para identificar ficheiros de configuração e telemetria."
+        validation:
+          - command: "ls / && ls /etc && ls /proc && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Nem todos os diretórios principais foram explorados corretamente."
+      - name: "Explorando o Território: Navegação e Listagem no Sistema de Arquivos"
+        description: "Navegue pelo sistema de arquivos usando comandos como pwd, cd, ls, tree. Liste ficheiros e diretórios, incluindo ocultos e detalhes."
+        steps:
+          - "Obtenha o diretório atual: pwd"
+          - "Navegue para /etc e depois para a home do utilizador: cd /etc; cd ~"
+          - "Liste ficheiros e diretórios: ls, ls -l, ls -a, ls -lh"
+          - "Instale o comando tree e visualize a estrutura em árvore: sudo apt install tree -y; tree /etc"
+        validation:
+          - command: "pwd && cd /etc && cd ~ && ls -a && command -v tree && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Navegação ou listagem não foi realizada corretamente."
+      - name: "Construindo e Remodelando: Manipulação de Ficheiros e Diretórios"
+        description: "Crie, copie, mova, remova ficheiros e diretórios. Use comandos touch, mkdir, cp, mv, rm, rmdir."
+        steps:
+          - "Crie um diretório exemplo e ficheiros: mkdir exemplo; cd exemplo; touch ficheiro1.txt"
+          - "Copie ficheiro: cp ficheiro1.txt copia.txt"
+          - "Renomeie ficheiro: mv copia.txt ficheiro2.txt"
+          - "Remova ficheiro: rm ficheiro2.txt"
+          - "Volte ao diretório anterior e remova o diretório: cd ..; rm -r exemplo"
+        validation:
+          - command: "mkdir exemplo && cd exemplo && touch ficheiro1.txt && cp ficheiro1.txt copia.txt && mv copia.txt ficheiro2.txt && rm ficheiro2.txt && cd .. && rm -r exemplo && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Manipulação de ficheiros ou diretórios não foi realizada corretamente."
+      - name: "Memória do Shell: Produtividade e Eficiência com History"
+        description: "Utilize o histórico do shell para repetir e pesquisar comandos anteriores. Use history, !!, !n, !palavra, Ctrl+R."
+        steps:
+          - "Mostre o histórico de comandos: history"
+          - "Repita o último comando: !!"
+          - "Execute um comando específico do histórico: !n"
+          - "Pesquise no histórico: Ctrl+R e digite parte do comando"
+        validation:
+          - command: "history && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O histórico do shell não foi utilizado corretamente."
