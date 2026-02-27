@@ -66,7 +66,7 @@
 ---
 
 
-### 📅 [Dia 4 - Administração de Utilizadores, Grupos e Ficheiros] (day-4/README.md)
+### 📅 [Dia 4 - Administração de Utilizadores, Grupos e Ficheiros](day-4/README.md)
 
 - **Criação, Modificação e Remoção de Utilizadores e Grupos**
   - `useradd`, `usermod`, `userdel` - Gestão de utilizadores
@@ -96,7 +96,7 @@
 
 ---
 
-### 📅 [Dia 5 - Processos, Compressão e Redes] (day-5/README.md)
+### 📅 [Dia 5 - Processos, Compressão e Redes](day-5/README.md)
 
 - **Comandos de Processos**
   - `ps` - Listar processos
@@ -120,7 +120,7 @@
 
 ---
 
-### 📅 [Dia 6 - Redirecionamento, Pipes e Shell Scripting] (day-6/README.md)
+### 📅 [Dia 6 - Redirecionamento, Pipes e Shell Scripting](day-6/README.md)
 
 - **Uso de STDIN, STDOUT e STDERR**
   - File descriptors: 0 (stdin), 1 (stdout), 2 (stderr)
@@ -159,7 +159,7 @@
 ---
 
 
-### 📅 [Dia 7 - Setup de Ambiente de Desenvolvimento] (day-7/README.md)
+### 📅 [Dia 7 - Setup de Ambiente de Desenvolvimento](day-7/README.md)
 
   - Desenvolvimento Java
   - Desenvolvimento .NET
