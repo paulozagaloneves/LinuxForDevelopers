@@ -1,5 +1,7 @@
 # Linux For Developers
 
+![Linux For Developers](/images/capa-linux-for-developers.png)
+
 ## Trilha de Treinamento
 
 ### 🚀 [Plataforma Girus](girus/README.md)
@@ -37,6 +39,7 @@
     - Exercícios
   - O Despertar do Terminal
     - Mapa de Sobrevivência: Comandos Essenciais
+    - Mapa de Sobrevivência: Encontre os seus ficheiros
     - Raio-X do Sistema: Conhecendo a Máquina com Neofetch
     - Poder Elevado: Usando o Sudo
     - O Ecossistema de Pacotes: Atualizações e Instalações com APT
