@@ -11,6 +11,17 @@
   - [O Despertar do Terminal](#o-despertar-do-terminal)
     - [Videos](#videos)
     - [Mapa de Sobrevivência: Comandos Essenciais](#mapa-de-sobrevivência-comandos-essenciais)
+    - [Mapa de Sobrevivência: Encontre os seus ficheiros](#mapa-de-sobrevivência-encontre-os-seus-ficheiros)
+      - [Pesquisa avançada](#pesquisa-avançada)
+      - [`tree`](#tree)
+      - [`find`](#find)
+      - [Extração Inteligente de Texto](#extração-inteligente-de-texto)
+      - [`grep`](#grep)
+      - [`awk`](#awk)
+      - [`sed (Stream Editor)`](#sed-stream-editor)
+      - [`tr (Translate)`](#tr-translate)
+      - [🚀 Exercício: Análise de Logs](#-exercício-análise-de-logs)
+      - [🚀 Exercício: Análise de CSV](#-exercício-análise-de-csv)
     - [Raio-X do Sistema: Conhecendo a Máquina com Neofetch](#raio-x-do-sistema-conhecendo-a-máquina-com-neofetch)
     - [Poder Elevado: Usando o Sudo](#poder-elevado-usando-o-sudo)
     - [O Ecossistema de Pacotes: Atualizações e Instalações com APT](#o-ecossistema-de-pacotes-atualizações-e-instalações-com-apt)
@@ -98,7 +109,7 @@ Comandos essenciais para começar a usar Linux logo após a instalação (Ubuntu
 | `mv`      | Move ou renomeia ficheiros/pastas                                                                                                                                              | `mv antigo.txt novo.txt`     |
 | `cp`      | Copia ficheiros/pastas                                                                                                                                                         | `cp ficheiro.txt copia.txt`  |
 | `sudo`    | Executa comando com privilégios administrativos                                                                                                                                | `sudo apt update`            |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------         |
+| --- | --- | --- |
 | `command` | Comando interno do shell para verificar como um comando será resolvido (builtin, alias, função ou executável). Muito usado com `-v` para mostrar o caminho/comando encontrado. | `command -v python3`         |
 | `which`   | Mostra o caminho do executável encontrado no `PATH` (normalmente para comandos externos).                                                                                      | `which python3`              |
 
@@ -108,7 +119,7 @@ Exemplo:
 $ pwd
 /home/paulo/workspace/ITSector/LinuxForDevelopers
 $
-$ ls -la                                                                                                                                                                                                 2 ↵
+$ ls -la     
 total 76
 drwxrwxr-x  7 paulo paulo  4096 fev 17 18:36 .
 drwxr-xr-x 21 paulo paulo  4096 fev 17 16:56 ..
@@ -153,6 +164,532 @@ $ which python3
 /usr/bin/python3
 $
 ```
+
+### Mapa de Sobrevivência: Encontre os seus ficheiros
+
+#### Pesquisa avançada
+
+#### `tree`
+
+- [Libere o poder do comando tree do Linux](https://www.youtube.com/watch?v=b5F8xpHsGn8)
+
+
+O comando **tree** exibe a estrutura de diretórios e ficheiros em formato de árvore.
+
+- Uso básico:
+
+```bash
+$ tree 
+.
+├── day-1
+│   ├── Debian13.Cloud.md
+│   ├── README.md
+│   └── Ubuntu.Desktop.md
+├── day-2
+│   └── README.md
+├── day-3
+│   └── README.md
+├── day-4
+│   └── README.md
+├── day-5
+│   └── README.md
+├── day-6
+│   └── README.md
+├── day-7
+│   ├── gerador-senhas-java
+│   │   ├── pom.xml
+│   │   └── src
+│   │       └── main
+│   │           └── java
+│   │               └── pt
+│   │                   └── exemplo
+│   │                       └── senhas
+│   │                           └── app
+│   │                               └── Application.java
+│   └── README.md
+├── Estrutura.md
+├── general
+│   ├── Certbot-LetsEncrypt-Cloudflare.md
+│   └── README.md
+├── girus
+│   └── README.md
+├── girus-labs
+│   ├── index.yaml
+│   ├── labs
+│   │   ├── linux_comandos-basicos
+│   │   │   └── lab.yaml
+│   │   ├── linux_despertar_do_terminal
+│   │   │   └── lab.yaml
+│   │   └── linux_fhs_navegacao_manipulacao
+│   │       └── lab.yaml
+│   └── LICENSE
+├── images
+│   ├── install_ubuntu_desktop_001.png
+│   ├── install_ubuntu_desktop_002.png
+│   ├── install_ubuntu_desktop_003.png
+│   ├── install_ubuntu_desktop_004.png
+│   ├── install_ubuntu_desktop_005.png
+│   ├── install_ubuntu_desktop_006.png
+│   ├── install_ubuntu_desktop_007.png
+│   ├── install_ubuntu_desktop_008.png
+│   ├── install_ubuntu_desktop_009.png
+│   ├── install_ubuntu_desktop_010.png
+│   ├── install_ubuntu_desktop_011.png
+│   ├── install_ubuntu_desktop_012.png
+│   ├── install_ubuntu_desktop_013.png
+│   └── Plataforma_Girus_Local.png
+├── LICENSE
+├── notas.txt
+└── README.md
+
+24 directories, 37 files
+```
+
+- Mostra a árvore até 2 níveis de profundidade
+
+```bash
+$ tree -L 2
+.
+├── day-1
+│   ├── Debian13.Cloud.md
+│   ├── README.md
+│   └── Ubuntu.Desktop.md
+├── day-2
+│   └── README.md
+├── day-3
+│   └── README.md
+├── day-4
+│   └── README.md
+├── day-5
+│   └── README.md
+├── day-6
+│   └── README.md
+├── day-7
+│   ├── gerador-senhas-java
+│   └── README.md
+├── Estrutura.md
+├── general
+│   ├── Certbot-LetsEncrypt-Cloudflare.md
+│   └── README.md
+├── girus
+│   └── README.md
+├── girus-labs
+│   ├── index.yaml
+│   ├── labs
+│   └── LICENSE
+├── images
+│   ├── install_ubuntu_desktop_001.png
+│   ├── install_ubuntu_desktop_002.png
+│   ├── install_ubuntu_desktop_003.png
+│   ├── install_ubuntu_desktop_004.png
+│   ├── install_ubuntu_desktop_005.png
+│   ├── install_ubuntu_desktop_006.png
+│   ├── install_ubuntu_desktop_007.png
+│   ├── install_ubuntu_desktop_008.png
+│   ├── install_ubuntu_desktop_009.png
+│   ├── install_ubuntu_desktop_010.png
+│   ├── install_ubuntu_desktop_011.png
+│   ├── install_ubuntu_desktop_012.png
+│   ├── install_ubuntu_desktop_013.png
+│   └── Plataforma_Girus_Local.png
+├── LICENSE
+├── notas.txt
+└── README.md
+
+14 directories, 32 files
+```
+
+- Mostra apenas estrutura (diretórios)
+
+```bash
+$ tree -d        
+.
+├── day-1
+├── day-2
+├── day-3
+├── day-4
+├── day-5
+├── day-6
+├── day-7
+│   └── gerador-senhas-java
+│       └── src
+│           └── main
+│               └── java
+│                   └── pt
+│                       └── exemplo
+│                           └── senhas
+│                               └── app
+├── general
+├── girus
+├── girus-labs
+│   └── labs
+│       ├── linux_comandos-basicos
+│       ├── linux_despertar_do_terminal
+│       └── linux_fhs_navegacao_manipulacao
+└── images
+
+24 directories
+```
+
+#### `find`
+
+- [Curso intensivo de Linux - O comando find](https://www.youtube.com/watch?v=skTiK_6DdqU)
+- [Comando find no Linux: buscas eficientes no terminal](https://www.youtube.com/watch?v=Ix4mbqtxoRo)
+
+O comando **find** procurar ficheiros e diretórios de forma flexível, usando critérios como nome, tipo, tamanho, data, etc.
+
+
+- **Uso básico**: Procura por ficheiros chamados arquivo.txt dentro da pasta especificada.
+
+```bash
+$ find /caminho/para/pasta -name "arquivo.txt"
+```
+
+- **Uso básico**: Procurar ficheiros com extensão .jpg no diretorio atual e subdiretórios.
+
+```bash
+$ find . -type f -name "*.jpg"
+```
+
+- **Uso intermediário**: Procura ficheiros maiores que 10MB em /var/log
+
+```bash
+$ find /var/log -type f -size +10M
+```
+
+-type f : Procura apenas ficheiros
+-type d : Procura apenas diretorios
+
+- **Uso intermediário**: Procura por ficheiros modificados nos últimos 7 dias
+
+```bash
+$ find . -mtime -7
+```
+
+
+#### Extração Inteligente de Texto
+
+#### `grep`
+
+- [Linux Crash Course - The grep Command](https://www.youtube.com/watch?v=Tc_jntovCM0)
+- [Comando grep | Curso Linux para Computação Científica](https://www.youtube.com/watch?v=g-gpH_3GY4Y)
+- [Ferramentas incríveis do Linux: ripgrep (rg)](https://www.youtube.com/watch?v=1gywe0ILrvw)
+
+O `grep` é a ferramenta de procura. Ele varre ficheiros ou fluxos de dados à procura de padrões específicos (strings ou expressões regulares) e exibe as linhas correspondentes.
+
+No desenvolvimento pode ser usado para filtrar logs de erro, encontrar onde uma função foi definida ou verificar processos em execução.
+
+**Exemplos Práticos:**
+
+- Procura simples num ficheiro:
+
+```bash
+$ grep "NullPointerException" server.log
+```
+
+- Procura recursiva (em todos os ficheiros do projeto):
+
+```bash 
+$ grep -r "api_key" ./src
+```
+
+- Ignorar maiúsculas/minúsculas e mostrar o número da linha:
+
+```bash
+$ grep -in "todo" README.md
+```
+
+- Filtrar outputs de outros comandos (Pipe):
+  
+```bash
+$ ps aux | grep node (Mostra se o processo Node.js está a correr)
+```
+
+#### `awk`
+
+- [Curso Intensivo de Linux - awk](https://www.youtube.com/watch?v=oPEnvuj9QrI)
+- [Awk Tutorial - Ultimate Guide](https://www.youtube.com/watch?v=KZ9Oj4XZ8d8)
+
+O `awk` não é apenas um comando, é uma **linguagem de processamento de dados** baseada em colunas. Ele é ideal para extrair informações específicas de ficheiros formatados (como CSVs, logs ou tabelas).
+
+No desenvolvimento pode ser usado para extrair IDs de uma lista, somar valores de uma coluna de logs ou reformatar outputs de comandos.
+
+**Exemplos Práticos:**
+
+- Imprimir apenas a primeira e a terceira coluna (separadas por espaço):
+
+```bash
+$ awk '{print $1, $3}' dados.txt
+```
+
+- Filtrar por condição (ex: linhas onde a 2ª coluna é maior que 100):
+
+```bash
+$ awk '$2 > 100 {print $0}' métricas.log
+```
+
+- Alterar o delimitador (ex: processar um ficheiro CSV separado por vírgulas):
+Nota: Por defeito o delimitador no awk é o espaço. Com o parâmetro -F pode alterar o delimitador para outro caracter.
+
+```bash
+$ awk -F "," '{print $1}' utilizadores.csv
+```
+
+- Contar o número de linhas de um ficheiro:
+
+```bash
+$ awk 'END {print NR}' ficheiro.txt
+```
+
+Ou usando o comando wc (Word Count)
+
+wc -l : conta número de linhas de um ficheiro
+
+Os 3 comandos abaixo contam número de linhas de um ficheiro
+
+```bash
+$ wc -l ficheiro.txt
+```
+
+```bash
+$ cat ficheiro.txt | wc -l
+```
+
+```bash
+$ wc -l < ficheiro.txt
+```
+
+#### `sed (Stream Editor)`
+
+- [Curso intensivo de Linux - O comando sed](https://www.youtube.com/watch?v=nXLnx8ncZyE)
+- [sed no Linux: Editando Arquivos Diretamente no Terminal | Aula 19](https://www.youtube.com/watch?v=3-FcXxy9I48)
+
+O `sed` é um **editor de texto não interativo**. Ele permite transformar, substituir ou apagar texto num fluxo de dados de forma automática.
+
+No desenvolvimento pode ser usado para refactoring rápido (mudar nome de variáveis em vários ficheiros), automatizar updates de versões em ficheiros de configuração,limpar dados sujos ou substituição de placeholders.
+
+**Exemplos Práticos:**
+
+- Substituir a primeira ocorrência de "localhost" por "127.0.0.1" numa linha:
+
+```bash
+$ sed 's/localhost/127.0.0.1/' config.env
+```
+
+- Substituição global (todas as ocorrências) e gravar no ficheiro (In-place):
+
+```bash
+$ sed -i 's/v1.0/v2.0/g' package.json
+```
+
+- Apagar linhas específicas (ex: apagar a linha 3):
+
+```bash
+$ sed '3d' lista.txt
+```
+
+- Remover todas as linhas que contêm comentários (começam por #):
+
+```bash
+$ sed '/^#/d' setup.sh
+```
+
+
+#### `tr (Translate)`
+
+- [Curso intensivo de Linux - O comando tr](https://www.youtube.com/watch?v=4qP5xA_epXo)
+- [Aula 11 – Comando tr | Curso Linux para Computação Científica](https://www.youtube.com/watch?v=34mndfZqcJI)
+
+O comando `tr` lê do standard input (entrada padrão) e traduz, remove repetições (squeeze) ou elimina caracteres, enviando o resultado para o standard output.
+
+**Nota importante**: O tr não aceita um nome de ficheiro como argumento direto (ex: tr a b ficheiro.txt não funciona). Ele precisa de receber os dados através de um pipe (|) ou de um redirecionamento (<).
+
+**Utilidade para Devs:**
+
+- Normalizar dados (converter tudo para minúsculas).
+
+- Limpar ficheiros CSV (trocar vírgulas por tabs).
+
+- Remover quebras de linha ou caracteres invisíveis que causam bugs em scripts.
+
+**Exemplos Práticos:**
+
+- Alterar a caixa do texto (Upper para Lower):
+
+```bash
+$ echo "LINUX PARA DEVS" | tr 'A-Z' 'a-z'
+```
+Útil para comparar strings em scripts de forma case-insensitive.
+
+- Substituir delimitadores (ex: transformar espaços em vírgulas):
+```bash
+$ cat lista.txt | tr ' ' ','
+```
+
+- Eliminar caracteres específicos (Flag -d de delete):
+```bash
+$ echo "User ID: 12345" | tr -d '0-9'
+```
+Output: User ID:  (Remove todos os dígitos).
+
+- Remover repetições (Flag -s de squeeze):
+```bash
+$ echo "Onde      está o   espaço?" | tr -s ' '
+```
+Output: Onde está o espaço? (Transforma múltiplos espaços seguidos em apenas um).
+
+- Remover quebras de linha (Transformar uma lista numa linha única):
+
+```bash
+$ cat lista_ids.txt | tr -d '\n'
+```
+
+| Comando | Foco Principal         | Melhor Caso de Uso                              | Exemplo de Operação                                 |
+|---------|-----------------------|-------------------------------------------------|-----------------------------------------------------|
+| grep    | Linhas / Padrões      | Filtrar e encontrar informação específica        | Encontrar todos os "404" num log                    |
+| sed     | Substituição / Edição | Transformar strings ou editar ficheiros em massa | Trocar "localhost" por "127.0.0.1"                  |
+| awk     | Colunas / Campos      | Processar dados estruturados e gerar relatórios  | Extrair a 3ª coluna de um CSV                       |
+| tr      | Caracteres Individuais| Limpezas rápidas e normalização de texto         | Converter minúsculas em MAIÚSCULAS                  |
+| wc      | Contagem              | Validar volume de dados ou resultados            | Contar quantas linhas tem um ficheiro               |
+
+
+
+#### 🚀 Exercício: Análise de Logs
+
+**Cenário:** Tens um ficheiro chamado access.log com milhares de linhas. Precisas de gerar um relatório rápido que mostre quantos acessos únicos a API recebeu, mas apenas para pedidos que resultaram em erro 500 (Internal Server Error).
+
+O Ficheiro de Exemplo (access.log):
+
+```txt
+192.168.1.1 - [2024-03-01] "GET /api/v1/users" 200
+192.168.1.5 - [2024-03-01] "POST /api/v1/save" 500
+172.16.0.10 - [2024-03-01] "GET /api/v1/admin" 403
+192.168.1.5 - [2024-03-01] "POST /api/v1/save" 500
+10.0.0.45   - [2024-03-01] "PUT /api/v1/update" 500
+```
+
+**O Desafio: A "linha" Mágica**
+
+O teu objetivo é criar um comando único que:
+
+- Filtre apenas as linhas com erro 500.
+
+- Remova o texto desnecessário (ex: o prefixo /api/v1/).
+
+- Extraia apenas o endpoint (ex: save, update).
+
+- Conte quantas ocorrências de erro existem no total.
+
+**A Solução Passo a Passo:**
+
+- `grep "500"`: Filtra apenas as linhas problemáticas.
+
+- `sed 's/\/api\/v1\///g'`: Limpa o caminho do URL para facilitar a leitura.
+
+- `awk '{print $7}'`: Extrai a 7ª coluna (onde está o endpoint após a limpeza).
+
+- `wc -l`: Dá-te o número final de erros processados.
+
+
+**Comando Completo:**
+
+```bash
+$ grep "500" access.log | sed 's/\/api\/v1\///g' | awk '{print $7}' | wc -l
+```
+
+
+📝 **Questões:**
+
+- **Pergunta 1**: O que acontece se removermos o wc -l do final do comando?
+
+- **Pergunta 2**: Como alterarias o comando para contar apenas os erros vindos de um IP específico (ex: 192.168.1.5)?
+
+- **Pergunta 3**: (Bónus) Se quisesses guardar o resultado num ficheiro chamado relatorio_erros.txt em vez de ver no ecrã, o que adicionarias ao final?
+
+
+#### 🚀 Exercício: Análise de CSV
+
+📋 **Cenário: Relatório de Vendas Internacional**
+
+**O Problema:**
+
+Recebeste um ficheiro CSV (lista_clientes.csv) extraído de uma base de dados antiga. O ficheiro está "sujo": alguns nomes de países estão em minúsculas, outros em maiúsculas, e tu precisas de saber rapidamente quantos clientes temos em Portugal, extraindo apenas o nome deles para um relatório interno.
+
+**Estrutura do Ficheiro** (`lista_clientes.csv`):
+
+```csv
+nome,email,pais
+Joana Silva,joana@mail.com,Portugal
+John Doe,john@mail.com,USA
+CARLOS SERRANO,carlos@mail.com,portugal
+Marta Reais,marta@mail.com,PORTUGAL
+```
+
+
+```bash
+$ cat lista_clientes.csv | tr 'a-z' 'A-Z' | grep "PORTUGAL" | awk -F',' '{print $1}' | wc -l
+```
+
+🛠️ **Decomposição do Pipeline**
+
+1. `cat lista_clientes.csv`
+- **O que faz:** Lê o conteúdo do ficheiro e "atira-o" para o pipeline.
+
+- **Estado dos dados:** O texto original, com misturas de maiúsculas e minúsculas.
+
+2. `tr 'a-z' 'A-Z'`
+- **O que faz: Normalização**. Converte todos os caracteres do fluxo para Letras Maiúsculas.
+
+- **Porquê?** Para garantir que o grep seguinte não ignore "portugal" ou "Portugal". Assim, tudo passa a ser "PORTUGAL".
+
+3. `grep "PORTUGAL"`
+- **O que faz:** Filtragem. Seleciona apenas as linhas que contêm a palavra "PORTUGAL".
+
+- **Resultado:** Remove todos os clientes de outros países (USA, Espanha, etc.).
+
+4. `awk -F',' '{print $1}'`
+- **O que faz: Extração**. Define a vírgula (,) como separador de colunas (-F) e imprime apenas a primeira coluna ($1).
+
+- **Resultado:** Ficas apenas com uma lista de nomes (ex: JOANA SILVA, CARLOS SERRANO), descartando o e-mail e o país.
+
+5. `wc -l`
+- **O que faz:** Contagem. Conta quantas linhas (clientes) restaram após todos os filtros.
+
+- **Resultado Final**: Um número inteiro (neste exemplo: 3).
+
+> **Dica**: Se o objetivo fosse apenas ver os nomes, pararíamos no `awk`. Como o objetivo é um relatório estatístico, terminamos com o `wc -l`. Esta modularidade é o que torna o CLI do Linux tão flexível para Developers e Data Analysts.
+
+
+🛠️ **Desafio Prático: Extração de Contactos**
+**Enunciado:**
+
+Utilizando o mesmo ficheiro lista_clientes.csv do exemplo anterior, modifica o pipeline para que o sistema:
+
+1. Normalize os dados para maiúsculas.
+
+2. Filtre apenas os clientes de PORTUGAL.
+
+3. Extraia apenas os e-mails (que estão na 2ª coluna).
+
+4. Guarde o resultado final num novo ficheiro chamado emails_marketing.txt em vez de os mostrar no ecrã.
+
+
+**Solução:**
+
+```bash
+$ cat lista_clientes.csv | tr 'a-z' 'A-Z' | grep "PORTUGAL" | awk -F',' '{print $2}' > emails_marketing.txt
+```
+
+🌟 Bónus: "Dica de Performance"
+
+Embora o `cat` seja muito usado por iniciantes, o pipeline pode ser encurtado. Em Linux, quase todos estes comandos aceitam o ficheiro como argumento ou via redirecionamento de entrada:
+
+```bash
+$ tr 'a-z' 'A-Z' < lista_clientes.csv | grep "PORTUGAL" | awk -F',' '{print $2}' > emails_marketing.txt
+```
+
+Isto elimina um processo (`cat`) e torna a execução marginalmente mais rápida em ficheiros massivos.
+
 
 ### Raio-X do Sistema: Conhecendo a Máquina com Neofetch
 

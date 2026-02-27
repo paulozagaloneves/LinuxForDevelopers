@@ -59,30 +59,15 @@
 
 ### 📅 [Dia 3 - Editores e Instalação de Software](day-3/README.md)
 
-  - **Editores Essenciais no Linux**
-   - O Clássico do Terminal: Dominando o VIM
-   - A Simplicidade Eficiente: Navegando com NANO
-   - IDE do Mundo Moderno: VS Code – Edição Remota e Produtividade
+- **Editores Essenciais no Linux**
+  - O Clássico do Terminal: Dominando o VIM
+  - A Simplicidade Eficiente: Navegando com NANO
+  - IDE do Mundo Moderno: VS Code – Edição Remota e Produtividade
   
- - **Instalação de Software**
-   - O Gerente Clássico: APT – Instalando Pacotes com Segurança
-   - Pacotes em Contêinerizados: Snap – Sandboxed e Universal
-   - Portabilidade Flexível: Flatpak – Apps Universais no Linux
-
----
-
-### 📅 Dia 3 - Manipulação de Arquivos e Diretórios
-
-- **Comandos de Manipulação de Diretórios**
-  - `pwd`, `cd`, `ls`, `mkdir`, `rmdir`
-  - `tree`, `find`, `locate`
-  - Navegação e organização
-- **Comandos de Manipulação de Ficheiros**
-  - `touch`, `cp`, `mv`, `rm`
-  - `cat`, `less`, `more`, `head`, `tail`
-  - `grep`, `awk`, `sed`
-  - Permissões: `chmod`, `chown`, `chgrp`
-
+- **Instalação de Software**
+  - O Gerente Clássico: APT – Instalando Pacotes com Segurança
+  - Pacotes em Contêinerizados: Snap – Sandboxed e Universal
+  - Portabilidade Flexível: Flatpak – Apps Universais no Linux
 
 ---
 
