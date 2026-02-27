@@ -6,20 +6,15 @@
 
 ### 🚀 [Plataforma Girus](girus/README.md)
 
-- Objetivos
 - Docker
-
    - Docker em Ubuntu ou Debian
    - Docker no WSL2 e Ubuntu ou Debian
 - Girus-cli
-
    - Instalar
    - Criar a plataforma Girus
 
 ### 📅 [Dia 1 - Setup](day-1/README.md)
 
-- **Objetivos Dia 1**
-- Exercício Prático
 - **Introdução ao Linux**
   - História e evolução do Linux
   - Distribuições Populares (Ubuntu, Debian, Fedora, CentOS)
@@ -33,10 +28,6 @@
 
 ### 📅 [Dia 2 - Shell Básico](day-2/README.md)
 
-  - Objetivos Dia 2
-  - Exercícios Práticos
-    - Preparação
-    - Exercícios
   - O Despertar do Terminal
     - Mapa de Sobrevivência: Comandos Essenciais
     - Mapa de Sobrevivência: Encontre os seus ficheiros
