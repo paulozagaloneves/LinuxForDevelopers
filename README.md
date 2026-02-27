@@ -57,65 +57,22 @@
 
 ---
 
-### 📅 [Dia 2 - Acesso Remoto e Gerenciamento de Pacotes](day-2/README.md)
+### 📅 [Dia 3 - Editores e Instalação de Software](day-3/README.md)
 
-- **Objetivos Dia 2**
-- Exercícios Práticos
-  - Preparação
-  - Exercícios
-- Acesso Remoto SSH
-  - Configuração de SSH
-  - Acesso remoto ao linux sem senha
-- Comandos: Command e Which]
-- Editores de texto no terminal
-  - VIM
-    - Principais atalhos do Vim
-  - Nano
-    - Principais atalhos do Nano
-  - Visual Studio Code Remote
-- Descomplicando o Sudo
-  - Comando Sudo
-  - O que é o ficheiro sudoers
-  - Listar permissões sudo
-  - Editar permissões Sudo
-- Documentação (man)
-  - MAN - Manual de comandos
-- Interface Linha de Comandos (CLI)
-- Gerenciamento de Pacotes
-- Pacotes SNAP e FLATPAK
-- Ambiente DEV Java
-  - GIT
-  - SDKMAN: Instalação
-  - SDKMAN: Comandos básicos
-  - SDKMAN: Exercícios
-  - Instalação maven
-  - Projeto: Gerador Senhas Java
-    - Compilar
-    - Executar
-- Ambiente DEV .NET
-- IDEs para Programação
+  - **Editores Essenciais no Linux**
+   - O Clássico do Terminal: Dominando o VIM
+   - A Simplicidade Eficiente: Navegando com NANO
+   - IDE do Mundo Moderno: VS Code – Edição Remota e Produtividade
+  
+ - **Instalação de Software**
+   - O Gerente Clássico: APT – Instalando Pacotes com Segurança
+   - Pacotes em Contêinerizados: Snap – Sandboxed e Universal
+   - Portabilidade Flexível: Flatpak – Apps Universais no Linux
 
 ---
 
 ### 📅 Dia 3 - Manipulação de Arquivos e Diretórios
 
-- **Estrutura de Diretorios (FHS)**
-  - `/` - Diretório raiz
-  - `/bin` - Binários essenciais do sistema
-  - `/boot` - Arquivos de inicialização (kernel, GRUB)
-  - `/dev` - Dispositivos (devices)
-  - `/etc` - Arquivos de configuração do sistema
-  - `/home` - Diretórios pessoais dos usuários
-  - `/lib` - Bibliotecas compartilhadas essenciais
-  - `/mnt` - Pontos de montagem temporários
-  - `/opt` - Pacotes de software opcionais
-  - `/proc` - Sistema de arquivos virtual (processos)
-  - `/root` - Diretório pessoal do superusuário
-  - `/sbin` - Binários do sistema (superusuário)
-  - `/srv` - Dados de serviços
-  - `/tmp` - Arquivos temporários
-  - `/usr` - Hierarquia secundária (programas, bibliotecas)
-  - `/var` - Dados variáveis (logs, cache, spool)
 - **Comandos de Manipulação de Diretórios**
   - `pwd`, `cd`, `ls`, `mkdir`, `rmdir`
   - `tree`, `find`, `locate`
@@ -125,37 +82,12 @@
   - `cat`, `less`, `more`, `head`, `tail`
   - `grep`, `awk`, `sed`
   - Permissões: `chmod`, `chown`, `chgrp`
-- **Editores de Texto**
-  - `nano` - Editor para iniciantes
-  - `vim` - Editor avançado
-  - `vi` - Editor clássico
-  - Configuração e personalização
+
 
 ---
 
-### 📅 Dia 4 - Processos, Compressão e Redes
 
-- **Comandos de Processos**
-  - `ps` - Listar processos
-  - `top`, `htop` - Monitoramento em tempo real
-  - `kill`, `killall` - Finalizar processos
-  - `jobs`, `bg`, `fg` - Gerenciamento de jobs
-  - `nohup`, `screen`, `tmux`
-- **Comandos de Compressão**
-  - `tar` - Arquivamento
-  - `gzip`, `gunzip` - Compressão
-  - `zip`, `unzip` - Arquivos ZIP
-  - `bzip2`, `xz` - Outras ferramentas
-- **Comandos Básicos de Redes**
-  - `ping`, `traceroute` - Diagnóstico
-  - `ifconfig`, `ip` - Configuração de rede
-  - `netstat`, `ss` - Conexões ativas
-  - `curl`, `wget` - Download de arquivos
-  - `scp`, `rsync` - Transferência de arquivos
-
----
-
-### 📅 Dia 5 - Administração de Utilizadores, Grupos e Ficheiros
+### 📅 Dia 4 - Administração de Utilizadores, Grupos e Ficheiros (day-4/README.md)
 
 - **Criação, Modificação e Remoção de Utilizadores e Grupos**
   - `useradd`, `usermod`, `userdel` - Gestão de utilizadores
@@ -185,7 +117,31 @@
 
 ---
 
-### 📅 Dia 6 - Redirecionamento, Pipes e Shell Scripting
+### 📅 Dia 5 - Processos, Compressão e Redes (day-5/README.md)
+
+- **Comandos de Processos**
+  - `ps` - Listar processos
+  - `top`, `htop` - Monitoramento em tempo real
+  - `kill`, `killall` - Finalizar processos
+  - `jobs`, `bg`, `fg` - Gerenciamento de jobs
+  - `nohup`, `screen`, `tmux`
+- **Comandos de Compressão**
+  - `tar` - Arquivamento
+  - `gzip`, `gunzip` - Compressão
+  - `zip`, `unzip` - Arquivos ZIP
+  - `bzip2`, `xz` - Outras ferramentas
+- **Comandos Básicos de Redes**
+  - `ping`, `traceroute` - Diagnóstico
+  - `ifconfig`, `ip` - Configuração de rede
+  - `netstat`, `ss` - Conexões ativas
+  - `curl`, `wget` - Download de arquivos
+  - `scp`, `rsync` - Transferência de arquivos
+
+
+
+---
+
+### 📅 Dia 6 - Redirecionamento, Pipes e Shell Scripting (day-6/README.md)
 
 - **Uso de STDIN, STDOUT e STDERR**
   - File descriptors: 0 (stdin), 1 (stdout), 2 (stderr)
@@ -222,6 +178,13 @@
   - Boas práticas e debugging
 
 ---
+
+
+### 📅 Dia 7 - Setup de Ambiente de Desenvolvimento (day-7/README.md)
+
+  - Desenvolvimento Java
+  - Desenvolvimento .NET
+
 
 ### Configurações Avançadas
 

@@ -68,10 +68,7 @@ Para a realização dos exercicios pode usar:
 3. Usar [KillerCoda - Playground Ubuntu Linux](https://killercoda.com/playgrounds/scenario/ubuntu)
 4. Usar [Iximiuz Labs - Ubuntu 24.04](https://labs.iximiuz.com/playgrounds?category=linux)
 
-
 ### Exercícios
-
-
 
 ## O Despertar do Terminal
 
@@ -812,13 +809,12 @@ Estes comandos aumentam a produtividade e facilitam a repetição de tarefas no 
 
 O Oh-My-Zsh é uma framework open source para gerir configurações do Zsh, tornando o terminal mais bonito, funcional e produtivo. Permite personalizar o prompt, adicionar plugins e temas facilmente.
 
-
 - [https://ohmyz.sh/](https://ohmyz.sh/)
-
 
 ### Vídeos recomendados
 
 - [APRENDA COMO INSTALAR E CONFIGURAR O OH MY ZSH E TENHA SUPER PODERES](https://www.youtube.com/watch?v=1-Lm4znOtaQ)
+
   
 
 ### Instalação do Zsh e Oh-My-Zsh (Ubuntu 24.04)
