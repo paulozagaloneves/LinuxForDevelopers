@@ -53,6 +53,8 @@
 
 ### 📅 [Dia 3 - Editores e Instalação de Software](day-3/README.md)
 
+- **MAN - Manual de comandos**
+
 - **Editores Essenciais no Linux**
   - O Clássico do Terminal: Dominando o VIM
   - A Simplicidade Eficiente: Navegando com NANO

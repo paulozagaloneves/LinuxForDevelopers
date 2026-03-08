@@ -2,57 +2,44 @@
 
 ## Índice
 
-- [Linux For Developers - Dia 2](#linux-for-developers---dia-2)
-  - [Índice](#índice)
-  - [Objetivos Dia 2](#objetivos-dia-2)
-  - [Exercícios Práticos](#exercícios-práticos)
-    - [Preparação](#preparação)
-    - [Exercícios](#exercícios)
-  - [O Despertar do Terminal](#o-despertar-do-terminal)
-    - [Videos](#videos)
-    - [Mapa de Sobrevivência: Comandos Essenciais](#mapa-de-sobrevivência-comandos-essenciais)
-    - [Mapa de Sobrevivência: Encontre os seus ficheiros](#mapa-de-sobrevivência-encontre-os-seus-ficheiros)
-      - [Pesquisa avançada](#pesquisa-avançada)
-      - [`tree`](#tree)
-      - [`find`](#find)
-      - [Extração Inteligente de Texto](#extração-inteligente-de-texto)
-      - [`grep`](#grep)
-      - [`awk`](#awk)
-      - [`sed (Stream Editor)`](#sed-stream-editor)
-      - [`tr (Translate)`](#tr-translate)
-      - [🚀 Exercício: Análise de Logs](#-exercício-análise-de-logs)
-      - [🚀 Exercício: Análise de CSV](#-exercício-análise-de-csv)
-    - [Raio-X do Sistema: Conhecendo a Máquina com Neofetch](#raio-x-do-sistema-conhecendo-a-máquina-com-neofetch)
-    - [Poder Elevado: Usando o Sudo](#poder-elevado-usando-o-sudo)
-    - [O Ecossistema de Pacotes: Atualizações e Instalações com APT](#o-ecossistema-de-pacotes-atualizações-e-instalações-com-apt)
-      - [Videos](#videos-1)
-    - [Localizando a Máquina na Rede: Descobrindo o IP do Servidor](#localizando-a-máquina-na-rede-descobrindo-o-ip-do-servidor)
-    - [Identidade Digital: Gerenciando o Hostname da Máquina](#identidade-digital-gerenciando-o-hostname-da-máquina)
-  - [Além das Fronteiras: Acesso Remoto com SSH](#além-das-fronteiras-acesso-remoto-com-ssh)
-    - [Configuração de SSH](#configuração-de-ssh)
-      - [Instalar servidor ssh (Openssh)](#instalar-servidor-ssh-openssh)
-    - [Acesso remoto ao linux sem senha](#acesso-remoto-ao-linux-sem-senha)
-      - [Videos](#videos-2)
-  - [A Arquitetura do Sistema: Entendendo o FHS](#a-arquitetura-do-sistema-entendendo-o-fhs)
-    - [Videos](#videos-3)
-    - [Configuração do Sistema: Explorando o /etc](#configuração-do-sistema-explorando-o-etc)
-    - [Telemetria do Sistema: Extraindo Dados do /proc](#telemetria-do-sistema-extraindo-dados-do-proc)
-    - [Início do Sistema: Decodificando o /boot](#início-do-sistema-decodificando-o-boot)
-  - [Explorando o Território: Navegação e Listagem no Sistema de Arquivos](#explorando-o-território-navegação-e-listagem-no-sistema-de-arquivos)
-    - [Videos](#videos-4)
-    - [Comandos de Navegação](#comandos-de-navegação)
-    - [Comandos de Listagem](#comandos-de-listagem)
-      - [Exemplo prático:](#exemplo-prático)
-  - [Construindo e Remodelando: Manipulação de Ficheiros e Diretórios](#construindo-e-remodelando-manipulação-de-ficheiros-e-diretórios)
-    - [Videos](#videos-5)
-      - [Exemplo prático:](#exemplo-prático-1)
-  - [Memória do Shell: Produtividade e Eficiência com History](#memória-do-shell-produtividade-e-eficiência-com-history)
-    - [Videos](#videos-6)
-      - [Exemplo prático:](#exemplo-prático-2)
-  - [Estética e Poder: Transformando o Terminal com Oh-My-Zsh](#estética-e-poder-transformando-o-terminal-com-oh-my-zsh)
-    - [Vídeos recomendados](#vídeos-recomendados)
-    - [Instalação do Zsh e Oh-My-Zsh (Ubuntu 24.04)](#instalação-do-zsh-e-oh-my-zsh-ubuntu-2404)
-    - [Exemplo prático:](#exemplo-prático-3)
+- [Objetivos Dia 2](#objetivos-dia-2)
+- [Exercícios Práticos](#exercícios-práticos)
+  - [Preparação](#preparação)
+  - [Exercícios](#exercícios)
+- [O Despertar do Terminal](#o-despertar-do-terminal)
+  - [Videos](#videos)
+  - [Interface Linha de Comandos (CLI)](#interface-linha-de-comandos-cli)
+  - [Variáveis de ambiente (PATH, .bashrc, .zshrc)](#variáveis-de-ambiente-path-bashrc-zshrc)
+  - [Diferenças de configuração: Bash vs Zsh](#diferenças-de-configuração-bash-vs-zsh)
+  - [Mapa de Sobrevivência: Comandos Essenciais](#mapa-de-sobrevivência-comandos-essenciais)
+  - [Mapa de Sobrevivência: Encontre os seus ficheiros](#mapa-de-sobrevivência-encontre-os-seus-ficheiros)
+  - [Raio-X do Sistema: Conhecendo a Máquina com Neofetch](#raio-x-do-sistema-conhecendo-a-máquina-com-neofetch)
+  - [Poder Elevado: Usando o Sudo](#poder-elevado-usando-o-sudo)
+  - [O Ecossistema de Pacotes: Atualizações e Instalações com APT](#o-ecossistema-de-pacotes-atualizações-e-instalações-com-apt)
+  - [Localizando a Máquina na Rede: Descobrindo o IP do Servidor](#localizando-a-máquina-na-rede-descobrindo-o-ip-do-servidor)
+  - [Identidade Digital: Gerenciando o Hostname da Máquina](#identidade-digital-gerenciando-o-hostname-da-máquina)
+- [Trilha de Treinamento](#trilha-de-treinamento)
+- [📚 Recursos Adicionais](#-recursos-adicionais)
+- [Além das Fronteiras: Acesso Remoto com SSH](#além-das-fronteiras-acesso-remoto-com-ssh)
+  - [Configuração de SSH](#configuração-de-ssh)
+  - [Acesso remoto ao linux sem senha](#acesso-remoto-ao-linux-sem-senha)
+- [A Arquitetura do Sistema: Entendendo o FHS](#a-arquitetura-do-sistema-entendendo-o-fhs)
+  - [Videos](#videos-1)
+  - [Configuração do Sistema: Explorando o /etc](#configuração-do-sistema-explorando-o-etc)
+  - [Telemetria do Sistema: Extraindo Dados do /proc](#telemetria-do-sistema-extraindo-dados-do-proc)
+  - [Início do Sistema: Decodificando o /boot](#início-do-sistema-decodificando-o-boot)
+- [Explorando o Território: Navegação e Listagem no Sistema de Arquivos](#explorando-o-território-navegação-e-listagem-no-sistema-de-arquivos)
+  - [Videos](#videos-2)
+  - [Comandos de Navegação](#comandos-de-navegação)
+  - [Comandos de Listagem](#comandos-de-listagem)
+- [Construindo e Remodelando: Manipulação de Ficheiros e Diretórios](#construindo-e-remodelando-manipulação-de-ficheiros-e-diretórios)
+  - [Videos](#videos-3)
+- [Memória do Shell: Produtividade e Eficiência com History](#memória-do-shell-produtividade-e-eficiência-com-history)
+  - [Videos](#videos-4)
+- [Estética e Poder: Transformando o Terminal com Oh-My-Zsh](#estética-e-poder-transformando-o-terminal-com-oh-my-zsh)
+  - [Vídeos recomendados](#vídeos-recomendados)
+  - [Instalação do Zsh e Oh-My-Zsh (Ubuntu 24.04)](#instalação-do-zsh-e-oh-my-zsh-ubuntu-2404)
+  - [Exemplo prático:](#exemplo-prático)
 
 ## Objetivos Dia 2
 
@@ -88,6 +75,98 @@ Comandos essenciais para começar a usar Linux logo após a instalação (Ubuntu
 ### Videos
 
 - [Getting Started with Linux CLI: Must-Know Commands | Linux Basics](https://www.youtube.com/watch?v=eafVBUh5-pQ)
+
+
+### Interface Linha de Comandos (CLI)
+
+- Introdução ao shell (bash, zsh)
+
+**O que é um Shell?**
+
+Um **shell** é um interpretador de comandos que funciona como intermediário entre o utilizador e o kernel do Linux. Ele permite que você execute comandos, scripts e navegue pelo sistema de ficheiros através de uma interface de linha de comandos (CLI).
+
+**Em resumo:** O shell é a porta de entrada para o poder do Linux, permitindo controlo completo do sistema através de comandos.
+
+**Shells mais famosos**
+
+No Linux, é possível usar **diferentes shells** (como Bash, Zsh, Fish, entre outros). A escolha depende do contexto: alguns são preferidos por **compatibilidade com scripts**, outros por **produtividade interativa** (autocomplete, plugins, temas e histórico avançado) e outros por **preferência pessoal** ou padrões da equipa.
+
+
+
+**Bash (Bourne Again Shell)**
+- Shell padrão na maioria das distribuições Linux
+- Desenvolvido como evolução do sh original
+- Versátil e amplamente suportado
+- Ideal para scripts de automação
+- Sintaxe simples e direta
+- Excelente para iniciantes
+
+**Zsh (Z Shell)**
+- Shell moderno e poderoso com recursos avançados
+- Oferece autocompletar inteligente e histórico melhorado
+- Suporta temas e plugins (via frameworks como Oh My Zsh)
+- Sintaxe compatível com bash, mas com mais funcionalidades
+- Melhor experiência interativa para desenvolvedores
+- Presets prontos para aumentar produtividade
+
+
+
+
+### Variáveis de ambiente (PATH, .bashrc, .zshrc)
+
+As **variáveis de ambiente** são pares `NOME=valor` que o sistema e os programas usam para definir comportamento em tempo de execução.
+
+Elas servem para:
+
+- Configurar caminhos de execução (`PATH`)
+- Definir idioma e localidade (`LANG`, `LC_ALL`)
+- Guardar configurações de ferramentas (`JAVA_HOME`, `EDITOR`, `NODE_ENV`)
+- Evitar repetir parâmetros sempre que executas comandos
+
+Exemplo prático com `PATH`:
+
+- O `PATH` contém uma lista de pastas onde o shell procura executáveis.
+- Quando escreves `git` no terminal, o shell procura esse executável nas pastas definidas no `PATH`.
+
+Comandos úteis:
+
+```bash
+echo $PATH
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH="$JAVA_HOME/bin:$PATH"
+```
+
+> `export` torna a variável disponível para processos filhos (comandos e scripts executados a partir desse terminal).
+
+**Temporária vs permanente**
+
+- Temporária: definida só na sessão atual do terminal
+- Permanente: gravada em ficheiros de configuração do shell
+
+### Diferenças de configuração: Bash vs Zsh
+
+Ambos suportam variáveis de ambiente e `export`, mas carregam ficheiros de inicialização diferentes.
+
+**Bash (mais comum em servidores Linux):**
+
+- `~/.bashrc` → configurações de shell interativo
+- `~/.bash_profile` ou `~/.profile` → sessões de login
+
+**Zsh (muito usado por developers):**
+
+- `~/.zshrc` → configurações de shell interativo (aliases, prompt, plugins)
+- `~/.zprofile` → sessões de login
+- `~/.zshenv` → carregado em todas as execuções (usar com cuidado)
+
+Resumo prático:
+
+- Se usas **Bash**, normalmente colocas aliases e `export` no `~/.bashrc`
+- Se usas **Zsh**, normalmente colocas aliases e `export` no `~/.zshrc`
+- Após alterar ficheiros, aplica sem reiniciar:
+        - Bash: `source ~/.bashrc`
+        - Zsh: `source ~/.zshrc`
+
+
 
 ### Mapa de Sobrevivência: Comandos Essenciais
 
