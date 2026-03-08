@@ -13,3 +13,10 @@ labs:
     duration: 30m
     tags: [linux, terminal, commands, neofetch, sudo, apt, hostname]
     url: https://raw.githubusercontent.com/paulozagaloneves/LinuxForDevelopers/refs/heads/main/girus-labs/labs/linux_despertar_do_terminal/lab.yaml
+  - id: linux-memoria-shell
+    title: Memória do Shell - Produtividade e Eficiência com History
+    description: Aprenda a consultar, pesquisar e reutilizar comandos com o history para ganhar produtividade.
+    version: 1.0.0
+    duration: 20m
+    tags: [linux, shell, history, produtividade, terminal]
+    url: https://raw.githubusercontent.com/paulozagaloneves/LinuxForDevelopers/refs/heads/main/girus-labs/labs/linux_memoria_shell/lab.yaml

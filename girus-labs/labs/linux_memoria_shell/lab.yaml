@@ -1,0 +1,177 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: linux-memoria-shell-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: |
+    name: linux-memoria-shell
+    title: "Memória do Shell: Produtividade e Eficiência com History"
+    description: "Compreenda como o shell guarda comandos executados e aprenda a reutilizar, pesquisar e organizar o histórico para ganhar velocidade no terminal Linux."
+    duration: 20m
+    image: "linuxtips/girus-devops:0.1"
+    tasks:
+      - name: "Compreender o history"
+        description: "Compreenda o que é o history, onde ele é armazenado e como visualizar os últimos comandos executados."
+        steps:
+          - "**O que é o history?**"
+          - "O comando **history** mostra a lista de comandos executados no shell atual. Ele é uma forma de 'memória do terminal' e ajuda a repetir tarefas sem redigitar tudo."
+          - "No Bash, o histórico é normalmente persistido em **~/.bash_history** quando a sessão termina. Durante a sessão, pode consultar os comandos já executados com **history**."
+          - "Liste todo o histórico atual da sessão:"
+          - "`history`"
+          - "Mostre apenas os 10 comandos mais recentes:"
+          - "`history 10`"
+          - "Verifique se o ficheiro de histórico do Bash existe na sua home:"
+          - "`ls -la ~/.bash_history`"
+          - "Se o ficheiro não existir, ele será criado na próxima vez que você encerrar a sessão do Bash."
+          - "Pode atualizar o histórico da sessão atual para o ficheiro a qualquer momento com:"
+          - "`history -a`"
+          - "Mostre as últimas 10 linhas gravadas no ficheiro de histórico:"
+          - "`tail -n 10 ~/.bash_history`"
+          - "Defina um formato de data/hora para visualização do histórico na sessão atual:"
+          - "`export HISTTIMEFORMAT='%F %T '`"
+          - "Visualize novamente os últimos comandos com timestamp:"
+          - "`history 5`"
+          - "Com o timestamp, pode ver quando cada comando foi executado, o que é útil para auditoria e revisão de atividades passadas."
+          - "Lembre-se de que o histórico é específico para cada usuário e shell. Se usar outro shell, como Zsh, o arquivo de histórico e o comando podem ser diferentes (por exemplo, **~/.zsh_history**)."
+          - "`export HISTTIMEFORMAT='' # para remover o timestamp se não quiser mais essa informação.`"
+        tips:
+          - type: "info"
+            title: "Sessão atual vs ficheiro"
+            content: "Nem sempre o conteúdo de `~/.bash_history` reflete imediatamente todos os comandos da sessão atual. Para gravar comandos da sessão no ficheiro, use `history -a`."
+          - type: "tip"
+            title: "Ver só os últimos comandos"
+            content: "Use `history N` para limitar a saída, por exemplo `history 20`, evitando rolagem excessiva em sessões longas."
+        validation:
+          - command: "bash -lc 'history 1 >/dev/null 2>&1' && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Não foi possível consultar o histórico com o comando history."
+          - command: "test -f ~/.bash_history && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Ficheiro ~/.bash_history não encontrado."
+
+      - name: "Reutilização rápida de comandos"
+        description: "Pratique atalhos para repetir comandos do histórico e acelerar tarefas do dia a dia."
+        steps:
+          - "Crie um diretório de prática para o lab:"
+          - "`mkdir -p history-lab && cd history-lab`"
+          - "Execute alguns comandos para popular o histórico:"
+          - "`echo 'linha inicial' > treino_history.txt`"
+          - "`date >> treino_history.txt`"
+          - "`pwd >> treino_history.txt`"
+          - "Visualize os últimos comandos para identificar a numeração:"
+          - "`history 10`"
+          - "Repita o último comando executado com **!!**:"
+          - "`!!`"
+          - "Repita o comando mais recente que começa com **date**:"
+          - "`!date`"
+          - "Repita um comando específico pelo número exibido no history (substitua N pelo número real):"
+          - "`!N`"
+          - "Verifique o conteúdo final do ficheiro de prática:"
+          - "`cat treino_history.txt`"
+        tips:
+          - type: "warning"
+            title: "Cuidado com !! e !N"
+            content: "Antes de executar `!!` ou `!N`, confirme no `history` qual comando será repetido. Isso evita repetir acidentalmente um comando destrutivo."
+          - type: "tip"
+            title: "Pré-visualização segura"
+            content: "Use `history 10` antes de usar expansões com `!` para reduzir risco e aumentar precisão."
+        validation:
+          - command: "test -f history-lab/treino_history.txt && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O ficheiro treino_history.txt não foi criado no diretório history-lab."
+          - command: "grep -q 'linha inicial' history-lab/treino_history.txt && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Conteúdo esperado não encontrado em treino_history.txt."
+
+      - name: "Pesquisa e produtividade com histórico"
+        description: "Aprenda a pesquisar no histórico para localizar comandos antigos e reutilizá-los rapidamente."
+        steps:
+          - "Liste os últimos comandos e filtre apenas os que contêm a palavra 'history':"
+          - "`history | grep history`"
+          - "Liste comandos relacionados com navegação e ficheiros:"
+          - "`history | grep -E 'cd|ls|cat|pwd'`"
+          - "Grave os comandos da sessão atual no ficheiro de histórico:"
+          - "`history -a`"
+          - "Abra uma pesquisa interativa no histórico com **Ctrl+R** e digite parte de um comando para encontrá-lo:"
+          - "`(Use Ctrl+R no terminal interativo)`"
+          - "Depois da pesquisa, execute novamente um comando encontrado e valide o fluxo com:"
+          - "`history 15`"
+        tips:
+          - type: "info"
+            title: "Pesquisa incremental"
+            content: "Com `Ctrl+R`, a busca é incremental: cada caractere digitado refina os resultados no histórico."
+          - type: "tip"
+            title: "Combinação poderosa"
+            content: "Uma combinação útil é `history | grep <termo>` para localizar o comando e depois executar com `!N`."
+        validation:
+          - command: "bash -lc 'history -a >/dev/null 2>&1' && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Não foi possível gravar o histórico da sessão com history -a."
+
+      - name: "Comandos avançados com history"
+        description: "Pratique combinações avançadas de comandos do histórico."
+        steps:
+          - "**Repetir comando com sudo**"
+          - "Execute um comando que exige privilégios e depois reutilize-o com sudo sem voltar a escrever tudo:"
+          - "`apt update`"
+          - "`sudo !!`"
+          - "Neste caso, **!!** expande para o último comando executado, ficando equivalente a **'sudo apt update'**."
+          - "**Remover um comando sensível do histórico**"
+          - "Se executou um comando sensível e quer removê-lo do histórico, use o índice da linha no history:"
+          - "`history -d 10`"
+          - "Isto remove a entrada número 10 da lista do histórico da sessão."
+          - "**Usar o último argumento do comando anterior**"
+          - "Crie um diretório e depois use o último argumento automaticamente no comando seguinte:"
+          - "`mkdir projeto`"
+          - "`cd !$`"
+          - "O token **!$** expande para o último argumento do comando anterior (neste exemplo, **projeto**)."
+          - "**Comandos mais usados do utilizador (pipeline)**"
+          - "`history | awk '{print $2}' | sort | uniq -c | sort -nr | head`"
+          - "Explicação do pipeline:"
+          - "- **history**: lista o histórico com número e comando"
+          - "- **awk '{print $2}'**: extrai o nome do comando (segundo campo)"
+          - "- **sort**: ordena para agrupar comandos iguais"
+          - "- **uniq -c**: conta repetições de cada comando"
+          - "- **sort -nr**: ordena por frequência, do maior para o menor"
+          - "- **head`**: mostra apenas os mais frequentes"
+          - "**Exportar histórico para análise**"
+          - "`history > comandos.log`"
+          - "Este comando grava o histórico visível da sessão no ficheiro **comandos.log**."
+          - "**Analisar comandos mais longos**"
+          - "`history | awk '{ $1=\"\"; print length, $0 }' | sort -nr | head`"
+          - "Aqui removemos a primeira coluna (número do histórico), calculamos o comprimento da linha e mostramos os comandos mais longos."   
+          - "**Extrair apenas comandos git**"
+          - "`history | grep -E ' git '`"
+          - "Filtra entradas do histórico que contêm **git** no comando."
+          - "**Auditoria de privilégios**"
+          - "`history | grep sudo`"
+          - "Mostra comandos que usaram **sudo**, útil para revisão rápida de ações administrativas."
+          - "**Gerar estatística do histórico**"
+          - "`history | awk '{print $2}' | sort | uniq -c | sort -nr`"
+          - "Sem `head`, obtém uma visão completa da frequência de comandos."
+          - "**Dica poderosa de configuração no .bashrc**"
+          - "Adicione as linhas abaixo ao ficheiro '~/.bashrc' para melhorar o histórico:"
+          - | 
+            ```
+             # Configurações recomendadas para o histórico
+             HISTSIZE=10000
+             HISTFILESIZE=20000
+             HISTCONTROL=ignoredups:erasedups
+             PROMPT_COMMAND="history -a"
+            ```
+          - "Estas configurações aumentam o tamanho do histórico, evitam duplicados e garantem que cada comando é gravado imediatamente no ficheiro de histórico."
+          - "Depois, recarregue a configuração com 'source ~/.bashrc'."
+        tips:
+          - type: "warning"
+            title: "Atenção ao history -d"
+            content: "Confirme o número da entrada com `history` antes de usar `history -d N`, para não remover o comando errado."
+          - type: "info"
+            title: "Persistência imediata"
+            content: "Com `PROMPT_COMMAND=\"history -a\"`, cada comando passa a ser gravado no ficheiro de histórico logo após a execução."                           
+        validation:
+          - command: "bash -lc 'history -a >/dev/null 2>&1' && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "Não foi possível gravar o histórico da sessão com history -a."          

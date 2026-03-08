@@ -374,4 +374,5 @@ linux-despertar-do-terminal       1.0.0             linux-for-developers   Este 
 ```bash
 $ girus lab install linux-for-developers linux-comandos-essenciais
 $ girus lab install linux-for-developers linux-despertar-do-terminal
+$ girus lab install linux-for-developers linux-memoria-shell
 ```
